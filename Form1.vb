@@ -75,7 +75,7 @@ Public Class Form1
     Public Const CMD_READ_CNTRL_CAL_DATA As Byte = &HE9
     Public Const CMD_SAVE_CNTRL_CAL_DATA_TO_EEPROM As Byte = &HEA
 
-
+    Public Const CMD_SOFTWARE_SKIP_WARMUP As Byte = &HA1
 
 
     ' Ram Locations
@@ -1734,6 +1734,14 @@ Public Class Form1
 
     Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
         If SendAndValidateCommand(CMD_FORCE_SOFTWARE_RESTART, 0, 0, 0) = True Then
+            ' the command Succeded
+        Else
+            MsgBox("Doh!!!!")
+        End If
+    End Sub
+
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+        If SendAndValidateCommand(CMD_SOFTWARE_SKIP_WARMUP, 0, 0, 0) = True Then
             ' the command Succeded
         Else
             MsgBox("Doh!!!!")

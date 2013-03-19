@@ -423,6 +423,7 @@ Partial Class Form1
         Me.LabelMCUVersion = New System.Windows.Forms.Label()
         Me.LabelMagnetControlStatus = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -4077,9 +4078,9 @@ Partial Class Form1
         Me.Label99.AutoSize = True
         Me.Label99.Location = New System.Drawing.Point(684, 570)
         Me.Label99.Name = "Label99"
-        Me.Label99.Size = New System.Drawing.Size(97, 13)
+        Me.Label99.Size = New System.Drawing.Size(109, 13)
         Me.Label99.TabIndex = 795
-        Me.Label99.Text = "Mag Voltage Glitch"
+        Me.Label99.Text = "Enable Cycle Counter"
         '
         'LabelMagnetronCurrentGlitch
         '
@@ -4095,9 +4096,9 @@ Partial Class Form1
         Me.Label101.AutoSize = True
         Me.Label101.Location = New System.Drawing.Point(684, 557)
         Me.Label101.Name = "Label101"
-        Me.Label101.Size = New System.Drawing.Size(95, 13)
+        Me.Label101.Size = New System.Drawing.Size(104, 13)
         Me.Label101.TabIndex = 793
-        Me.Label101.Text = "Mag Current Glitch"
+        Me.Label101.Text = "Reset Pulse Counter"
         '
         'LabelReverseScale16BitSaturation
         '
@@ -4396,38 +4397,38 @@ Partial Class Form1
         '
         Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CalibrationDataToolStripMenuItem, Me.MagnetSupplyCalibrationToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(70, 20)
+        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(77, 20)
         Me.ToolStripMenuItem1.Text = "Calibration"
         '
         'CalibrationDataToolStripMenuItem
         '
         Me.CalibrationDataToolStripMenuItem.Name = "CalibrationDataToolStripMenuItem"
-        Me.CalibrationDataToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.CalibrationDataToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
         Me.CalibrationDataToolStripMenuItem.Text = "Magnet Current Scaling"
         '
         'MagnetSupplyCalibrationToolStripMenuItem
         '
         Me.MagnetSupplyCalibrationToolStripMenuItem.Name = "MagnetSupplyCalibrationToolStripMenuItem"
-        Me.MagnetSupplyCalibrationToolStripMenuItem.Size = New System.Drawing.Size(197, 22)
+        Me.MagnetSupplyCalibrationToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
         Me.MagnetSupplyCalibrationToolStripMenuItem.Text = "Calibration Factors"
         '
         'LocalRemoteToolStripMenuItem
         '
         Me.LocalRemoteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RemoteMagnetCurrentToolStripMenuItem, Me.LocalMagnetCurrentToolStripMenuItem})
         Me.LocalRemoteToolStripMenuItem.Name = "LocalRemoteToolStripMenuItem"
-        Me.LocalRemoteToolStripMenuItem.Size = New System.Drawing.Size(84, 20)
+        Me.LocalRemoteToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
         Me.LocalRemoteToolStripMenuItem.Text = "Local/Remote"
         '
         'RemoteMagnetCurrentToolStripMenuItem
         '
         Me.RemoteMagnetCurrentToolStripMenuItem.Name = "RemoteMagnetCurrentToolStripMenuItem"
-        Me.RemoteMagnetCurrentToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.RemoteMagnetCurrentToolStripMenuItem.Size = New System.Drawing.Size(227, 22)
         Me.RemoteMagnetCurrentToolStripMenuItem.Text = "Mode A Sets Magnet Current"
         '
         'LocalMagnetCurrentToolStripMenuItem
         '
         Me.LocalMagnetCurrentToolStripMenuItem.Name = "LocalMagnetCurrentToolStripMenuItem"
-        Me.LocalMagnetCurrentToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.LocalMagnetCurrentToolStripMenuItem.Size = New System.Drawing.Size(227, 22)
         Me.LocalMagnetCurrentToolStripMenuItem.Text = "GUI Sets Magnet Current"
         '
         'LabelGUIVersion
@@ -4467,11 +4468,21 @@ Partial Class Form1
         Me.Button2.Text = "Software Reset"
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'Button3
+        '
+        Me.Button3.Location = New System.Drawing.Point(1049, 645)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(93, 23)
+        Me.Button3.TabIndex = 854
+        Me.Button3.Text = "Skip Warmup"
+        Me.Button3.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1154, 704)
+        Me.Controls.Add(Me.Button3)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.LabelMagnetControlStatus)
         Me.Controls.Add(Me.LabelMCUVersion)
@@ -5272,5 +5283,6 @@ Partial Class Form1
     Friend WithEvents LocalMagnetCurrentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LabelMagnetControlStatus As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
+    Friend WithEvents Button3 As System.Windows.Forms.Button
 
 End Class
