@@ -168,6 +168,13 @@ Public Class Form1
     Public Const RAM_READ_COUNT_SCALE16BIT_SATURATION As Byte = &HA8
     Public Const RAM_READ_COUNT_REVERSESCALE16BIT_SATURATION As Byte = &HA9
 
+    Public Const RAM_READ_COUNT_TIMING_ERROR_INT1 As Byte = &HAA
+    Public Const RAM_READ_COUNT_PROCESSOR_CRASH As Byte = &HAB
+    Public Const RAM_READ_LAST_ACTION_BEFORE_CRASH As Byte = &HAC
+    Public Const RAM_READ_COUNT_LVD_INTERRUPT As Byte = &HAD
+    Public Const RAM_READ_LAST_OSCCON_BEFORE_CRASH As Byte = &HAE
+
+
 
 
     Public Const EEPROM_V_SET_POINT As Byte = 0
@@ -788,6 +795,35 @@ Public Class Form1
             LabelReverseScale16BitSaturation.Text = "error"
         End If
 
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_COUNT_TIMING_ERROR_INT1, 0, 0) = True Then
+            LabelInt1TimingError.Text = ReturnData
+        Else
+            LabelInt1TimingError.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_COUNT_PROCESSOR_CRASH, 0, 0) = True Then
+            LabeluPCrashCount.Text = ReturnData
+        Else
+            LabeluPCrashCount.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_LAST_ACTION_BEFORE_CRASH, 0, 0) = True Then
+            LabelActionBeforeCrash.Text = ReturnData
+        Else
+            LabelActionBeforeCrash.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_COUNT_LVD_INTERRUPT, 0, 0) = True Then
+            LabelLVDIntCount.Text = ReturnData
+        Else
+            LabelLVDIntCount.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_LAST_OSCCON_BEFORE_CRASH, 0, 0) = True Then
+            LabelOscConBeforeCrash.Text = ReturnData
+        Else
+            LabelOscConBeforeCrash.Text = "error"
+        End If
 
 
         LabelTime.Text = DateTime.Now
@@ -1740,11 +1776,20 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonSkipWarmup.Click
         If SendAndValidateCommand(CMD_SOFTWARE_SKIP_WARMUP, 0, 0, 0) = True Then
             ' the command Succeded
         Else
             MsgBox("Doh!!!!")
         End If
+    End Sub
+
+    Private Sub ETMOverrideModeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ETMOverrideModeToolStripMenuItem.Click
+        If ButtonSkipWarmup.Visible Then
+            ButtonSkipWarmup.Visible() = False
+        Else
+            ButtonSkipWarmup.Visible() = True
+        End If
+
     End Sub
 End Class

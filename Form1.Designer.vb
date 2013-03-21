@@ -416,6 +416,7 @@ Partial Class Form1
         Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.CalibrationDataToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MagnetSupplyCalibrationToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ETMOverrideModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LocalRemoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RemoteMagnetCurrentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LocalMagnetCurrentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -423,7 +424,19 @@ Partial Class Form1
         Me.LabelMCUVersion = New System.Windows.Forms.Label()
         Me.LabelMagnetControlStatus = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.ButtonSkipWarmup = New System.Windows.Forms.Button()
+        Me.Label92 = New System.Windows.Forms.Label()
+        Me.Label97 = New System.Windows.Forms.Label()
+        Me.LabelInt1TimingError = New System.Windows.Forms.Label()
+        Me.Label107 = New System.Windows.Forms.Label()
+        Me.LabeluPCrashCount = New System.Windows.Forms.Label()
+        Me.Label121 = New System.Windows.Forms.Label()
+        Me.LabelActionBeforeCrash = New System.Windows.Forms.Label()
+        Me.Label127 = New System.Windows.Forms.Label()
+        Me.LabelLVDIntCount = New System.Windows.Forms.Label()
+        Me.Label134 = New System.Windows.Forms.Label()
+        Me.LabelOscConBeforeCrash = New System.Windows.Forms.Label()
+        Me.Label136 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -437,7 +450,7 @@ Partial Class Form1
         'LabelComMsg
         '
         Me.LabelComMsg.AutoSize = True
-        Me.LabelComMsg.Location = New System.Drawing.Point(12, 573)
+        Me.LabelComMsg.Location = New System.Drawing.Point(10, 513)
         Me.LabelComMsg.Name = "LabelComMsg"
         Me.LabelComMsg.Size = New System.Drawing.Size(98, 13)
         Me.LabelComMsg.TabIndex = 1
@@ -446,7 +459,7 @@ Partial Class Form1
         'ComboBoxComPorts
         '
         Me.ComboBoxComPorts.FormattingEnabled = True
-        Me.ComboBoxComPorts.Location = New System.Drawing.Point(11, 589)
+        Me.ComboBoxComPorts.Location = New System.Drawing.Point(9, 529)
         Me.ComboBoxComPorts.Name = "ComboBoxComPorts"
         Me.ComboBoxComPorts.Size = New System.Drawing.Size(121, 21)
         Me.ComboBoxComPorts.TabIndex = 6
@@ -491,7 +504,7 @@ Partial Class Form1
         'LabelHeaterSetPoint
         '
         Me.LabelHeaterSetPoint.AutoSize = True
-        Me.LabelHeaterSetPoint.Location = New System.Drawing.Point(141, 132)
+        Me.LabelHeaterSetPoint.Location = New System.Drawing.Point(365, 82)
         Me.LabelHeaterSetPoint.Name = "LabelHeaterSetPoint"
         Me.LabelHeaterSetPoint.Size = New System.Drawing.Size(10, 13)
         Me.LabelHeaterSetPoint.TabIndex = 12
@@ -501,7 +514,7 @@ Partial Class Form1
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(4, 130)
+        Me.Label6.Location = New System.Drawing.Point(228, 80)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(101, 13)
         Me.Label6.TabIndex = 11
@@ -510,7 +523,7 @@ Partial Class Form1
         'LabelHeaterVmon
         '
         Me.LabelHeaterVmon.AutoSize = True
-        Me.LabelHeaterVmon.Location = New System.Drawing.Point(141, 145)
+        Me.LabelHeaterVmon.Location = New System.Drawing.Point(365, 95)
         Me.LabelHeaterVmon.Name = "LabelHeaterVmon"
         Me.LabelHeaterVmon.Size = New System.Drawing.Size(10, 13)
         Me.LabelHeaterVmon.TabIndex = 14
@@ -519,7 +532,7 @@ Partial Class Form1
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(4, 143)
+        Me.Label8.Location = New System.Drawing.Point(228, 93)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(74, 13)
         Me.Label8.TabIndex = 13
@@ -528,7 +541,7 @@ Partial Class Form1
         'LabelLambdaVpeak
         '
         Me.LabelLambdaVpeak.AutoSize = True
-        Me.LabelLambdaVpeak.Location = New System.Drawing.Point(363, 344)
+        Me.LabelLambdaVpeak.Location = New System.Drawing.Point(364, 302)
         Me.LabelLambdaVpeak.Name = "LabelLambdaVpeak"
         Me.LabelLambdaVpeak.Size = New System.Drawing.Size(10, 13)
         Me.LabelLambdaVpeak.TabIndex = 18
@@ -537,7 +550,7 @@ Partial Class Form1
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(228, 344)
+        Me.Label10.Location = New System.Drawing.Point(229, 302)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(122, 13)
         Me.Label10.TabIndex = 17
@@ -546,7 +559,7 @@ Partial Class Form1
         'LabelLambdaSetPointModeA
         '
         Me.LabelLambdaSetPointModeA.AutoSize = True
-        Me.LabelLambdaSetPointModeA.Location = New System.Drawing.Point(141, 179)
+        Me.LabelLambdaSetPointModeA.Location = New System.Drawing.Point(142, 137)
         Me.LabelLambdaSetPointModeA.Name = "LabelLambdaSetPointModeA"
         Me.LabelLambdaSetPointModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelLambdaSetPointModeA.TabIndex = 16
@@ -556,7 +569,7 @@ Partial Class Form1
         '
         Me.Label12.AutoSize = True
         Me.Label12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(4, 177)
+        Me.Label12.Location = New System.Drawing.Point(5, 135)
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(106, 13)
         Me.Label12.TabIndex = 15
@@ -565,81 +578,89 @@ Partial Class Form1
         'LabelThyrHeaterVmon
         '
         Me.LabelThyrHeaterVmon.AutoSize = True
-        Me.LabelThyrHeaterVmon.Location = New System.Drawing.Point(364, 93)
+        Me.LabelThyrHeaterVmon.Location = New System.Drawing.Point(560, 356)
         Me.LabelThyrHeaterVmon.Name = "LabelThyrHeaterVmon"
         Me.LabelThyrHeaterVmon.Size = New System.Drawing.Size(10, 13)
         Me.LabelThyrHeaterVmon.TabIndex = 22
         Me.LabelThyrHeaterVmon.Text = "-"
+        Me.LabelThyrHeaterVmon.Visible = False
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(228, 93)
+        Me.Label14.Location = New System.Drawing.Point(424, 356)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(88, 13)
         Me.Label14.TabIndex = 21
         Me.Label14.Text = "Thyr Htr Reading"
+        Me.Label14.Visible = False
         '
         'LabelThyrHtrSetPoint
         '
         Me.LabelThyrHtrSetPoint.AutoSize = True
-        Me.LabelThyrHtrSetPoint.Location = New System.Drawing.Point(364, 80)
+        Me.LabelThyrHtrSetPoint.Location = New System.Drawing.Point(560, 343)
         Me.LabelThyrHtrSetPoint.Name = "LabelThyrHtrSetPoint"
         Me.LabelThyrHtrSetPoint.Size = New System.Drawing.Size(10, 13)
         Me.LabelThyrHtrSetPoint.TabIndex = 20
         Me.LabelThyrHtrSetPoint.Text = "-"
+        Me.LabelThyrHtrSetPoint.Visible = False
         '
         'Label16
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(228, 80)
+        Me.Label16.Location = New System.Drawing.Point(424, 343)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(106, 13)
         Me.Label16.TabIndex = 19
         Me.Label16.Text = "Thyr Cath Htr Set"
+        Me.Label16.Visible = False
         '
         'LabelThyrResrHeaterVmon
         '
         Me.LabelThyrResrHeaterVmon.AutoSize = True
-        Me.LabelThyrResrHeaterVmon.Location = New System.Drawing.Point(364, 143)
+        Me.LabelThyrResrHeaterVmon.Location = New System.Drawing.Point(560, 406)
         Me.LabelThyrResrHeaterVmon.Name = "LabelThyrResrHeaterVmon"
         Me.LabelThyrResrHeaterVmon.Size = New System.Drawing.Size(10, 13)
         Me.LabelThyrResrHeaterVmon.TabIndex = 26
         Me.LabelThyrResrHeaterVmon.Text = "-"
+        Me.LabelThyrResrHeaterVmon.Visible = False
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(228, 143)
+        Me.Label18.Location = New System.Drawing.Point(424, 406)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(113, 13)
         Me.Label18.TabIndex = 25
         Me.Label18.Text = "Thyr Resr Htr Reading"
+        Me.Label18.Visible = False
         '
         'LabelThyrResrHtrSetPoint
         '
         Me.LabelThyrResrHtrSetPoint.AutoSize = True
-        Me.LabelThyrResrHtrSetPoint.Location = New System.Drawing.Point(364, 130)
+        Me.LabelThyrResrHtrSetPoint.Location = New System.Drawing.Point(560, 393)
         Me.LabelThyrResrHtrSetPoint.Name = "LabelThyrResrHtrSetPoint"
         Me.LabelThyrResrHtrSetPoint.Size = New System.Drawing.Size(10, 13)
         Me.LabelThyrResrHtrSetPoint.TabIndex = 24
         Me.LabelThyrResrHtrSetPoint.Text = "-"
+        Me.LabelThyrResrHtrSetPoint.Visible = False
         '
         'Label20
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(228, 130)
+        Me.Label20.Location = New System.Drawing.Point(424, 393)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(106, 13)
         Me.Label20.TabIndex = 23
         Me.Label20.Text = "Thyr Resr Htr Set"
+        Me.Label20.Visible = False
         '
         'LabelPulseVoltageModeA
         '
         Me.LabelPulseVoltageModeA.AutoSize = True
-        Me.LabelPulseVoltageModeA.Location = New System.Drawing.Point(141, 195)
+        Me.LabelPulseVoltageModeA.Location = New System.Drawing.Point(142, 153)
         Me.LabelPulseVoltageModeA.Name = "LabelPulseVoltageModeA"
         Me.LabelPulseVoltageModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltageModeA.TabIndex = 28
@@ -648,7 +669,7 @@ Partial Class Form1
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(4, 193)
+        Me.Label22.Location = New System.Drawing.Point(5, 151)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(72, 13)
         Me.Label22.TabIndex = 27
@@ -657,7 +678,7 @@ Partial Class Form1
         'LabelPulseCurrentModeA
         '
         Me.LabelPulseCurrentModeA.AutoSize = True
-        Me.LabelPulseCurrentModeA.Location = New System.Drawing.Point(141, 208)
+        Me.LabelPulseCurrentModeA.Location = New System.Drawing.Point(142, 166)
         Me.LabelPulseCurrentModeA.Name = "LabelPulseCurrentModeA"
         Me.LabelPulseCurrentModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentModeA.TabIndex = 30
@@ -666,7 +687,7 @@ Partial Class Form1
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(4, 206)
+        Me.Label24.Location = New System.Drawing.Point(5, 164)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(70, 13)
         Me.Label24.TabIndex = 29
@@ -675,7 +696,7 @@ Partial Class Form1
         'LabelPulseCurrentMinModeA
         '
         Me.LabelPulseCurrentMinModeA.AutoSize = True
-        Me.LabelPulseCurrentMinModeA.Location = New System.Drawing.Point(141, 221)
+        Me.LabelPulseCurrentMinModeA.Location = New System.Drawing.Point(142, 179)
         Me.LabelPulseCurrentMinModeA.Name = "LabelPulseCurrentMinModeA"
         Me.LabelPulseCurrentMinModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentMinModeA.TabIndex = 32
@@ -684,7 +705,7 @@ Partial Class Form1
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(4, 219)
+        Me.Label26.Location = New System.Drawing.Point(5, 177)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(90, 13)
         Me.Label26.TabIndex = 31
@@ -711,7 +732,7 @@ Partial Class Form1
         'LabelHeaterImon
         '
         Me.LabelHeaterImon.AutoSize = True
-        Me.LabelHeaterImon.Location = New System.Drawing.Point(141, 158)
+        Me.LabelHeaterImon.Location = New System.Drawing.Point(365, 108)
         Me.LabelHeaterImon.Name = "LabelHeaterImon"
         Me.LabelHeaterImon.Size = New System.Drawing.Size(10, 13)
         Me.LabelHeaterImon.TabIndex = 36
@@ -720,7 +741,7 @@ Partial Class Form1
         'Label30
         '
         Me.Label30.AutoSize = True
-        Me.Label30.Location = New System.Drawing.Point(4, 156)
+        Me.Label30.Location = New System.Drawing.Point(228, 106)
         Me.Label30.Name = "Label30"
         Me.Label30.Size = New System.Drawing.Size(70, 13)
         Me.Label30.TabIndex = 35
@@ -729,7 +750,7 @@ Partial Class Form1
         'LabelPulseCurrentMaxModeA
         '
         Me.LabelPulseCurrentMaxModeA.AutoSize = True
-        Me.LabelPulseCurrentMaxModeA.Location = New System.Drawing.Point(141, 234)
+        Me.LabelPulseCurrentMaxModeA.Location = New System.Drawing.Point(142, 192)
         Me.LabelPulseCurrentMaxModeA.Name = "LabelPulseCurrentMaxModeA"
         Me.LabelPulseCurrentMaxModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentMaxModeA.TabIndex = 38
@@ -738,7 +759,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(4, 232)
+        Me.Label3.Location = New System.Drawing.Point(5, 190)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(93, 13)
         Me.Label3.TabIndex = 37
@@ -748,7 +769,7 @@ Partial Class Form1
         '
         Me.CheckBox49.AutoCheck = False
         Me.CheckBox49.AutoSize = True
-        Me.CheckBox49.Location = New System.Drawing.Point(1070, 380)
+        Me.CheckBox49.Location = New System.Drawing.Point(851, 373)
         Me.CheckBox49.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox49.Name = "CheckBox49"
         Me.CheckBox49.Size = New System.Drawing.Size(15, 14)
@@ -760,7 +781,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit4.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit4.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit4.Location = New System.Drawing.Point(1049, 380)
+        Me.CheckBoxMagnetronStatusBit4.Location = New System.Drawing.Point(830, 373)
         Me.CheckBoxMagnetronStatusBit4.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit4.Name = "CheckBoxMagnetronStatusBit4"
         Me.CheckBoxMagnetronStatusBit4.Size = New System.Drawing.Size(15, 14)
@@ -771,7 +792,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit4.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit4.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit4.Location = New System.Drawing.Point(1028, 380)
+        Me.CheckBoxMagnetronFaultBit4.Location = New System.Drawing.Point(809, 373)
         Me.CheckBoxMagnetronFaultBit4.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit4.Name = "CheckBoxMagnetronFaultBit4"
         Me.CheckBoxMagnetronFaultBit4.Size = New System.Drawing.Size(15, 14)
@@ -782,7 +803,7 @@ Partial Class Form1
         '
         Me.Label60.AutoSize = True
         Me.Label60.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label60.Location = New System.Drawing.Point(903, 297)
+        Me.Label60.Location = New System.Drawing.Point(684, 290)
         Me.Label60.Name = "Label60"
         Me.Label60.Size = New System.Drawing.Size(137, 13)
         Me.Label60.TabIndex = 340
@@ -792,7 +813,7 @@ Partial Class Form1
         '
         Me.CheckBox105.AutoCheck = False
         Me.CheckBox105.AutoSize = True
-        Me.CheckBox105.Location = New System.Drawing.Point(1070, 366)
+        Me.CheckBox105.Location = New System.Drawing.Point(851, 359)
         Me.CheckBox105.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox105.Name = "CheckBox105"
         Me.CheckBox105.Size = New System.Drawing.Size(15, 14)
@@ -804,7 +825,7 @@ Partial Class Form1
         '
         Me.CheckBox107.AutoCheck = False
         Me.CheckBox107.AutoSize = True
-        Me.CheckBox107.Location = New System.Drawing.Point(1070, 338)
+        Me.CheckBox107.Location = New System.Drawing.Point(851, 331)
         Me.CheckBox107.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox107.Name = "CheckBox107"
         Me.CheckBox107.Size = New System.Drawing.Size(15, 14)
@@ -816,7 +837,7 @@ Partial Class Form1
         '
         Me.CheckBox108.AutoCheck = False
         Me.CheckBox108.AutoSize = True
-        Me.CheckBox108.Location = New System.Drawing.Point(1070, 352)
+        Me.CheckBox108.Location = New System.Drawing.Point(851, 345)
         Me.CheckBox108.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox108.Name = "CheckBox108"
         Me.CheckBox108.Size = New System.Drawing.Size(15, 14)
@@ -828,7 +849,7 @@ Partial Class Form1
         '
         Me.CheckBox110.AutoCheck = False
         Me.CheckBox110.AutoSize = True
-        Me.CheckBox110.Location = New System.Drawing.Point(1070, 324)
+        Me.CheckBox110.Location = New System.Drawing.Point(851, 317)
         Me.CheckBox110.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox110.Name = "CheckBox110"
         Me.CheckBox110.Size = New System.Drawing.Size(15, 14)
@@ -840,7 +861,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit3.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit3.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit3.Location = New System.Drawing.Point(1049, 366)
+        Me.CheckBoxMagnetronStatusBit3.Location = New System.Drawing.Point(830, 359)
         Me.CheckBoxMagnetronStatusBit3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit3.Name = "CheckBoxMagnetronStatusBit3"
         Me.CheckBoxMagnetronStatusBit3.Size = New System.Drawing.Size(15, 14)
@@ -851,7 +872,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit1.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit1.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit1.Location = New System.Drawing.Point(1049, 338)
+        Me.CheckBoxMagnetronStatusBit1.Location = New System.Drawing.Point(830, 331)
         Me.CheckBoxMagnetronStatusBit1.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit1.Name = "CheckBoxMagnetronStatusBit1"
         Me.CheckBoxMagnetronStatusBit1.Size = New System.Drawing.Size(15, 14)
@@ -862,7 +883,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit2.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit2.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit2.Location = New System.Drawing.Point(1049, 352)
+        Me.CheckBoxMagnetronStatusBit2.Location = New System.Drawing.Point(830, 345)
         Me.CheckBoxMagnetronStatusBit2.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit2.Name = "CheckBoxMagnetronStatusBit2"
         Me.CheckBoxMagnetronStatusBit2.Size = New System.Drawing.Size(15, 14)
@@ -873,7 +894,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit0.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit0.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit0.Location = New System.Drawing.Point(1049, 324)
+        Me.CheckBoxMagnetronStatusBit0.Location = New System.Drawing.Point(830, 317)
         Me.CheckBoxMagnetronStatusBit0.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit0.Name = "CheckBoxMagnetronStatusBit0"
         Me.CheckBoxMagnetronStatusBit0.Size = New System.Drawing.Size(15, 14)
@@ -883,7 +904,7 @@ Partial Class Form1
         'Label61
         '
         Me.Label61.AutoSize = True
-        Me.Label61.Location = New System.Drawing.Point(903, 352)
+        Me.Label61.Location = New System.Drawing.Point(684, 345)
         Me.Label61.Name = "Label61"
         Me.Label61.Size = New System.Drawing.Size(111, 13)
         Me.Label61.TabIndex = 321
@@ -892,7 +913,7 @@ Partial Class Form1
         'Label65
         '
         Me.Label65.AutoSize = True
-        Me.Label65.Location = New System.Drawing.Point(903, 338)
+        Me.Label65.Location = New System.Drawing.Point(684, 331)
         Me.Label65.Name = "Label65"
         Me.Label65.Size = New System.Drawing.Size(114, 13)
         Me.Label65.TabIndex = 317
@@ -901,7 +922,7 @@ Partial Class Form1
         'Label66
         '
         Me.Label66.AutoSize = True
-        Me.Label66.Location = New System.Drawing.Point(903, 380)
+        Me.Label66.Location = New System.Drawing.Point(684, 373)
         Me.Label66.Name = "Label66"
         Me.Label66.Size = New System.Drawing.Size(109, 13)
         Me.Label66.TabIndex = 316
@@ -911,7 +932,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit3.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit3.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit3.Location = New System.Drawing.Point(1028, 366)
+        Me.CheckBoxMagnetronFaultBit3.Location = New System.Drawing.Point(809, 359)
         Me.CheckBoxMagnetronFaultBit3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit3.Name = "CheckBoxMagnetronFaultBit3"
         Me.CheckBoxMagnetronFaultBit3.Size = New System.Drawing.Size(15, 14)
@@ -922,7 +943,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit1.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit1.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit1.Location = New System.Drawing.Point(1028, 338)
+        Me.CheckBoxMagnetronFaultBit1.Location = New System.Drawing.Point(809, 331)
         Me.CheckBoxMagnetronFaultBit1.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit1.Name = "CheckBoxMagnetronFaultBit1"
         Me.CheckBoxMagnetronFaultBit1.Size = New System.Drawing.Size(15, 14)
@@ -933,7 +954,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit2.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit2.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit2.Location = New System.Drawing.Point(1028, 352)
+        Me.CheckBoxMagnetronFaultBit2.Location = New System.Drawing.Point(809, 345)
         Me.CheckBoxMagnetronFaultBit2.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit2.Name = "CheckBoxMagnetronFaultBit2"
         Me.CheckBoxMagnetronFaultBit2.Size = New System.Drawing.Size(15, 14)
@@ -944,7 +965,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit0.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit0.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit0.Location = New System.Drawing.Point(1028, 324)
+        Me.CheckBoxMagnetronFaultBit0.Location = New System.Drawing.Point(809, 317)
         Me.CheckBoxMagnetronFaultBit0.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit0.Name = "CheckBoxMagnetronFaultBit0"
         Me.CheckBoxMagnetronFaultBit0.Size = New System.Drawing.Size(15, 14)
@@ -954,7 +975,7 @@ Partial Class Form1
         'Label67
         '
         Me.Label67.AutoSize = True
-        Me.Label67.Location = New System.Drawing.Point(903, 366)
+        Me.Label67.Location = New System.Drawing.Point(684, 359)
         Me.Label67.Name = "Label67"
         Me.Label67.Size = New System.Drawing.Size(117, 13)
         Me.Label67.TabIndex = 306
@@ -963,7 +984,7 @@ Partial Class Form1
         'Label68
         '
         Me.Label68.AutoSize = True
-        Me.Label68.Location = New System.Drawing.Point(903, 324)
+        Me.Label68.Location = New System.Drawing.Point(684, 317)
         Me.Label68.Name = "Label68"
         Me.Label68.Size = New System.Drawing.Size(92, 13)
         Me.Label68.TabIndex = 305
@@ -990,14 +1011,14 @@ Partial Class Form1
         '
         'TextBoxSetLambdaModeA
         '
-        Me.TextBoxSetLambdaModeA.Location = New System.Drawing.Point(12, 415)
+        Me.TextBoxSetLambdaModeA.Location = New System.Drawing.Point(13, 381)
         Me.TextBoxSetLambdaModeA.Name = "TextBoxSetLambdaModeA"
         Me.TextBoxSetLambdaModeA.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxSetLambdaModeA.TabIndex = 439
         '
         'ButtonSetLambdaModeA
         '
-        Me.ButtonSetLambdaModeA.Location = New System.Drawing.Point(89, 412)
+        Me.ButtonSetLambdaModeA.Location = New System.Drawing.Point(90, 378)
         Me.ButtonSetLambdaModeA.Name = "ButtonSetLambdaModeA"
         Me.ButtonSetLambdaModeA.Size = New System.Drawing.Size(114, 23)
         Me.ButtonSetLambdaModeA.TabIndex = 440
@@ -1006,7 +1027,7 @@ Partial Class Form1
         '
         'ButtonSetMagnet
         '
-        Me.ButtonSetMagnet.Location = New System.Drawing.Point(89, 509)
+        Me.ButtonSetMagnet.Location = New System.Drawing.Point(90, 451)
         Me.ButtonSetMagnet.Name = "ButtonSetMagnet"
         Me.ButtonSetMagnet.Size = New System.Drawing.Size(114, 23)
         Me.ButtonSetMagnet.TabIndex = 442
@@ -1015,7 +1036,7 @@ Partial Class Form1
         '
         'TextBoxSetMagnet
         '
-        Me.TextBoxSetMagnet.Location = New System.Drawing.Point(12, 512)
+        Me.TextBoxSetMagnet.Location = New System.Drawing.Point(13, 454)
         Me.TextBoxSetMagnet.Name = "TextBoxSetMagnet"
         Me.TextBoxSetMagnet.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxSetMagnet.TabIndex = 441
@@ -1023,7 +1044,7 @@ Partial Class Form1
         'LabelEnergyPerPulse
         '
         Me.LabelEnergyPerPulse.AutoSize = True
-        Me.LabelEnergyPerPulse.Location = New System.Drawing.Point(363, 318)
+        Me.LabelEnergyPerPulse.Location = New System.Drawing.Point(364, 276)
         Me.LabelEnergyPerPulse.Name = "LabelEnergyPerPulse"
         Me.LabelEnergyPerPulse.Size = New System.Drawing.Size(10, 13)
         Me.LabelEnergyPerPulse.TabIndex = 447
@@ -1032,7 +1053,7 @@ Partial Class Form1
         'Label94
         '
         Me.Label94.AutoSize = True
-        Me.Label94.Location = New System.Drawing.Point(228, 318)
+        Me.Label94.Location = New System.Drawing.Point(229, 276)
         Me.Label94.Name = "Label94"
         Me.Label94.Size = New System.Drawing.Size(88, 13)
         Me.Label94.TabIndex = 446
@@ -1041,7 +1062,7 @@ Partial Class Form1
         'LabelPRF
         '
         Me.LabelPRF.AutoSize = True
-        Me.LabelPRF.Location = New System.Drawing.Point(363, 331)
+        Me.LabelPRF.Location = New System.Drawing.Point(364, 289)
         Me.LabelPRF.Name = "LabelPRF"
         Me.LabelPRF.Size = New System.Drawing.Size(10, 13)
         Me.LabelPRF.TabIndex = 449
@@ -1050,7 +1071,7 @@ Partial Class Form1
         'Label96
         '
         Me.Label96.AutoSize = True
-        Me.Label96.Location = New System.Drawing.Point(228, 331)
+        Me.Label96.Location = New System.Drawing.Point(229, 289)
         Me.Label96.Name = "Label96"
         Me.Label96.Size = New System.Drawing.Size(28, 13)
         Me.Label96.TabIndex = 448
@@ -1059,7 +1080,7 @@ Partial Class Form1
         'LabelMagnetronPower
         '
         Me.LabelMagnetronPower.AutoSize = True
-        Me.LabelMagnetronPower.Location = New System.Drawing.Point(363, 306)
+        Me.LabelMagnetronPower.Location = New System.Drawing.Point(364, 264)
         Me.LabelMagnetronPower.Name = "LabelMagnetronPower"
         Me.LabelMagnetronPower.Size = New System.Drawing.Size(10, 13)
         Me.LabelMagnetronPower.TabIndex = 451
@@ -1068,7 +1089,7 @@ Partial Class Form1
         'Label98
         '
         Me.Label98.AutoSize = True
-        Me.Label98.Location = New System.Drawing.Point(228, 306)
+        Me.Label98.Location = New System.Drawing.Point(229, 264)
         Me.Label98.Name = "Label98"
         Me.Label98.Size = New System.Drawing.Size(118, 13)
         Me.Label98.TabIndex = 450
@@ -1077,7 +1098,7 @@ Partial Class Form1
         'Label102
         '
         Me.Label102.AutoSize = True
-        Me.Label102.Location = New System.Drawing.Point(4, 306)
+        Me.Label102.Location = New System.Drawing.Point(5, 264)
         Me.Label102.Name = "Label102"
         Me.Label102.Size = New System.Drawing.Size(81, 13)
         Me.Label102.TabIndex = 481
@@ -1086,7 +1107,7 @@ Partial Class Form1
         'Label104
         '
         Me.Label104.AutoSize = True
-        Me.Label104.Location = New System.Drawing.Point(4, 318)
+        Me.Label104.Location = New System.Drawing.Point(5, 276)
         Me.Label104.Name = "Label104"
         Me.Label104.Size = New System.Drawing.Size(71, 13)
         Me.Label104.TabIndex = 482
@@ -1095,7 +1116,7 @@ Partial Class Form1
         'Label105
         '
         Me.Label105.AutoSize = True
-        Me.Label105.Location = New System.Drawing.Point(3, 344)
+        Me.Label105.Location = New System.Drawing.Point(4, 302)
         Me.Label105.Name = "Label105"
         Me.Label105.Size = New System.Drawing.Size(61, 13)
         Me.Label105.TabIndex = 484
@@ -1104,7 +1125,7 @@ Partial Class Form1
         'Label106
         '
         Me.Label106.AutoSize = True
-        Me.Label106.Location = New System.Drawing.Point(3, 331)
+        Me.Label106.Location = New System.Drawing.Point(4, 289)
         Me.Label106.Name = "Label106"
         Me.Label106.Size = New System.Drawing.Size(71, 13)
         Me.Label106.TabIndex = 483
@@ -1113,7 +1134,7 @@ Partial Class Form1
         'LabelArcsTotal
         '
         Me.LabelArcsTotal.AutoSize = True
-        Me.LabelArcsTotal.Location = New System.Drawing.Point(141, 344)
+        Me.LabelArcsTotal.Location = New System.Drawing.Point(142, 302)
         Me.LabelArcsTotal.Name = "LabelArcsTotal"
         Me.LabelArcsTotal.Size = New System.Drawing.Size(10, 13)
         Me.LabelArcsTotal.TabIndex = 488
@@ -1122,7 +1143,7 @@ Partial Class Form1
         'LabelPulsesTotal
         '
         Me.LabelPulsesTotal.AutoSize = True
-        Me.LabelPulsesTotal.Location = New System.Drawing.Point(141, 331)
+        Me.LabelPulsesTotal.Location = New System.Drawing.Point(142, 289)
         Me.LabelPulsesTotal.Name = "LabelPulsesTotal"
         Me.LabelPulsesTotal.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulsesTotal.TabIndex = 487
@@ -1131,7 +1152,7 @@ Partial Class Form1
         'LabelArcsHVOn
         '
         Me.LabelArcsHVOn.AutoSize = True
-        Me.LabelArcsHVOn.Location = New System.Drawing.Point(141, 318)
+        Me.LabelArcsHVOn.Location = New System.Drawing.Point(142, 276)
         Me.LabelArcsHVOn.Name = "LabelArcsHVOn"
         Me.LabelArcsHVOn.Size = New System.Drawing.Size(10, 13)
         Me.LabelArcsHVOn.TabIndex = 486
@@ -1140,7 +1161,7 @@ Partial Class Form1
         'LabelPulsesHVon
         '
         Me.LabelPulsesHVon.AutoSize = True
-        Me.LabelPulsesHVon.Location = New System.Drawing.Point(141, 306)
+        Me.LabelPulsesHVon.Location = New System.Drawing.Point(142, 264)
         Me.LabelPulsesHVon.Name = "LabelPulsesHVon"
         Me.LabelPulsesHVon.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulsesHVon.TabIndex = 485
@@ -1149,7 +1170,7 @@ Partial Class Form1
         'LabelTime
         '
         Me.LabelTime.AutoSize = True
-        Me.LabelTime.Location = New System.Drawing.Point(4, 370)
+        Me.LabelTime.Location = New System.Drawing.Point(5, 328)
         Me.LabelTime.Name = "LabelTime"
         Me.LabelTime.Size = New System.Drawing.Size(10, 13)
         Me.LabelTime.TabIndex = 492
@@ -1159,7 +1180,7 @@ Partial Class Form1
         '
         Me.Label103.AutoSize = True
         Me.Label103.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label103.Location = New System.Drawing.Point(228, 290)
+        Me.Label103.Location = New System.Drawing.Point(229, 248)
         Me.Label103.Name = "Label103"
         Me.Label103.Size = New System.Drawing.Size(106, 13)
         Me.Label103.TabIndex = 493
@@ -1186,7 +1207,7 @@ Partial Class Form1
         '
         'ButtonSetFilament
         '
-        Me.ButtonSetFilament.Location = New System.Drawing.Point(304, 510)
+        Me.ButtonSetFilament.Location = New System.Drawing.Point(305, 452)
         Me.ButtonSetFilament.Name = "ButtonSetFilament"
         Me.ButtonSetFilament.Size = New System.Drawing.Size(114, 23)
         Me.ButtonSetFilament.TabIndex = 496
@@ -1195,14 +1216,14 @@ Partial Class Form1
         '
         'TextBoxSetFilament
         '
-        Me.TextBoxSetFilament.Location = New System.Drawing.Point(227, 512)
+        Me.TextBoxSetFilament.Location = New System.Drawing.Point(228, 454)
         Me.TextBoxSetFilament.Name = "TextBoxSetFilament"
         Me.TextBoxSetFilament.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxSetFilament.TabIndex = 495
         '
         'ButtonSetLambdaModeB
         '
-        Me.ButtonSetLambdaModeB.Location = New System.Drawing.Point(304, 412)
+        Me.ButtonSetLambdaModeB.Location = New System.Drawing.Point(305, 378)
         Me.ButtonSetLambdaModeB.Name = "ButtonSetLambdaModeB"
         Me.ButtonSetLambdaModeB.Size = New System.Drawing.Size(114, 23)
         Me.ButtonSetLambdaModeB.TabIndex = 498
@@ -1211,7 +1232,7 @@ Partial Class Form1
         '
         'TextBoxSetLambdaModeB
         '
-        Me.TextBoxSetLambdaModeB.Location = New System.Drawing.Point(227, 415)
+        Me.TextBoxSetLambdaModeB.Location = New System.Drawing.Point(228, 381)
         Me.TextBoxSetLambdaModeB.Name = "TextBoxSetLambdaModeB"
         Me.TextBoxSetLambdaModeB.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxSetLambdaModeB.TabIndex = 497
@@ -1219,7 +1240,7 @@ Partial Class Form1
         'LabelLambdaSetPointModeB
         '
         Me.LabelLambdaSetPointModeB.AutoSize = True
-        Me.LabelLambdaSetPointModeB.Location = New System.Drawing.Point(363, 175)
+        Me.LabelLambdaSetPointModeB.Location = New System.Drawing.Point(364, 133)
         Me.LabelLambdaSetPointModeB.Name = "LabelLambdaSetPointModeB"
         Me.LabelLambdaSetPointModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelLambdaSetPointModeB.TabIndex = 500
@@ -1229,7 +1250,7 @@ Partial Class Form1
         '
         Me.Label111.AutoSize = True
         Me.Label111.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label111.Location = New System.Drawing.Point(228, 177)
+        Me.Label111.Location = New System.Drawing.Point(229, 135)
         Me.Label111.Name = "Label111"
         Me.Label111.Size = New System.Drawing.Size(106, 13)
         Me.Label111.TabIndex = 499
@@ -1238,7 +1259,7 @@ Partial Class Form1
         'LabelPulseVoltagetMaxModeA
         '
         Me.LabelPulseVoltagetMaxModeA.AutoSize = True
-        Me.LabelPulseVoltagetMaxModeA.Location = New System.Drawing.Point(141, 260)
+        Me.LabelPulseVoltagetMaxModeA.Location = New System.Drawing.Point(142, 218)
         Me.LabelPulseVoltagetMaxModeA.Name = "LabelPulseVoltagetMaxModeA"
         Me.LabelPulseVoltagetMaxModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltagetMaxModeA.TabIndex = 504
@@ -1247,7 +1268,7 @@ Partial Class Form1
         'Label109
         '
         Me.Label109.AutoSize = True
-        Me.Label109.Location = New System.Drawing.Point(4, 258)
+        Me.Label109.Location = New System.Drawing.Point(5, 216)
         Me.Label109.Name = "Label109"
         Me.Label109.Size = New System.Drawing.Size(95, 13)
         Me.Label109.TabIndex = 503
@@ -1256,7 +1277,7 @@ Partial Class Form1
         'LabelPulseVoltagetMinModeA
         '
         Me.LabelPulseVoltagetMinModeA.AutoSize = True
-        Me.LabelPulseVoltagetMinModeA.Location = New System.Drawing.Point(141, 247)
+        Me.LabelPulseVoltagetMinModeA.Location = New System.Drawing.Point(142, 205)
         Me.LabelPulseVoltagetMinModeA.Name = "LabelPulseVoltagetMinModeA"
         Me.LabelPulseVoltagetMinModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltagetMinModeA.TabIndex = 502
@@ -1265,7 +1286,7 @@ Partial Class Form1
         'Label112
         '
         Me.Label112.AutoSize = True
-        Me.Label112.Location = New System.Drawing.Point(4, 245)
+        Me.Label112.Location = New System.Drawing.Point(5, 203)
         Me.Label112.Name = "Label112"
         Me.Label112.Size = New System.Drawing.Size(92, 13)
         Me.Label112.TabIndex = 501
@@ -1274,7 +1295,7 @@ Partial Class Form1
         'LabelPulseVoltagetMaxModeB
         '
         Me.LabelPulseVoltagetMaxModeB.AutoSize = True
-        Me.LabelPulseVoltagetMaxModeB.Location = New System.Drawing.Point(363, 258)
+        Me.LabelPulseVoltagetMaxModeB.Location = New System.Drawing.Point(364, 216)
         Me.LabelPulseVoltagetMaxModeB.Name = "LabelPulseVoltagetMaxModeB"
         Me.LabelPulseVoltagetMaxModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltagetMaxModeB.TabIndex = 516
@@ -1283,7 +1304,7 @@ Partial Class Form1
         'Label114
         '
         Me.Label114.AutoSize = True
-        Me.Label114.Location = New System.Drawing.Point(228, 258)
+        Me.Label114.Location = New System.Drawing.Point(229, 216)
         Me.Label114.Name = "Label114"
         Me.Label114.Size = New System.Drawing.Size(95, 13)
         Me.Label114.TabIndex = 515
@@ -1292,7 +1313,7 @@ Partial Class Form1
         'LabelPulseVoltagetMinModeB
         '
         Me.LabelPulseVoltagetMinModeB.AutoSize = True
-        Me.LabelPulseVoltagetMinModeB.Location = New System.Drawing.Point(363, 245)
+        Me.LabelPulseVoltagetMinModeB.Location = New System.Drawing.Point(364, 203)
         Me.LabelPulseVoltagetMinModeB.Name = "LabelPulseVoltagetMinModeB"
         Me.LabelPulseVoltagetMinModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltagetMinModeB.TabIndex = 514
@@ -1301,7 +1322,7 @@ Partial Class Form1
         'Label116
         '
         Me.Label116.AutoSize = True
-        Me.Label116.Location = New System.Drawing.Point(228, 245)
+        Me.Label116.Location = New System.Drawing.Point(229, 203)
         Me.Label116.Name = "Label116"
         Me.Label116.Size = New System.Drawing.Size(92, 13)
         Me.Label116.TabIndex = 513
@@ -1310,7 +1331,7 @@ Partial Class Form1
         'LabelPulseCurrentMaxModeB
         '
         Me.LabelPulseCurrentMaxModeB.AutoSize = True
-        Me.LabelPulseCurrentMaxModeB.Location = New System.Drawing.Point(363, 232)
+        Me.LabelPulseCurrentMaxModeB.Location = New System.Drawing.Point(364, 190)
         Me.LabelPulseCurrentMaxModeB.Name = "LabelPulseCurrentMaxModeB"
         Me.LabelPulseCurrentMaxModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentMaxModeB.TabIndex = 512
@@ -1319,7 +1340,7 @@ Partial Class Form1
         'Label118
         '
         Me.Label118.AutoSize = True
-        Me.Label118.Location = New System.Drawing.Point(228, 232)
+        Me.Label118.Location = New System.Drawing.Point(229, 190)
         Me.Label118.Name = "Label118"
         Me.Label118.Size = New System.Drawing.Size(93, 13)
         Me.Label118.TabIndex = 511
@@ -1328,7 +1349,7 @@ Partial Class Form1
         'LabelPulseCurrentMinModeB
         '
         Me.LabelPulseCurrentMinModeB.AutoSize = True
-        Me.LabelPulseCurrentMinModeB.Location = New System.Drawing.Point(363, 219)
+        Me.LabelPulseCurrentMinModeB.Location = New System.Drawing.Point(364, 177)
         Me.LabelPulseCurrentMinModeB.Name = "LabelPulseCurrentMinModeB"
         Me.LabelPulseCurrentMinModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentMinModeB.TabIndex = 510
@@ -1337,7 +1358,7 @@ Partial Class Form1
         'Label120
         '
         Me.Label120.AutoSize = True
-        Me.Label120.Location = New System.Drawing.Point(228, 219)
+        Me.Label120.Location = New System.Drawing.Point(229, 177)
         Me.Label120.Name = "Label120"
         Me.Label120.Size = New System.Drawing.Size(90, 13)
         Me.Label120.TabIndex = 509
@@ -1346,7 +1367,7 @@ Partial Class Form1
         'LabelPulseCurrentModeB
         '
         Me.LabelPulseCurrentModeB.AutoSize = True
-        Me.LabelPulseCurrentModeB.Location = New System.Drawing.Point(363, 206)
+        Me.LabelPulseCurrentModeB.Location = New System.Drawing.Point(364, 164)
         Me.LabelPulseCurrentModeB.Name = "LabelPulseCurrentModeB"
         Me.LabelPulseCurrentModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentModeB.TabIndex = 508
@@ -1355,7 +1376,7 @@ Partial Class Form1
         'Label122
         '
         Me.Label122.AutoSize = True
-        Me.Label122.Location = New System.Drawing.Point(228, 206)
+        Me.Label122.Location = New System.Drawing.Point(229, 164)
         Me.Label122.Name = "Label122"
         Me.Label122.Size = New System.Drawing.Size(70, 13)
         Me.Label122.TabIndex = 507
@@ -1364,7 +1385,7 @@ Partial Class Form1
         'LabelPulseVoltageModeB
         '
         Me.LabelPulseVoltageModeB.AutoSize = True
-        Me.LabelPulseVoltageModeB.Location = New System.Drawing.Point(363, 193)
+        Me.LabelPulseVoltageModeB.Location = New System.Drawing.Point(364, 151)
         Me.LabelPulseVoltageModeB.Name = "LabelPulseVoltageModeB"
         Me.LabelPulseVoltageModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltageModeB.TabIndex = 506
@@ -1373,7 +1394,7 @@ Partial Class Form1
         'Label124
         '
         Me.Label124.AutoSize = True
-        Me.Label124.Location = New System.Drawing.Point(228, 193)
+        Me.Label124.Location = New System.Drawing.Point(229, 151)
         Me.Label124.Name = "Label124"
         Me.Label124.Size = New System.Drawing.Size(72, 13)
         Me.Label124.TabIndex = 505
@@ -1382,7 +1403,7 @@ Partial Class Form1
         'LabelMagnetronCurrent
         '
         Me.LabelMagnetronCurrent.AutoSize = True
-        Me.LabelMagnetronCurrent.Location = New System.Drawing.Point(363, 370)
+        Me.LabelMagnetronCurrent.Location = New System.Drawing.Point(364, 328)
         Me.LabelMagnetronCurrent.Name = "LabelMagnetronCurrent"
         Me.LabelMagnetronCurrent.Size = New System.Drawing.Size(10, 13)
         Me.LabelMagnetronCurrent.TabIndex = 520
@@ -1391,7 +1412,7 @@ Partial Class Form1
         'Label110
         '
         Me.Label110.AutoSize = True
-        Me.Label110.Location = New System.Drawing.Point(228, 370)
+        Me.Label110.Location = New System.Drawing.Point(229, 328)
         Me.Label110.Name = "Label110"
         Me.Label110.Size = New System.Drawing.Size(114, 13)
         Me.Label110.TabIndex = 519
@@ -1400,7 +1421,7 @@ Partial Class Form1
         'LabelMagnetronVoltage
         '
         Me.LabelMagnetronVoltage.AutoSize = True
-        Me.LabelMagnetronVoltage.Location = New System.Drawing.Point(363, 357)
+        Me.LabelMagnetronVoltage.Location = New System.Drawing.Point(364, 315)
         Me.LabelMagnetronVoltage.Name = "LabelMagnetronVoltage"
         Me.LabelMagnetronVoltage.Size = New System.Drawing.Size(10, 13)
         Me.LabelMagnetronVoltage.TabIndex = 518
@@ -1409,7 +1430,7 @@ Partial Class Form1
         'Label115
         '
         Me.Label115.AutoSize = True
-        Me.Label115.Location = New System.Drawing.Point(228, 357)
+        Me.Label115.Location = New System.Drawing.Point(229, 315)
         Me.Label115.Name = "Label115"
         Me.Label115.Size = New System.Drawing.Size(116, 13)
         Me.Label115.TabIndex = 517
@@ -1419,7 +1440,7 @@ Partial Class Form1
         '
         Me.Label117.AutoSize = True
         Me.Label117.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label117.Location = New System.Drawing.Point(5, 290)
+        Me.Label117.Location = New System.Drawing.Point(6, 248)
         Me.Label117.Name = "Label117"
         Me.Label117.Size = New System.Drawing.Size(57, 13)
         Me.Label117.TabIndex = 521
@@ -1429,7 +1450,7 @@ Partial Class Form1
         '
         Me.CheckBox18.AutoCheck = False
         Me.CheckBox18.AutoSize = True
-        Me.CheckBox18.Location = New System.Drawing.Point(1070, 450)
+        Me.CheckBox18.Location = New System.Drawing.Point(851, 443)
         Me.CheckBox18.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox18.Name = "CheckBox18"
         Me.CheckBox18.Size = New System.Drawing.Size(15, 14)
@@ -1441,7 +1462,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit9.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit9.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit9.Location = New System.Drawing.Point(1049, 450)
+        Me.CheckBoxMagnetronStatusBit9.Location = New System.Drawing.Point(830, 443)
         Me.CheckBoxMagnetronStatusBit9.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit9.Name = "CheckBoxMagnetronStatusBit9"
         Me.CheckBoxMagnetronStatusBit9.Size = New System.Drawing.Size(15, 14)
@@ -1452,7 +1473,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit9.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit9.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit9.Location = New System.Drawing.Point(1028, 450)
+        Me.CheckBoxMagnetronFaultBit9.Location = New System.Drawing.Point(809, 443)
         Me.CheckBoxMagnetronFaultBit9.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit9.Name = "CheckBoxMagnetronFaultBit9"
         Me.CheckBoxMagnetronFaultBit9.Size = New System.Drawing.Size(15, 14)
@@ -1463,7 +1484,7 @@ Partial Class Form1
         '
         Me.CheckBox21.AutoCheck = False
         Me.CheckBox21.AutoSize = True
-        Me.CheckBox21.Location = New System.Drawing.Point(1070, 436)
+        Me.CheckBox21.Location = New System.Drawing.Point(851, 429)
         Me.CheckBox21.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox21.Name = "CheckBox21"
         Me.CheckBox21.Size = New System.Drawing.Size(15, 14)
@@ -1475,7 +1496,7 @@ Partial Class Form1
         '
         Me.CheckBox22.AutoCheck = False
         Me.CheckBox22.AutoSize = True
-        Me.CheckBox22.Location = New System.Drawing.Point(1070, 408)
+        Me.CheckBox22.Location = New System.Drawing.Point(851, 401)
         Me.CheckBox22.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox22.Name = "CheckBox22"
         Me.CheckBox22.Size = New System.Drawing.Size(15, 14)
@@ -1487,7 +1508,7 @@ Partial Class Form1
         '
         Me.CheckBox23.AutoCheck = False
         Me.CheckBox23.AutoSize = True
-        Me.CheckBox23.Location = New System.Drawing.Point(1070, 422)
+        Me.CheckBox23.Location = New System.Drawing.Point(851, 415)
         Me.CheckBox23.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox23.Name = "CheckBox23"
         Me.CheckBox23.Size = New System.Drawing.Size(15, 14)
@@ -1499,7 +1520,7 @@ Partial Class Form1
         '
         Me.CheckBox24.AutoCheck = False
         Me.CheckBox24.AutoSize = True
-        Me.CheckBox24.Location = New System.Drawing.Point(1070, 394)
+        Me.CheckBox24.Location = New System.Drawing.Point(851, 387)
         Me.CheckBox24.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox24.Name = "CheckBox24"
         Me.CheckBox24.Size = New System.Drawing.Size(15, 14)
@@ -1511,7 +1532,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit8.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit8.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit8.Location = New System.Drawing.Point(1049, 436)
+        Me.CheckBoxMagnetronStatusBit8.Location = New System.Drawing.Point(830, 429)
         Me.CheckBoxMagnetronStatusBit8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit8.Name = "CheckBoxMagnetronStatusBit8"
         Me.CheckBoxMagnetronStatusBit8.Size = New System.Drawing.Size(15, 14)
@@ -1522,7 +1543,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit6.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit6.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit6.Location = New System.Drawing.Point(1049, 408)
+        Me.CheckBoxMagnetronStatusBit6.Location = New System.Drawing.Point(830, 401)
         Me.CheckBoxMagnetronStatusBit6.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit6.Name = "CheckBoxMagnetronStatusBit6"
         Me.CheckBoxMagnetronStatusBit6.Size = New System.Drawing.Size(15, 14)
@@ -1533,7 +1554,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit7.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit7.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit7.Location = New System.Drawing.Point(1049, 422)
+        Me.CheckBoxMagnetronStatusBit7.Location = New System.Drawing.Point(830, 415)
         Me.CheckBoxMagnetronStatusBit7.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit7.Name = "CheckBoxMagnetronStatusBit7"
         Me.CheckBoxMagnetronStatusBit7.Size = New System.Drawing.Size(15, 14)
@@ -1544,7 +1565,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit5.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit5.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit5.Location = New System.Drawing.Point(1049, 394)
+        Me.CheckBoxMagnetronStatusBit5.Location = New System.Drawing.Point(830, 387)
         Me.CheckBoxMagnetronStatusBit5.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit5.Name = "CheckBoxMagnetronStatusBit5"
         Me.CheckBoxMagnetronStatusBit5.Size = New System.Drawing.Size(15, 14)
@@ -1554,7 +1575,7 @@ Partial Class Form1
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(903, 422)
+        Me.Label13.Location = New System.Drawing.Point(684, 415)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(102, 13)
         Me.Label13.TabIndex = 550
@@ -1563,7 +1584,7 @@ Partial Class Form1
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(903, 408)
+        Me.Label15.Location = New System.Drawing.Point(684, 401)
         Me.Label15.Name = "Label15"
         Me.Label15.Size = New System.Drawing.Size(102, 13)
         Me.Label15.TabIndex = 549
@@ -1572,7 +1593,7 @@ Partial Class Form1
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(903, 449)
+        Me.Label17.Location = New System.Drawing.Point(684, 442)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(111, 13)
         Me.Label17.TabIndex = 548
@@ -1582,7 +1603,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit8.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit8.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit8.Location = New System.Drawing.Point(1028, 436)
+        Me.CheckBoxMagnetronFaultBit8.Location = New System.Drawing.Point(809, 429)
         Me.CheckBoxMagnetronFaultBit8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit8.Name = "CheckBoxMagnetronFaultBit8"
         Me.CheckBoxMagnetronFaultBit8.Size = New System.Drawing.Size(15, 14)
@@ -1593,7 +1614,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit6.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit6.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit6.Location = New System.Drawing.Point(1028, 408)
+        Me.CheckBoxMagnetronFaultBit6.Location = New System.Drawing.Point(809, 401)
         Me.CheckBoxMagnetronFaultBit6.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit6.Name = "CheckBoxMagnetronFaultBit6"
         Me.CheckBoxMagnetronFaultBit6.Size = New System.Drawing.Size(15, 14)
@@ -1604,7 +1625,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit7.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit7.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit7.Location = New System.Drawing.Point(1028, 422)
+        Me.CheckBoxMagnetronFaultBit7.Location = New System.Drawing.Point(809, 415)
         Me.CheckBoxMagnetronFaultBit7.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit7.Name = "CheckBoxMagnetronFaultBit7"
         Me.CheckBoxMagnetronFaultBit7.Size = New System.Drawing.Size(15, 14)
@@ -1615,7 +1636,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit5.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit5.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit5.Location = New System.Drawing.Point(1028, 394)
+        Me.CheckBoxMagnetronFaultBit5.Location = New System.Drawing.Point(809, 387)
         Me.CheckBoxMagnetronFaultBit5.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit5.Name = "CheckBoxMagnetronFaultBit5"
         Me.CheckBoxMagnetronFaultBit5.Size = New System.Drawing.Size(15, 14)
@@ -1625,7 +1646,7 @@ Partial Class Form1
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(903, 436)
+        Me.Label19.Location = New System.Drawing.Point(684, 429)
         Me.Label19.Name = "Label19"
         Me.Label19.Size = New System.Drawing.Size(111, 13)
         Me.Label19.TabIndex = 543
@@ -1634,7 +1655,7 @@ Partial Class Form1
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(903, 394)
+        Me.Label21.Location = New System.Drawing.Point(684, 387)
         Me.Label21.Name = "Label21"
         Me.Label21.Size = New System.Drawing.Size(115, 13)
         Me.Label21.TabIndex = 542
@@ -1644,7 +1665,7 @@ Partial Class Form1
         '
         Me.CheckBox39.AutoCheck = False
         Me.CheckBox39.AutoSize = True
-        Me.CheckBox39.Location = New System.Drawing.Point(1070, 534)
+        Me.CheckBox39.Location = New System.Drawing.Point(851, 527)
         Me.CheckBox39.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox39.Name = "CheckBox39"
         Me.CheckBox39.Size = New System.Drawing.Size(15, 14)
@@ -1656,7 +1677,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit15.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit15.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit15.Location = New System.Drawing.Point(1049, 534)
+        Me.CheckBoxMagnetronStatusBit15.Location = New System.Drawing.Point(830, 527)
         Me.CheckBoxMagnetronStatusBit15.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit15.Name = "CheckBoxMagnetronStatusBit15"
         Me.CheckBoxMagnetronStatusBit15.Size = New System.Drawing.Size(15, 14)
@@ -1667,7 +1688,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit15.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit15.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit15.Location = New System.Drawing.Point(1028, 534)
+        Me.CheckBoxMagnetronFaultBit15.Location = New System.Drawing.Point(809, 527)
         Me.CheckBoxMagnetronFaultBit15.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit15.Name = "CheckBoxMagnetronFaultBit15"
         Me.CheckBoxMagnetronFaultBit15.Size = New System.Drawing.Size(15, 14)
@@ -1677,7 +1698,7 @@ Partial Class Form1
         'Label31
         '
         Me.Label31.AutoSize = True
-        Me.Label31.Location = New System.Drawing.Point(903, 534)
+        Me.Label31.Location = New System.Drawing.Point(684, 527)
         Me.Label31.Name = "Label31"
         Me.Label31.Size = New System.Drawing.Size(99, 13)
         Me.Label31.TabIndex = 582
@@ -1687,7 +1708,7 @@ Partial Class Form1
         '
         Me.CheckBox48.AutoCheck = False
         Me.CheckBox48.AutoSize = True
-        Me.CheckBox48.Location = New System.Drawing.Point(1070, 520)
+        Me.CheckBox48.Location = New System.Drawing.Point(851, 513)
         Me.CheckBox48.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox48.Name = "CheckBox48"
         Me.CheckBox48.Size = New System.Drawing.Size(15, 14)
@@ -1699,7 +1720,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit14.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit14.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit14.Location = New System.Drawing.Point(1049, 520)
+        Me.CheckBoxMagnetronStatusBit14.Location = New System.Drawing.Point(830, 513)
         Me.CheckBoxMagnetronStatusBit14.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit14.Name = "CheckBoxMagnetronStatusBit14"
         Me.CheckBoxMagnetronStatusBit14.Size = New System.Drawing.Size(15, 14)
@@ -1710,7 +1731,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit14.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit14.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit14.Location = New System.Drawing.Point(1028, 520)
+        Me.CheckBoxMagnetronFaultBit14.Location = New System.Drawing.Point(809, 513)
         Me.CheckBoxMagnetronFaultBit14.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit14.Name = "CheckBoxMagnetronFaultBit14"
         Me.CheckBoxMagnetronFaultBit14.Size = New System.Drawing.Size(15, 14)
@@ -1721,7 +1742,7 @@ Partial Class Form1
         '
         Me.CheckBox53.AutoCheck = False
         Me.CheckBox53.AutoSize = True
-        Me.CheckBox53.Location = New System.Drawing.Point(1070, 506)
+        Me.CheckBox53.Location = New System.Drawing.Point(851, 499)
         Me.CheckBox53.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox53.Name = "CheckBox53"
         Me.CheckBox53.Size = New System.Drawing.Size(15, 14)
@@ -1733,7 +1754,7 @@ Partial Class Form1
         '
         Me.CheckBox54.AutoCheck = False
         Me.CheckBox54.AutoSize = True
-        Me.CheckBox54.Location = New System.Drawing.Point(1070, 478)
+        Me.CheckBox54.Location = New System.Drawing.Point(851, 471)
         Me.CheckBox54.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox54.Name = "CheckBox54"
         Me.CheckBox54.Size = New System.Drawing.Size(15, 14)
@@ -1745,7 +1766,7 @@ Partial Class Form1
         '
         Me.CheckBox55.AutoCheck = False
         Me.CheckBox55.AutoSize = True
-        Me.CheckBox55.Location = New System.Drawing.Point(1070, 492)
+        Me.CheckBox55.Location = New System.Drawing.Point(851, 485)
         Me.CheckBox55.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox55.Name = "CheckBox55"
         Me.CheckBox55.Size = New System.Drawing.Size(15, 14)
@@ -1757,7 +1778,7 @@ Partial Class Form1
         '
         Me.CheckBox56.AutoCheck = False
         Me.CheckBox56.AutoSize = True
-        Me.CheckBox56.Location = New System.Drawing.Point(1070, 464)
+        Me.CheckBox56.Location = New System.Drawing.Point(851, 457)
         Me.CheckBox56.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox56.Name = "CheckBox56"
         Me.CheckBox56.Size = New System.Drawing.Size(15, 14)
@@ -1769,7 +1790,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit13.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit13.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit13.Location = New System.Drawing.Point(1049, 506)
+        Me.CheckBoxMagnetronStatusBit13.Location = New System.Drawing.Point(830, 499)
         Me.CheckBoxMagnetronStatusBit13.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit13.Name = "CheckBoxMagnetronStatusBit13"
         Me.CheckBoxMagnetronStatusBit13.Size = New System.Drawing.Size(15, 14)
@@ -1780,7 +1801,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit11.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit11.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit11.Location = New System.Drawing.Point(1049, 478)
+        Me.CheckBoxMagnetronStatusBit11.Location = New System.Drawing.Point(830, 471)
         Me.CheckBoxMagnetronStatusBit11.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit11.Name = "CheckBoxMagnetronStatusBit11"
         Me.CheckBoxMagnetronStatusBit11.Size = New System.Drawing.Size(15, 14)
@@ -1791,7 +1812,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit12.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit12.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit12.Location = New System.Drawing.Point(1049, 492)
+        Me.CheckBoxMagnetronStatusBit12.Location = New System.Drawing.Point(830, 485)
         Me.CheckBoxMagnetronStatusBit12.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit12.Name = "CheckBoxMagnetronStatusBit12"
         Me.CheckBoxMagnetronStatusBit12.Size = New System.Drawing.Size(15, 14)
@@ -1802,7 +1823,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronStatusBit10.AutoCheck = False
         Me.CheckBoxMagnetronStatusBit10.AutoSize = True
-        Me.CheckBoxMagnetronStatusBit10.Location = New System.Drawing.Point(1049, 464)
+        Me.CheckBoxMagnetronStatusBit10.Location = New System.Drawing.Point(830, 457)
         Me.CheckBoxMagnetronStatusBit10.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronStatusBit10.Name = "CheckBoxMagnetronStatusBit10"
         Me.CheckBoxMagnetronStatusBit10.Size = New System.Drawing.Size(15, 14)
@@ -1812,7 +1833,7 @@ Partial Class Form1
         'Label32
         '
         Me.Label32.AutoSize = True
-        Me.Label32.Location = New System.Drawing.Point(903, 492)
+        Me.Label32.Location = New System.Drawing.Point(684, 485)
         Me.Label32.Name = "Label32"
         Me.Label32.Size = New System.Drawing.Size(108, 13)
         Me.Label32.TabIndex = 570
@@ -1821,7 +1842,7 @@ Partial Class Form1
         'Label33
         '
         Me.Label33.AutoSize = True
-        Me.Label33.Location = New System.Drawing.Point(903, 478)
+        Me.Label33.Location = New System.Drawing.Point(684, 471)
         Me.Label33.Name = "Label33"
         Me.Label33.Size = New System.Drawing.Size(112, 13)
         Me.Label33.TabIndex = 569
@@ -1830,7 +1851,7 @@ Partial Class Form1
         'Label34
         '
         Me.Label34.AutoSize = True
-        Me.Label34.Location = New System.Drawing.Point(903, 520)
+        Me.Label34.Location = New System.Drawing.Point(684, 513)
         Me.Label34.Name = "Label34"
         Me.Label34.Size = New System.Drawing.Size(99, 13)
         Me.Label34.TabIndex = 568
@@ -1840,7 +1861,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit13.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit13.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit13.Location = New System.Drawing.Point(1028, 506)
+        Me.CheckBoxMagnetronFaultBit13.Location = New System.Drawing.Point(809, 499)
         Me.CheckBoxMagnetronFaultBit13.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit13.Name = "CheckBoxMagnetronFaultBit13"
         Me.CheckBoxMagnetronFaultBit13.Size = New System.Drawing.Size(15, 14)
@@ -1851,7 +1872,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit11.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit11.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit11.Location = New System.Drawing.Point(1028, 478)
+        Me.CheckBoxMagnetronFaultBit11.Location = New System.Drawing.Point(809, 471)
         Me.CheckBoxMagnetronFaultBit11.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit11.Name = "CheckBoxMagnetronFaultBit11"
         Me.CheckBoxMagnetronFaultBit11.Size = New System.Drawing.Size(15, 14)
@@ -1862,7 +1883,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit12.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit12.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit12.Location = New System.Drawing.Point(1028, 492)
+        Me.CheckBoxMagnetronFaultBit12.Location = New System.Drawing.Point(809, 485)
         Me.CheckBoxMagnetronFaultBit12.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit12.Name = "CheckBoxMagnetronFaultBit12"
         Me.CheckBoxMagnetronFaultBit12.Size = New System.Drawing.Size(15, 14)
@@ -1873,7 +1894,7 @@ Partial Class Form1
         '
         Me.CheckBoxMagnetronFaultBit10.AutoCheck = False
         Me.CheckBoxMagnetronFaultBit10.AutoSize = True
-        Me.CheckBoxMagnetronFaultBit10.Location = New System.Drawing.Point(1028, 464)
+        Me.CheckBoxMagnetronFaultBit10.Location = New System.Drawing.Point(809, 457)
         Me.CheckBoxMagnetronFaultBit10.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxMagnetronFaultBit10.Name = "CheckBoxMagnetronFaultBit10"
         Me.CheckBoxMagnetronFaultBit10.Size = New System.Drawing.Size(15, 14)
@@ -1883,7 +1904,7 @@ Partial Class Form1
         'Label35
         '
         Me.Label35.AutoSize = True
-        Me.Label35.Location = New System.Drawing.Point(903, 506)
+        Me.Label35.Location = New System.Drawing.Point(684, 499)
         Me.Label35.Name = "Label35"
         Me.Label35.Size = New System.Drawing.Size(114, 13)
         Me.Label35.TabIndex = 563
@@ -1892,7 +1913,7 @@ Partial Class Form1
         'Label36
         '
         Me.Label36.AutoSize = True
-        Me.Label36.Location = New System.Drawing.Point(903, 464)
+        Me.Label36.Location = New System.Drawing.Point(684, 457)
         Me.Label36.Name = "Label36"
         Me.Label36.Size = New System.Drawing.Size(106, 13)
         Me.Label36.TabIndex = 562
@@ -1902,7 +1923,7 @@ Partial Class Form1
         '
         Me.CheckBox1.AutoCheck = False
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(1070, 261)
+        Me.CheckBox1.Location = New System.Drawing.Point(1070, 264)
         Me.CheckBox1.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(15, 14)
@@ -1914,7 +1935,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit15.AutoCheck = False
         Me.CheckBoxHVStatusBit15.AutoSize = True
-        Me.CheckBoxHVStatusBit15.Location = New System.Drawing.Point(1049, 261)
+        Me.CheckBoxHVStatusBit15.Location = New System.Drawing.Point(1049, 264)
         Me.CheckBoxHVStatusBit15.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit15.Name = "CheckBoxHVStatusBit15"
         Me.CheckBoxHVStatusBit15.Size = New System.Drawing.Size(15, 14)
@@ -1925,7 +1946,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit15.AutoCheck = False
         Me.CheckBoxHVFaultBit15.AutoSize = True
-        Me.CheckBoxHVFaultBit15.Location = New System.Drawing.Point(1028, 261)
+        Me.CheckBoxHVFaultBit15.Location = New System.Drawing.Point(1028, 264)
         Me.CheckBoxHVFaultBit15.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit15.Name = "CheckBoxHVFaultBit15"
         Me.CheckBoxHVFaultBit15.Size = New System.Drawing.Size(15, 14)
@@ -1935,7 +1956,7 @@ Partial Class Form1
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(903, 261)
+        Me.Label2.Location = New System.Drawing.Point(903, 264)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(103, 13)
         Me.Label2.TabIndex = 657
@@ -1945,7 +1966,7 @@ Partial Class Form1
         '
         Me.CheckBox4.AutoCheck = False
         Me.CheckBox4.AutoSize = True
-        Me.CheckBox4.Location = New System.Drawing.Point(1070, 247)
+        Me.CheckBox4.Location = New System.Drawing.Point(1070, 250)
         Me.CheckBox4.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox4.Name = "CheckBox4"
         Me.CheckBox4.Size = New System.Drawing.Size(15, 14)
@@ -1957,7 +1978,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit14.AutoCheck = False
         Me.CheckBoxHVStatusBit14.AutoSize = True
-        Me.CheckBoxHVStatusBit14.Location = New System.Drawing.Point(1049, 247)
+        Me.CheckBoxHVStatusBit14.Location = New System.Drawing.Point(1049, 250)
         Me.CheckBoxHVStatusBit14.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit14.Name = "CheckBoxHVStatusBit14"
         Me.CheckBoxHVStatusBit14.Size = New System.Drawing.Size(15, 14)
@@ -1968,7 +1989,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit14.AutoCheck = False
         Me.CheckBoxHVFaultBit14.AutoSize = True
-        Me.CheckBoxHVFaultBit14.Location = New System.Drawing.Point(1028, 247)
+        Me.CheckBoxHVFaultBit14.Location = New System.Drawing.Point(1028, 250)
         Me.CheckBoxHVFaultBit14.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit14.Name = "CheckBoxHVFaultBit14"
         Me.CheckBoxHVFaultBit14.Size = New System.Drawing.Size(15, 14)
@@ -1979,7 +2000,7 @@ Partial Class Form1
         '
         Me.CheckBox9.AutoCheck = False
         Me.CheckBox9.AutoSize = True
-        Me.CheckBox9.Location = New System.Drawing.Point(1070, 233)
+        Me.CheckBox9.Location = New System.Drawing.Point(1070, 236)
         Me.CheckBox9.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox9.Name = "CheckBox9"
         Me.CheckBox9.Size = New System.Drawing.Size(15, 14)
@@ -1991,7 +2012,7 @@ Partial Class Form1
         '
         Me.CheckBox10.AutoCheck = False
         Me.CheckBox10.AutoSize = True
-        Me.CheckBox10.Location = New System.Drawing.Point(1070, 205)
+        Me.CheckBox10.Location = New System.Drawing.Point(1070, 208)
         Me.CheckBox10.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox10.Name = "CheckBox10"
         Me.CheckBox10.Size = New System.Drawing.Size(15, 14)
@@ -2003,7 +2024,7 @@ Partial Class Form1
         '
         Me.CheckBox11.AutoCheck = False
         Me.CheckBox11.AutoSize = True
-        Me.CheckBox11.Location = New System.Drawing.Point(1070, 219)
+        Me.CheckBox11.Location = New System.Drawing.Point(1070, 222)
         Me.CheckBox11.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox11.Name = "CheckBox11"
         Me.CheckBox11.Size = New System.Drawing.Size(15, 14)
@@ -2015,7 +2036,7 @@ Partial Class Form1
         '
         Me.CheckBox12.AutoCheck = False
         Me.CheckBox12.AutoSize = True
-        Me.CheckBox12.Location = New System.Drawing.Point(1070, 191)
+        Me.CheckBox12.Location = New System.Drawing.Point(1070, 194)
         Me.CheckBox12.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox12.Name = "CheckBox12"
         Me.CheckBox12.Size = New System.Drawing.Size(15, 14)
@@ -2027,7 +2048,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit13.AutoCheck = False
         Me.CheckBoxHVStatusBit13.AutoSize = True
-        Me.CheckBoxHVStatusBit13.Location = New System.Drawing.Point(1049, 233)
+        Me.CheckBoxHVStatusBit13.Location = New System.Drawing.Point(1049, 236)
         Me.CheckBoxHVStatusBit13.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit13.Name = "CheckBoxHVStatusBit13"
         Me.CheckBoxHVStatusBit13.Size = New System.Drawing.Size(15, 14)
@@ -2038,7 +2059,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit11.AutoCheck = False
         Me.CheckBoxHVStatusBit11.AutoSize = True
-        Me.CheckBoxHVStatusBit11.Location = New System.Drawing.Point(1049, 205)
+        Me.CheckBoxHVStatusBit11.Location = New System.Drawing.Point(1049, 208)
         Me.CheckBoxHVStatusBit11.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit11.Name = "CheckBoxHVStatusBit11"
         Me.CheckBoxHVStatusBit11.Size = New System.Drawing.Size(15, 14)
@@ -2049,7 +2070,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit12.AutoCheck = False
         Me.CheckBoxHVStatusBit12.AutoSize = True
-        Me.CheckBoxHVStatusBit12.Location = New System.Drawing.Point(1049, 219)
+        Me.CheckBoxHVStatusBit12.Location = New System.Drawing.Point(1049, 222)
         Me.CheckBoxHVStatusBit12.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit12.Name = "CheckBoxHVStatusBit12"
         Me.CheckBoxHVStatusBit12.Size = New System.Drawing.Size(15, 14)
@@ -2060,7 +2081,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit10.AutoCheck = False
         Me.CheckBoxHVStatusBit10.AutoSize = True
-        Me.CheckBoxHVStatusBit10.Location = New System.Drawing.Point(1049, 191)
+        Me.CheckBoxHVStatusBit10.Location = New System.Drawing.Point(1049, 194)
         Me.CheckBoxHVStatusBit10.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit10.Name = "CheckBoxHVStatusBit10"
         Me.CheckBoxHVStatusBit10.Size = New System.Drawing.Size(15, 14)
@@ -2070,7 +2091,7 @@ Partial Class Form1
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(903, 219)
+        Me.Label5.Location = New System.Drawing.Point(903, 222)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(101, 13)
         Me.Label5.TabIndex = 645
@@ -2079,7 +2100,7 @@ Partial Class Form1
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(903, 205)
+        Me.Label7.Location = New System.Drawing.Point(903, 208)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(97, 13)
         Me.Label7.TabIndex = 644
@@ -2088,7 +2109,7 @@ Partial Class Form1
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(903, 247)
+        Me.Label9.Location = New System.Drawing.Point(903, 250)
         Me.Label9.Name = "Label9"
         Me.Label9.Size = New System.Drawing.Size(98, 13)
         Me.Label9.TabIndex = 643
@@ -2098,7 +2119,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit13.AutoCheck = False
         Me.CheckBoxHVFaultBit13.AutoSize = True
-        Me.CheckBoxHVFaultBit13.Location = New System.Drawing.Point(1028, 233)
+        Me.CheckBoxHVFaultBit13.Location = New System.Drawing.Point(1028, 236)
         Me.CheckBoxHVFaultBit13.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit13.Name = "CheckBoxHVFaultBit13"
         Me.CheckBoxHVFaultBit13.Size = New System.Drawing.Size(15, 14)
@@ -2109,7 +2130,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit11.AutoCheck = False
         Me.CheckBoxHVFaultBit11.AutoSize = True
-        Me.CheckBoxHVFaultBit11.Location = New System.Drawing.Point(1028, 205)
+        Me.CheckBoxHVFaultBit11.Location = New System.Drawing.Point(1028, 208)
         Me.CheckBoxHVFaultBit11.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit11.Name = "CheckBoxHVFaultBit11"
         Me.CheckBoxHVFaultBit11.Size = New System.Drawing.Size(15, 14)
@@ -2120,7 +2141,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit12.AutoCheck = False
         Me.CheckBoxHVFaultBit12.AutoSize = True
-        Me.CheckBoxHVFaultBit12.Location = New System.Drawing.Point(1028, 219)
+        Me.CheckBoxHVFaultBit12.Location = New System.Drawing.Point(1028, 222)
         Me.CheckBoxHVFaultBit12.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit12.Name = "CheckBoxHVFaultBit12"
         Me.CheckBoxHVFaultBit12.Size = New System.Drawing.Size(15, 14)
@@ -2131,7 +2152,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit10.AutoCheck = False
         Me.CheckBoxHVFaultBit10.AutoSize = True
-        Me.CheckBoxHVFaultBit10.Location = New System.Drawing.Point(1028, 191)
+        Me.CheckBoxHVFaultBit10.Location = New System.Drawing.Point(1028, 194)
         Me.CheckBoxHVFaultBit10.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit10.Name = "CheckBoxHVFaultBit10"
         Me.CheckBoxHVFaultBit10.Size = New System.Drawing.Size(15, 14)
@@ -2141,7 +2162,7 @@ Partial Class Form1
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(903, 233)
+        Me.Label11.Location = New System.Drawing.Point(903, 236)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(103, 13)
         Me.Label11.TabIndex = 638
@@ -2150,7 +2171,7 @@ Partial Class Form1
         'Label23
         '
         Me.Label23.AutoSize = True
-        Me.Label23.Location = New System.Drawing.Point(903, 191)
+        Me.Label23.Location = New System.Drawing.Point(903, 194)
         Me.Label23.Name = "Label23"
         Me.Label23.Size = New System.Drawing.Size(91, 13)
         Me.Label23.TabIndex = 637
@@ -2160,7 +2181,7 @@ Partial Class Form1
         '
         Me.CheckBox31.AutoCheck = False
         Me.CheckBox31.AutoSize = True
-        Me.CheckBox31.Location = New System.Drawing.Point(1070, 177)
+        Me.CheckBox31.Location = New System.Drawing.Point(1070, 180)
         Me.CheckBox31.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox31.Name = "CheckBox31"
         Me.CheckBox31.Size = New System.Drawing.Size(15, 14)
@@ -2172,7 +2193,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit9.AutoCheck = False
         Me.CheckBoxHVStatusBit9.AutoSize = True
-        Me.CheckBoxHVStatusBit9.Location = New System.Drawing.Point(1049, 177)
+        Me.CheckBoxHVStatusBit9.Location = New System.Drawing.Point(1049, 180)
         Me.CheckBoxHVStatusBit9.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit9.Name = "CheckBoxHVStatusBit9"
         Me.CheckBoxHVStatusBit9.Size = New System.Drawing.Size(15, 14)
@@ -2183,7 +2204,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit9.AutoCheck = False
         Me.CheckBoxHVFaultBit9.AutoSize = True
-        Me.CheckBoxHVFaultBit9.Location = New System.Drawing.Point(1028, 177)
+        Me.CheckBoxHVFaultBit9.Location = New System.Drawing.Point(1028, 180)
         Me.CheckBoxHVFaultBit9.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit9.Name = "CheckBoxHVFaultBit9"
         Me.CheckBoxHVFaultBit9.Size = New System.Drawing.Size(15, 14)
@@ -2194,7 +2215,7 @@ Partial Class Form1
         '
         Me.CheckBox34.AutoCheck = False
         Me.CheckBox34.AutoSize = True
-        Me.CheckBox34.Location = New System.Drawing.Point(1070, 163)
+        Me.CheckBox34.Location = New System.Drawing.Point(1070, 166)
         Me.CheckBox34.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox34.Name = "CheckBox34"
         Me.CheckBox34.Size = New System.Drawing.Size(15, 14)
@@ -2206,7 +2227,7 @@ Partial Class Form1
         '
         Me.CheckBox35.AutoCheck = False
         Me.CheckBox35.AutoSize = True
-        Me.CheckBox35.Location = New System.Drawing.Point(1070, 135)
+        Me.CheckBox35.Location = New System.Drawing.Point(1070, 138)
         Me.CheckBox35.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox35.Name = "CheckBox35"
         Me.CheckBox35.Size = New System.Drawing.Size(15, 14)
@@ -2218,7 +2239,7 @@ Partial Class Form1
         '
         Me.CheckBox36.AutoCheck = False
         Me.CheckBox36.AutoSize = True
-        Me.CheckBox36.Location = New System.Drawing.Point(1070, 149)
+        Me.CheckBox36.Location = New System.Drawing.Point(1070, 152)
         Me.CheckBox36.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox36.Name = "CheckBox36"
         Me.CheckBox36.Size = New System.Drawing.Size(15, 14)
@@ -2230,7 +2251,7 @@ Partial Class Form1
         '
         Me.CheckBox37.AutoCheck = False
         Me.CheckBox37.AutoSize = True
-        Me.CheckBox37.Location = New System.Drawing.Point(1070, 121)
+        Me.CheckBox37.Location = New System.Drawing.Point(1070, 124)
         Me.CheckBox37.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox37.Name = "CheckBox37"
         Me.CheckBox37.Size = New System.Drawing.Size(15, 14)
@@ -2242,7 +2263,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit8.AutoCheck = False
         Me.CheckBoxHVStatusBit8.AutoSize = True
-        Me.CheckBoxHVStatusBit8.Location = New System.Drawing.Point(1049, 163)
+        Me.CheckBoxHVStatusBit8.Location = New System.Drawing.Point(1049, 166)
         Me.CheckBoxHVStatusBit8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit8.Name = "CheckBoxHVStatusBit8"
         Me.CheckBoxHVStatusBit8.Size = New System.Drawing.Size(15, 14)
@@ -2253,7 +2274,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit6.AutoCheck = False
         Me.CheckBoxHVStatusBit6.AutoSize = True
-        Me.CheckBoxHVStatusBit6.Location = New System.Drawing.Point(1049, 135)
+        Me.CheckBoxHVStatusBit6.Location = New System.Drawing.Point(1049, 138)
         Me.CheckBoxHVStatusBit6.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit6.Name = "CheckBoxHVStatusBit6"
         Me.CheckBoxHVStatusBit6.Size = New System.Drawing.Size(15, 14)
@@ -2264,7 +2285,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit7.AutoCheck = False
         Me.CheckBoxHVStatusBit7.AutoSize = True
-        Me.CheckBoxHVStatusBit7.Location = New System.Drawing.Point(1049, 149)
+        Me.CheckBoxHVStatusBit7.Location = New System.Drawing.Point(1049, 152)
         Me.CheckBoxHVStatusBit7.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit7.Name = "CheckBoxHVStatusBit7"
         Me.CheckBoxHVStatusBit7.Size = New System.Drawing.Size(15, 14)
@@ -2275,7 +2296,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit5.AutoCheck = False
         Me.CheckBoxHVStatusBit5.AutoSize = True
-        Me.CheckBoxHVStatusBit5.Location = New System.Drawing.Point(1049, 121)
+        Me.CheckBoxHVStatusBit5.Location = New System.Drawing.Point(1049, 124)
         Me.CheckBoxHVStatusBit5.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit5.Name = "CheckBoxHVStatusBit5"
         Me.CheckBoxHVStatusBit5.Size = New System.Drawing.Size(15, 14)
@@ -2285,7 +2306,7 @@ Partial Class Form1
         'Label25
         '
         Me.Label25.AutoSize = True
-        Me.Label25.Location = New System.Drawing.Point(903, 149)
+        Me.Label25.Location = New System.Drawing.Point(903, 152)
         Me.Label25.Name = "Label25"
         Me.Label25.Size = New System.Drawing.Size(109, 13)
         Me.Label25.TabIndex = 625
@@ -2294,7 +2315,7 @@ Partial Class Form1
         'Label27
         '
         Me.Label27.AutoSize = True
-        Me.Label27.Location = New System.Drawing.Point(903, 135)
+        Me.Label27.Location = New System.Drawing.Point(903, 138)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(109, 13)
         Me.Label27.TabIndex = 624
@@ -2303,7 +2324,7 @@ Partial Class Form1
         'Label29
         '
         Me.Label29.AutoSize = True
-        Me.Label29.Location = New System.Drawing.Point(903, 177)
+        Me.Label29.Location = New System.Drawing.Point(903, 180)
         Me.Label29.Name = "Label29"
         Me.Label29.Size = New System.Drawing.Size(111, 13)
         Me.Label29.TabIndex = 623
@@ -2313,7 +2334,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit8.AutoCheck = False
         Me.CheckBoxHVFaultBit8.AutoSize = True
-        Me.CheckBoxHVFaultBit8.Location = New System.Drawing.Point(1028, 163)
+        Me.CheckBoxHVFaultBit8.Location = New System.Drawing.Point(1028, 166)
         Me.CheckBoxHVFaultBit8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit8.Name = "CheckBoxHVFaultBit8"
         Me.CheckBoxHVFaultBit8.Size = New System.Drawing.Size(15, 14)
@@ -2324,7 +2345,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit6.AutoCheck = False
         Me.CheckBoxHVFaultBit6.AutoSize = True
-        Me.CheckBoxHVFaultBit6.Location = New System.Drawing.Point(1028, 135)
+        Me.CheckBoxHVFaultBit6.Location = New System.Drawing.Point(1028, 138)
         Me.CheckBoxHVFaultBit6.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit6.Name = "CheckBoxHVFaultBit6"
         Me.CheckBoxHVFaultBit6.Size = New System.Drawing.Size(15, 14)
@@ -2335,7 +2356,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit7.AutoCheck = False
         Me.CheckBoxHVFaultBit7.AutoSize = True
-        Me.CheckBoxHVFaultBit7.Location = New System.Drawing.Point(1028, 149)
+        Me.CheckBoxHVFaultBit7.Location = New System.Drawing.Point(1028, 152)
         Me.CheckBoxHVFaultBit7.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit7.Name = "CheckBoxHVFaultBit7"
         Me.CheckBoxHVFaultBit7.Size = New System.Drawing.Size(15, 14)
@@ -2346,7 +2367,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit5.AutoCheck = False
         Me.CheckBoxHVFaultBit5.AutoSize = True
-        Me.CheckBoxHVFaultBit5.Location = New System.Drawing.Point(1028, 121)
+        Me.CheckBoxHVFaultBit5.Location = New System.Drawing.Point(1028, 124)
         Me.CheckBoxHVFaultBit5.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit5.Name = "CheckBoxHVFaultBit5"
         Me.CheckBoxHVFaultBit5.Size = New System.Drawing.Size(15, 14)
@@ -2356,7 +2377,7 @@ Partial Class Form1
         'Label37
         '
         Me.Label37.AutoSize = True
-        Me.Label37.Location = New System.Drawing.Point(903, 163)
+        Me.Label37.Location = New System.Drawing.Point(903, 166)
         Me.Label37.Name = "Label37"
         Me.Label37.Size = New System.Drawing.Size(113, 13)
         Me.Label37.TabIndex = 618
@@ -2365,7 +2386,7 @@ Partial Class Form1
         'Label39
         '
         Me.Label39.AutoSize = True
-        Me.Label39.Location = New System.Drawing.Point(903, 121)
+        Me.Label39.Location = New System.Drawing.Point(903, 124)
         Me.Label39.Name = "Label39"
         Me.Label39.Size = New System.Drawing.Size(107, 13)
         Me.Label39.TabIndex = 617
@@ -2375,7 +2396,7 @@ Partial Class Form1
         '
         Me.CheckBox52.AutoCheck = False
         Me.CheckBox52.AutoSize = True
-        Me.CheckBox52.Location = New System.Drawing.Point(1070, 107)
+        Me.CheckBox52.Location = New System.Drawing.Point(1070, 110)
         Me.CheckBox52.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox52.Name = "CheckBox52"
         Me.CheckBox52.Size = New System.Drawing.Size(15, 14)
@@ -2387,7 +2408,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit4.AutoCheck = False
         Me.CheckBoxHVStatusBit4.AutoSize = True
-        Me.CheckBoxHVStatusBit4.Location = New System.Drawing.Point(1049, 107)
+        Me.CheckBoxHVStatusBit4.Location = New System.Drawing.Point(1049, 110)
         Me.CheckBoxHVStatusBit4.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit4.Name = "CheckBoxHVStatusBit4"
         Me.CheckBoxHVStatusBit4.Size = New System.Drawing.Size(15, 14)
@@ -2398,7 +2419,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit4.AutoCheck = False
         Me.CheckBoxHVFaultBit4.AutoSize = True
-        Me.CheckBoxHVFaultBit4.Location = New System.Drawing.Point(1028, 107)
+        Me.CheckBoxHVFaultBit4.Location = New System.Drawing.Point(1028, 110)
         Me.CheckBoxHVFaultBit4.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit4.Name = "CheckBoxHVFaultBit4"
         Me.CheckBoxHVFaultBit4.Size = New System.Drawing.Size(15, 14)
@@ -2409,7 +2430,7 @@ Partial Class Form1
         '
         Me.Label41.AutoSize = True
         Me.Label41.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label41.Location = New System.Drawing.Point(903, 24)
+        Me.Label41.Location = New System.Drawing.Point(903, 27)
         Me.Label41.Name = "Label41"
         Me.Label41.Size = New System.Drawing.Size(150, 13)
         Me.Label41.TabIndex = 613
@@ -2419,7 +2440,7 @@ Partial Class Form1
         '
         Me.CheckBox63.AutoCheck = False
         Me.CheckBox63.AutoSize = True
-        Me.CheckBox63.Location = New System.Drawing.Point(1070, 93)
+        Me.CheckBox63.Location = New System.Drawing.Point(1070, 96)
         Me.CheckBox63.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox63.Name = "CheckBox63"
         Me.CheckBox63.Size = New System.Drawing.Size(15, 14)
@@ -2431,7 +2452,7 @@ Partial Class Form1
         '
         Me.CheckBox64.AutoCheck = False
         Me.CheckBox64.AutoSize = True
-        Me.CheckBox64.Location = New System.Drawing.Point(1070, 65)
+        Me.CheckBox64.Location = New System.Drawing.Point(1070, 68)
         Me.CheckBox64.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox64.Name = "CheckBox64"
         Me.CheckBox64.Size = New System.Drawing.Size(15, 14)
@@ -2443,7 +2464,7 @@ Partial Class Form1
         '
         Me.CheckBox65.AutoCheck = False
         Me.CheckBox65.AutoSize = True
-        Me.CheckBox65.Location = New System.Drawing.Point(1070, 79)
+        Me.CheckBox65.Location = New System.Drawing.Point(1070, 82)
         Me.CheckBox65.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox65.Name = "CheckBox65"
         Me.CheckBox65.Size = New System.Drawing.Size(15, 14)
@@ -2455,7 +2476,7 @@ Partial Class Form1
         '
         Me.CheckBox66.AutoCheck = False
         Me.CheckBox66.AutoSize = True
-        Me.CheckBox66.Location = New System.Drawing.Point(1070, 51)
+        Me.CheckBox66.Location = New System.Drawing.Point(1070, 54)
         Me.CheckBox66.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox66.Name = "CheckBox66"
         Me.CheckBox66.Size = New System.Drawing.Size(15, 14)
@@ -2467,7 +2488,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit3.AutoCheck = False
         Me.CheckBoxHVStatusBit3.AutoSize = True
-        Me.CheckBoxHVStatusBit3.Location = New System.Drawing.Point(1049, 93)
+        Me.CheckBoxHVStatusBit3.Location = New System.Drawing.Point(1049, 96)
         Me.CheckBoxHVStatusBit3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit3.Name = "CheckBoxHVStatusBit3"
         Me.CheckBoxHVStatusBit3.Size = New System.Drawing.Size(15, 14)
@@ -2478,7 +2499,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit1.AutoCheck = False
         Me.CheckBoxHVStatusBit1.AutoSize = True
-        Me.CheckBoxHVStatusBit1.Location = New System.Drawing.Point(1049, 65)
+        Me.CheckBoxHVStatusBit1.Location = New System.Drawing.Point(1049, 68)
         Me.CheckBoxHVStatusBit1.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit1.Name = "CheckBoxHVStatusBit1"
         Me.CheckBoxHVStatusBit1.Size = New System.Drawing.Size(15, 14)
@@ -2489,7 +2510,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit2.AutoCheck = False
         Me.CheckBoxHVStatusBit2.AutoSize = True
-        Me.CheckBoxHVStatusBit2.Location = New System.Drawing.Point(1049, 79)
+        Me.CheckBoxHVStatusBit2.Location = New System.Drawing.Point(1049, 82)
         Me.CheckBoxHVStatusBit2.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit2.Name = "CheckBoxHVStatusBit2"
         Me.CheckBoxHVStatusBit2.Size = New System.Drawing.Size(15, 14)
@@ -2500,7 +2521,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVStatusBit0.AutoCheck = False
         Me.CheckBoxHVStatusBit0.AutoSize = True
-        Me.CheckBoxHVStatusBit0.Location = New System.Drawing.Point(1049, 51)
+        Me.CheckBoxHVStatusBit0.Location = New System.Drawing.Point(1049, 54)
         Me.CheckBoxHVStatusBit0.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVStatusBit0.Name = "CheckBoxHVStatusBit0"
         Me.CheckBoxHVStatusBit0.Size = New System.Drawing.Size(15, 14)
@@ -2510,7 +2531,7 @@ Partial Class Form1
         'Label42
         '
         Me.Label42.AutoSize = True
-        Me.Label42.Location = New System.Drawing.Point(903, 79)
+        Me.Label42.Location = New System.Drawing.Point(903, 82)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(73, 13)
         Me.Label42.TabIndex = 604
@@ -2519,7 +2540,7 @@ Partial Class Form1
         'Label43
         '
         Me.Label43.AutoSize = True
-        Me.Label43.Location = New System.Drawing.Point(903, 65)
+        Me.Label43.Location = New System.Drawing.Point(903, 68)
         Me.Label43.Name = "Label43"
         Me.Label43.Size = New System.Drawing.Size(70, 13)
         Me.Label43.TabIndex = 603
@@ -2528,7 +2549,7 @@ Partial Class Form1
         'Label44
         '
         Me.Label44.AutoSize = True
-        Me.Label44.Location = New System.Drawing.Point(903, 107)
+        Me.Label44.Location = New System.Drawing.Point(903, 110)
         Me.Label44.Name = "Label44"
         Me.Label44.Size = New System.Drawing.Size(107, 13)
         Me.Label44.TabIndex = 602
@@ -2538,7 +2559,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit3.AutoCheck = False
         Me.CheckBoxHVFaultBit3.AutoSize = True
-        Me.CheckBoxHVFaultBit3.Location = New System.Drawing.Point(1028, 93)
+        Me.CheckBoxHVFaultBit3.Location = New System.Drawing.Point(1028, 96)
         Me.CheckBoxHVFaultBit3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit3.Name = "CheckBoxHVFaultBit3"
         Me.CheckBoxHVFaultBit3.Size = New System.Drawing.Size(15, 14)
@@ -2549,7 +2570,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit1.AutoCheck = False
         Me.CheckBoxHVFaultBit1.AutoSize = True
-        Me.CheckBoxHVFaultBit1.Location = New System.Drawing.Point(1028, 65)
+        Me.CheckBoxHVFaultBit1.Location = New System.Drawing.Point(1028, 68)
         Me.CheckBoxHVFaultBit1.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit1.Name = "CheckBoxHVFaultBit1"
         Me.CheckBoxHVFaultBit1.Size = New System.Drawing.Size(15, 14)
@@ -2560,7 +2581,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit2.AutoCheck = False
         Me.CheckBoxHVFaultBit2.AutoSize = True
-        Me.CheckBoxHVFaultBit2.Location = New System.Drawing.Point(1028, 79)
+        Me.CheckBoxHVFaultBit2.Location = New System.Drawing.Point(1028, 82)
         Me.CheckBoxHVFaultBit2.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit2.Name = "CheckBoxHVFaultBit2"
         Me.CheckBoxHVFaultBit2.Size = New System.Drawing.Size(15, 14)
@@ -2571,7 +2592,7 @@ Partial Class Form1
         '
         Me.CheckBoxHVFaultBit0.AutoCheck = False
         Me.CheckBoxHVFaultBit0.AutoSize = True
-        Me.CheckBoxHVFaultBit0.Location = New System.Drawing.Point(1028, 51)
+        Me.CheckBoxHVFaultBit0.Location = New System.Drawing.Point(1028, 54)
         Me.CheckBoxHVFaultBit0.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxHVFaultBit0.Name = "CheckBoxHVFaultBit0"
         Me.CheckBoxHVFaultBit0.Size = New System.Drawing.Size(15, 14)
@@ -2581,7 +2602,7 @@ Partial Class Form1
         'Label45
         '
         Me.Label45.AutoSize = True
-        Me.Label45.Location = New System.Drawing.Point(903, 93)
+        Me.Label45.Location = New System.Drawing.Point(903, 96)
         Me.Label45.Name = "Label45"
         Me.Label45.Size = New System.Drawing.Size(63, 13)
         Me.Label45.TabIndex = 597
@@ -2590,7 +2611,7 @@ Partial Class Form1
         'Label46
         '
         Me.Label46.AutoSize = True
-        Me.Label46.Location = New System.Drawing.Point(903, 51)
+        Me.Label46.Location = New System.Drawing.Point(903, 54)
         Me.Label46.Name = "Label46"
         Me.Label46.Size = New System.Drawing.Size(109, 13)
         Me.Label46.TabIndex = 596
@@ -2600,7 +2621,7 @@ Partial Class Form1
         '
         Me.CheckBox3.AutoCheck = False
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(851, 261)
+        Me.CheckBox3.Location = New System.Drawing.Point(591, 274)
         Me.CheckBox3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(15, 14)
@@ -2612,38 +2633,41 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit15.AutoCheck = False
         Me.CheckBoxThyratronStatusBit15.AutoSize = True
-        Me.CheckBoxThyratronStatusBit15.Location = New System.Drawing.Point(830, 261)
+        Me.CheckBoxThyratronStatusBit15.Location = New System.Drawing.Point(570, 274)
         Me.CheckBoxThyratronStatusBit15.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit15.Name = "CheckBoxThyratronStatusBit15"
         Me.CheckBoxThyratronStatusBit15.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit15.TabIndex = 724
         Me.CheckBoxThyratronStatusBit15.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit15.Visible = False
         '
         'CheckBoxThyratronFaultBit15
         '
         Me.CheckBoxThyratronFaultBit15.AutoCheck = False
         Me.CheckBoxThyratronFaultBit15.AutoSize = True
-        Me.CheckBoxThyratronFaultBit15.Location = New System.Drawing.Point(809, 261)
+        Me.CheckBoxThyratronFaultBit15.Location = New System.Drawing.Point(549, 274)
         Me.CheckBoxThyratronFaultBit15.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit15.Name = "CheckBoxThyratronFaultBit15"
         Me.CheckBoxThyratronFaultBit15.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit15.TabIndex = 723
         Me.CheckBoxThyratronFaultBit15.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit15.Visible = False
         '
         'Label38
         '
         Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(684, 261)
+        Me.Label38.Location = New System.Drawing.Point(424, 274)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(60, 13)
         Me.Label38.TabIndex = 722
         Me.Label38.Text = "Unused #6"
+        Me.Label38.Visible = False
         '
         'CheckBox8
         '
         Me.CheckBox8.AutoCheck = False
         Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(851, 247)
+        Me.CheckBox8.Location = New System.Drawing.Point(591, 260)
         Me.CheckBox8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox8.Name = "CheckBox8"
         Me.CheckBox8.Size = New System.Drawing.Size(15, 14)
@@ -2655,29 +2679,31 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit14.AutoCheck = False
         Me.CheckBoxThyratronStatusBit14.AutoSize = True
-        Me.CheckBoxThyratronStatusBit14.Location = New System.Drawing.Point(830, 247)
+        Me.CheckBoxThyratronStatusBit14.Location = New System.Drawing.Point(570, 260)
         Me.CheckBoxThyratronStatusBit14.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit14.Name = "CheckBoxThyratronStatusBit14"
         Me.CheckBoxThyratronStatusBit14.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit14.TabIndex = 720
         Me.CheckBoxThyratronStatusBit14.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit14.Visible = False
         '
         'CheckBoxThyratronFaultBit14
         '
         Me.CheckBoxThyratronFaultBit14.AutoCheck = False
         Me.CheckBoxThyratronFaultBit14.AutoSize = True
-        Me.CheckBoxThyratronFaultBit14.Location = New System.Drawing.Point(809, 247)
+        Me.CheckBoxThyratronFaultBit14.Location = New System.Drawing.Point(549, 260)
         Me.CheckBoxThyratronFaultBit14.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit14.Name = "CheckBoxThyratronFaultBit14"
         Me.CheckBoxThyratronFaultBit14.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit14.TabIndex = 719
         Me.CheckBoxThyratronFaultBit14.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit14.Visible = False
         '
         'CheckBox29
         '
         Me.CheckBox29.AutoCheck = False
         Me.CheckBox29.AutoSize = True
-        Me.CheckBox29.Location = New System.Drawing.Point(851, 233)
+        Me.CheckBox29.Location = New System.Drawing.Point(591, 246)
         Me.CheckBox29.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox29.Name = "CheckBox29"
         Me.CheckBox29.Size = New System.Drawing.Size(15, 14)
@@ -2689,7 +2715,7 @@ Partial Class Form1
         '
         Me.CheckBox30.AutoCheck = False
         Me.CheckBox30.AutoSize = True
-        Me.CheckBox30.Location = New System.Drawing.Point(851, 205)
+        Me.CheckBox30.Location = New System.Drawing.Point(591, 218)
         Me.CheckBox30.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox30.Name = "CheckBox30"
         Me.CheckBox30.Size = New System.Drawing.Size(15, 14)
@@ -2701,7 +2727,7 @@ Partial Class Form1
         '
         Me.CheckBox33.AutoCheck = False
         Me.CheckBox33.AutoSize = True
-        Me.CheckBox33.Location = New System.Drawing.Point(851, 219)
+        Me.CheckBox33.Location = New System.Drawing.Point(591, 232)
         Me.CheckBox33.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox33.Name = "CheckBox33"
         Me.CheckBox33.Size = New System.Drawing.Size(15, 14)
@@ -2713,7 +2739,7 @@ Partial Class Form1
         '
         Me.CheckBox44.AutoCheck = False
         Me.CheckBox44.AutoSize = True
-        Me.CheckBox44.Location = New System.Drawing.Point(851, 191)
+        Me.CheckBox44.Location = New System.Drawing.Point(591, 204)
         Me.CheckBox44.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox44.Name = "CheckBox44"
         Me.CheckBox44.Size = New System.Drawing.Size(15, 14)
@@ -2725,140 +2751,153 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit13.AutoCheck = False
         Me.CheckBoxThyratronStatusBit13.AutoSize = True
-        Me.CheckBoxThyratronStatusBit13.Location = New System.Drawing.Point(830, 233)
+        Me.CheckBoxThyratronStatusBit13.Location = New System.Drawing.Point(570, 246)
         Me.CheckBoxThyratronStatusBit13.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit13.Name = "CheckBoxThyratronStatusBit13"
         Me.CheckBoxThyratronStatusBit13.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit13.TabIndex = 714
         Me.CheckBoxThyratronStatusBit13.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit13.Visible = False
         '
         'CheckBoxThyratronStatusBit11
         '
         Me.CheckBoxThyratronStatusBit11.AutoCheck = False
         Me.CheckBoxThyratronStatusBit11.AutoSize = True
-        Me.CheckBoxThyratronStatusBit11.Location = New System.Drawing.Point(830, 205)
+        Me.CheckBoxThyratronStatusBit11.Location = New System.Drawing.Point(570, 218)
         Me.CheckBoxThyratronStatusBit11.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit11.Name = "CheckBoxThyratronStatusBit11"
         Me.CheckBoxThyratronStatusBit11.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit11.TabIndex = 713
         Me.CheckBoxThyratronStatusBit11.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit11.Visible = False
         '
         'CheckBoxThyratronStatusBit12
         '
         Me.CheckBoxThyratronStatusBit12.AutoCheck = False
         Me.CheckBoxThyratronStatusBit12.AutoSize = True
-        Me.CheckBoxThyratronStatusBit12.Location = New System.Drawing.Point(830, 219)
+        Me.CheckBoxThyratronStatusBit12.Location = New System.Drawing.Point(570, 232)
         Me.CheckBoxThyratronStatusBit12.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit12.Name = "CheckBoxThyratronStatusBit12"
         Me.CheckBoxThyratronStatusBit12.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit12.TabIndex = 712
         Me.CheckBoxThyratronStatusBit12.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit12.Visible = False
         '
         'CheckBoxThyratronStatusBit10
         '
         Me.CheckBoxThyratronStatusBit10.AutoCheck = False
         Me.CheckBoxThyratronStatusBit10.AutoSize = True
-        Me.CheckBoxThyratronStatusBit10.Location = New System.Drawing.Point(830, 191)
+        Me.CheckBoxThyratronStatusBit10.Location = New System.Drawing.Point(570, 204)
         Me.CheckBoxThyratronStatusBit10.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit10.Name = "CheckBoxThyratronStatusBit10"
         Me.CheckBoxThyratronStatusBit10.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit10.TabIndex = 711
         Me.CheckBoxThyratronStatusBit10.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit10.Visible = False
         '
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(684, 219)
+        Me.Label40.Location = New System.Drawing.Point(424, 232)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(60, 13)
         Me.Label40.TabIndex = 710
         Me.Label40.Text = "Unused #3"
+        Me.Label40.Visible = False
         '
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(684, 205)
+        Me.Label47.Location = New System.Drawing.Point(424, 218)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(60, 13)
         Me.Label47.TabIndex = 709
         Me.Label47.Text = "Unused #2"
+        Me.Label47.Visible = False
         '
         'Label48
         '
         Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(684, 247)
+        Me.Label48.Location = New System.Drawing.Point(424, 260)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(60, 13)
         Me.Label48.TabIndex = 708
         Me.Label48.Text = "Unused #5"
+        Me.Label48.Visible = False
         '
         'CheckBoxThyratronFaultBit13
         '
         Me.CheckBoxThyratronFaultBit13.AutoCheck = False
         Me.CheckBoxThyratronFaultBit13.AutoSize = True
-        Me.CheckBoxThyratronFaultBit13.Location = New System.Drawing.Point(809, 233)
+        Me.CheckBoxThyratronFaultBit13.Location = New System.Drawing.Point(549, 246)
         Me.CheckBoxThyratronFaultBit13.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit13.Name = "CheckBoxThyratronFaultBit13"
         Me.CheckBoxThyratronFaultBit13.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit13.TabIndex = 707
         Me.CheckBoxThyratronFaultBit13.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit13.Visible = False
         '
         'CheckBoxThyratronFaultBit11
         '
         Me.CheckBoxThyratronFaultBit11.AutoCheck = False
         Me.CheckBoxThyratronFaultBit11.AutoSize = True
-        Me.CheckBoxThyratronFaultBit11.Location = New System.Drawing.Point(809, 205)
+        Me.CheckBoxThyratronFaultBit11.Location = New System.Drawing.Point(549, 218)
         Me.CheckBoxThyratronFaultBit11.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit11.Name = "CheckBoxThyratronFaultBit11"
         Me.CheckBoxThyratronFaultBit11.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit11.TabIndex = 706
         Me.CheckBoxThyratronFaultBit11.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit11.Visible = False
         '
         'CheckBoxThyratronFaultBit12
         '
         Me.CheckBoxThyratronFaultBit12.AutoCheck = False
         Me.CheckBoxThyratronFaultBit12.AutoSize = True
-        Me.CheckBoxThyratronFaultBit12.Location = New System.Drawing.Point(809, 219)
+        Me.CheckBoxThyratronFaultBit12.Location = New System.Drawing.Point(549, 232)
         Me.CheckBoxThyratronFaultBit12.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit12.Name = "CheckBoxThyratronFaultBit12"
         Me.CheckBoxThyratronFaultBit12.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit12.TabIndex = 705
         Me.CheckBoxThyratronFaultBit12.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit12.Visible = False
         '
         'CheckBoxThyratronFaultBit10
         '
         Me.CheckBoxThyratronFaultBit10.AutoCheck = False
         Me.CheckBoxThyratronFaultBit10.AutoSize = True
-        Me.CheckBoxThyratronFaultBit10.Location = New System.Drawing.Point(809, 191)
+        Me.CheckBoxThyratronFaultBit10.Location = New System.Drawing.Point(549, 204)
         Me.CheckBoxThyratronFaultBit10.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit10.Name = "CheckBoxThyratronFaultBit10"
         Me.CheckBoxThyratronFaultBit10.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit10.TabIndex = 704
         Me.CheckBoxThyratronFaultBit10.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit10.Visible = False
         '
         'Label49
         '
         Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(684, 233)
+        Me.Label49.Location = New System.Drawing.Point(424, 246)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(60, 13)
         Me.Label49.TabIndex = 703
         Me.Label49.Text = "Unused #4"
+        Me.Label49.Visible = False
         '
         'Label50
         '
         Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(684, 191)
+        Me.Label50.Location = New System.Drawing.Point(424, 204)
         Me.Label50.Name = "Label50"
         Me.Label50.Size = New System.Drawing.Size(60, 13)
         Me.Label50.TabIndex = 702
         Me.Label50.Text = "Unused #1"
+        Me.Label50.Visible = False
         '
         'CheckBox75
         '
         Me.CheckBox75.AutoCheck = False
         Me.CheckBox75.AutoSize = True
-        Me.CheckBox75.Location = New System.Drawing.Point(851, 177)
+        Me.CheckBox75.Location = New System.Drawing.Point(591, 190)
         Me.CheckBox75.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox75.Name = "CheckBox75"
         Me.CheckBox75.Size = New System.Drawing.Size(15, 14)
@@ -2870,29 +2909,31 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit9.AutoCheck = False
         Me.CheckBoxThyratronStatusBit9.AutoSize = True
-        Me.CheckBoxThyratronStatusBit9.Location = New System.Drawing.Point(830, 177)
+        Me.CheckBoxThyratronStatusBit9.Location = New System.Drawing.Point(570, 190)
         Me.CheckBoxThyratronStatusBit9.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit9.Name = "CheckBoxThyratronStatusBit9"
         Me.CheckBoxThyratronStatusBit9.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit9.TabIndex = 700
         Me.CheckBoxThyratronStatusBit9.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit9.Visible = False
         '
         'CheckBoxThyratronFaultBit9
         '
         Me.CheckBoxThyratronFaultBit9.AutoCheck = False
         Me.CheckBoxThyratronFaultBit9.AutoSize = True
-        Me.CheckBoxThyratronFaultBit9.Location = New System.Drawing.Point(809, 177)
+        Me.CheckBoxThyratronFaultBit9.Location = New System.Drawing.Point(549, 190)
         Me.CheckBoxThyratronFaultBit9.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit9.Name = "CheckBoxThyratronFaultBit9"
         Me.CheckBoxThyratronFaultBit9.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit9.TabIndex = 699
         Me.CheckBoxThyratronFaultBit9.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit9.Visible = False
         '
         'CheckBox78
         '
         Me.CheckBox78.AutoCheck = False
         Me.CheckBox78.AutoSize = True
-        Me.CheckBox78.Location = New System.Drawing.Point(851, 163)
+        Me.CheckBox78.Location = New System.Drawing.Point(591, 176)
         Me.CheckBox78.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox78.Name = "CheckBox78"
         Me.CheckBox78.Size = New System.Drawing.Size(15, 14)
@@ -2904,7 +2945,7 @@ Partial Class Form1
         '
         Me.CheckBox79.AutoCheck = False
         Me.CheckBox79.AutoSize = True
-        Me.CheckBox79.Location = New System.Drawing.Point(851, 135)
+        Me.CheckBox79.Location = New System.Drawing.Point(591, 148)
         Me.CheckBox79.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox79.Name = "CheckBox79"
         Me.CheckBox79.Size = New System.Drawing.Size(15, 14)
@@ -2916,7 +2957,7 @@ Partial Class Form1
         '
         Me.CheckBox80.AutoCheck = False
         Me.CheckBox80.AutoSize = True
-        Me.CheckBox80.Location = New System.Drawing.Point(851, 149)
+        Me.CheckBox80.Location = New System.Drawing.Point(591, 162)
         Me.CheckBox80.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox80.Name = "CheckBox80"
         Me.CheckBox80.Size = New System.Drawing.Size(15, 14)
@@ -2928,7 +2969,7 @@ Partial Class Form1
         '
         Me.CheckBox81.AutoCheck = False
         Me.CheckBox81.AutoSize = True
-        Me.CheckBox81.Location = New System.Drawing.Point(851, 121)
+        Me.CheckBox81.Location = New System.Drawing.Point(591, 134)
         Me.CheckBox81.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox81.Name = "CheckBox81"
         Me.CheckBox81.Size = New System.Drawing.Size(15, 14)
@@ -2940,140 +2981,153 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit8.AutoCheck = False
         Me.CheckBoxThyratronStatusBit8.AutoSize = True
-        Me.CheckBoxThyratronStatusBit8.Location = New System.Drawing.Point(830, 163)
+        Me.CheckBoxThyratronStatusBit8.Location = New System.Drawing.Point(570, 176)
         Me.CheckBoxThyratronStatusBit8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit8.Name = "CheckBoxThyratronStatusBit8"
         Me.CheckBoxThyratronStatusBit8.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit8.TabIndex = 694
         Me.CheckBoxThyratronStatusBit8.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit8.Visible = False
         '
         'CheckBoxThyratronStatusBit6
         '
         Me.CheckBoxThyratronStatusBit6.AutoCheck = False
         Me.CheckBoxThyratronStatusBit6.AutoSize = True
-        Me.CheckBoxThyratronStatusBit6.Location = New System.Drawing.Point(830, 135)
+        Me.CheckBoxThyratronStatusBit6.Location = New System.Drawing.Point(570, 148)
         Me.CheckBoxThyratronStatusBit6.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit6.Name = "CheckBoxThyratronStatusBit6"
         Me.CheckBoxThyratronStatusBit6.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit6.TabIndex = 693
         Me.CheckBoxThyratronStatusBit6.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit6.Visible = False
         '
         'CheckBoxThyratronStatusBit7
         '
         Me.CheckBoxThyratronStatusBit7.AutoCheck = False
         Me.CheckBoxThyratronStatusBit7.AutoSize = True
-        Me.CheckBoxThyratronStatusBit7.Location = New System.Drawing.Point(830, 149)
+        Me.CheckBoxThyratronStatusBit7.Location = New System.Drawing.Point(570, 162)
         Me.CheckBoxThyratronStatusBit7.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit7.Name = "CheckBoxThyratronStatusBit7"
         Me.CheckBoxThyratronStatusBit7.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit7.TabIndex = 692
         Me.CheckBoxThyratronStatusBit7.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit7.Visible = False
         '
         'CheckBoxThyratronStatusBit5
         '
         Me.CheckBoxThyratronStatusBit5.AutoCheck = False
         Me.CheckBoxThyratronStatusBit5.AutoSize = True
-        Me.CheckBoxThyratronStatusBit5.Location = New System.Drawing.Point(830, 121)
+        Me.CheckBoxThyratronStatusBit5.Location = New System.Drawing.Point(570, 134)
         Me.CheckBoxThyratronStatusBit5.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit5.Name = "CheckBoxThyratronStatusBit5"
         Me.CheckBoxThyratronStatusBit5.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit5.TabIndex = 691
         Me.CheckBoxThyratronStatusBit5.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit5.Visible = False
         '
         'Label51
         '
         Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(684, 149)
+        Me.Label51.Location = New System.Drawing.Point(424, 162)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(105, 13)
         Me.Label51.TabIndex = 690
         Me.Label51.Text = "Reservoir Under Volt"
+        Me.Label51.Visible = False
         '
         'Label52
         '
         Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(684, 135)
+        Me.Label52.Location = New System.Drawing.Point(424, 148)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(99, 13)
         Me.Label52.TabIndex = 689
         Me.Label52.Text = "Reservoir Over Volt"
+        Me.Label52.Visible = False
         '
         'Label53
         '
         Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(684, 177)
+        Me.Label53.Location = New System.Drawing.Point(424, 190)
         Me.Label53.Name = "Label53"
         Me.Label53.Size = New System.Drawing.Size(107, 13)
         Me.Label53.TabIndex = 688
         Me.Label53.Text = "Reservoir Control Sat"
+        Me.Label53.Visible = False
         '
         'CheckBoxThyratronFaultBit8
         '
         Me.CheckBoxThyratronFaultBit8.AutoCheck = False
         Me.CheckBoxThyratronFaultBit8.AutoSize = True
-        Me.CheckBoxThyratronFaultBit8.Location = New System.Drawing.Point(809, 163)
+        Me.CheckBoxThyratronFaultBit8.Location = New System.Drawing.Point(549, 176)
         Me.CheckBoxThyratronFaultBit8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit8.Name = "CheckBoxThyratronFaultBit8"
         Me.CheckBoxThyratronFaultBit8.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit8.TabIndex = 687
         Me.CheckBoxThyratronFaultBit8.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit8.Visible = False
         '
         'CheckBoxThyratronFaultBit6
         '
         Me.CheckBoxThyratronFaultBit6.AutoCheck = False
         Me.CheckBoxThyratronFaultBit6.AutoSize = True
-        Me.CheckBoxThyratronFaultBit6.Location = New System.Drawing.Point(809, 135)
+        Me.CheckBoxThyratronFaultBit6.Location = New System.Drawing.Point(549, 148)
         Me.CheckBoxThyratronFaultBit6.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit6.Name = "CheckBoxThyratronFaultBit6"
         Me.CheckBoxThyratronFaultBit6.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit6.TabIndex = 686
         Me.CheckBoxThyratronFaultBit6.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit6.Visible = False
         '
         'CheckBoxThyratronFaultBit7
         '
         Me.CheckBoxThyratronFaultBit7.AutoCheck = False
         Me.CheckBoxThyratronFaultBit7.AutoSize = True
-        Me.CheckBoxThyratronFaultBit7.Location = New System.Drawing.Point(809, 149)
+        Me.CheckBoxThyratronFaultBit7.Location = New System.Drawing.Point(549, 162)
         Me.CheckBoxThyratronFaultBit7.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit7.Name = "CheckBoxThyratronFaultBit7"
         Me.CheckBoxThyratronFaultBit7.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit7.TabIndex = 685
         Me.CheckBoxThyratronFaultBit7.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit7.Visible = False
         '
         'CheckBoxThyratronFaultBit5
         '
         Me.CheckBoxThyratronFaultBit5.AutoCheck = False
         Me.CheckBoxThyratronFaultBit5.AutoSize = True
-        Me.CheckBoxThyratronFaultBit5.Location = New System.Drawing.Point(809, 121)
+        Me.CheckBoxThyratronFaultBit5.Location = New System.Drawing.Point(549, 134)
         Me.CheckBoxThyratronFaultBit5.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit5.Name = "CheckBoxThyratronFaultBit5"
         Me.CheckBoxThyratronFaultBit5.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit5.TabIndex = 684
         Me.CheckBoxThyratronFaultBit5.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit5.Visible = False
         '
         'Label54
         '
         Me.Label54.AutoSize = True
-        Me.Label54.Location = New System.Drawing.Point(684, 163)
+        Me.Label54.Location = New System.Drawing.Point(424, 176)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(105, 13)
         Me.Label54.TabIndex = 683
         Me.Label54.Text = "Reservoir Driver FLT"
+        Me.Label54.Visible = False
         '
         'Label55
         '
         Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(684, 121)
+        Me.Label55.Location = New System.Drawing.Point(424, 134)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(125, 13)
         Me.Label55.TabIndex = 682
         Me.Label55.Text = "Reservoir Over Volt Hard"
+        Me.Label55.Visible = False
         '
         'CheckBox90
         '
         Me.CheckBox90.AutoCheck = False
         Me.CheckBox90.AutoSize = True
-        Me.CheckBox90.Location = New System.Drawing.Point(851, 107)
+        Me.CheckBox90.Location = New System.Drawing.Point(591, 120)
         Me.CheckBox90.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox90.Name = "CheckBox90"
         Me.CheckBox90.Size = New System.Drawing.Size(15, 14)
@@ -3085,39 +3139,42 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit4.AutoCheck = False
         Me.CheckBoxThyratronStatusBit4.AutoSize = True
-        Me.CheckBoxThyratronStatusBit4.Location = New System.Drawing.Point(830, 107)
+        Me.CheckBoxThyratronStatusBit4.Location = New System.Drawing.Point(570, 120)
         Me.CheckBoxThyratronStatusBit4.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit4.Name = "CheckBoxThyratronStatusBit4"
         Me.CheckBoxThyratronStatusBit4.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit4.TabIndex = 680
         Me.CheckBoxThyratronStatusBit4.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit4.Visible = False
         '
         'CheckBoxThyratronFaultBit4
         '
         Me.CheckBoxThyratronFaultBit4.AutoCheck = False
         Me.CheckBoxThyratronFaultBit4.AutoSize = True
-        Me.CheckBoxThyratronFaultBit4.Location = New System.Drawing.Point(809, 107)
+        Me.CheckBoxThyratronFaultBit4.Location = New System.Drawing.Point(549, 120)
         Me.CheckBoxThyratronFaultBit4.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit4.Name = "CheckBoxThyratronFaultBit4"
         Me.CheckBoxThyratronFaultBit4.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit4.TabIndex = 679
         Me.CheckBoxThyratronFaultBit4.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit4.Visible = False
         '
         'Label56
         '
         Me.Label56.AutoSize = True
         Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.Location = New System.Drawing.Point(684, 24)
+        Me.Label56.Location = New System.Drawing.Point(424, 37)
         Me.Label56.Name = "Label56"
         Me.Label56.Size = New System.Drawing.Size(135, 13)
         Me.Label56.TabIndex = 678
         Me.Label56.Text = "THYRATRON FAUTLS"
+        Me.Label56.Visible = False
         '
         'CheckBox93
         '
         Me.CheckBox93.AutoCheck = False
         Me.CheckBox93.AutoSize = True
-        Me.CheckBox93.Location = New System.Drawing.Point(851, 93)
+        Me.CheckBox93.Location = New System.Drawing.Point(591, 106)
         Me.CheckBox93.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox93.Name = "CheckBox93"
         Me.CheckBox93.Size = New System.Drawing.Size(15, 14)
@@ -3129,7 +3186,7 @@ Partial Class Form1
         '
         Me.CheckBox94.AutoCheck = False
         Me.CheckBox94.AutoSize = True
-        Me.CheckBox94.Location = New System.Drawing.Point(851, 65)
+        Me.CheckBox94.Location = New System.Drawing.Point(591, 78)
         Me.CheckBox94.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox94.Name = "CheckBox94"
         Me.CheckBox94.Size = New System.Drawing.Size(15, 14)
@@ -3141,7 +3198,7 @@ Partial Class Form1
         '
         Me.CheckBox95.AutoCheck = False
         Me.CheckBox95.AutoSize = True
-        Me.CheckBox95.Location = New System.Drawing.Point(851, 79)
+        Me.CheckBox95.Location = New System.Drawing.Point(591, 92)
         Me.CheckBox95.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox95.Name = "CheckBox95"
         Me.CheckBox95.Size = New System.Drawing.Size(15, 14)
@@ -3153,7 +3210,7 @@ Partial Class Form1
         '
         Me.CheckBox96.AutoCheck = False
         Me.CheckBox96.AutoSize = True
-        Me.CheckBox96.Location = New System.Drawing.Point(851, 51)
+        Me.CheckBox96.Location = New System.Drawing.Point(591, 64)
         Me.CheckBox96.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox96.Name = "CheckBox96"
         Me.CheckBox96.Size = New System.Drawing.Size(15, 14)
@@ -3165,140 +3222,153 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit3.AutoCheck = False
         Me.CheckBoxThyratronStatusBit3.AutoSize = True
-        Me.CheckBoxThyratronStatusBit3.Location = New System.Drawing.Point(830, 93)
+        Me.CheckBoxThyratronStatusBit3.Location = New System.Drawing.Point(570, 106)
         Me.CheckBoxThyratronStatusBit3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit3.Name = "CheckBoxThyratronStatusBit3"
         Me.CheckBoxThyratronStatusBit3.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit3.TabIndex = 673
         Me.CheckBoxThyratronStatusBit3.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit3.Visible = False
         '
         'CheckBoxThyratronStatusBit1
         '
         Me.CheckBoxThyratronStatusBit1.AutoCheck = False
         Me.CheckBoxThyratronStatusBit1.AutoSize = True
-        Me.CheckBoxThyratronStatusBit1.Location = New System.Drawing.Point(830, 65)
+        Me.CheckBoxThyratronStatusBit1.Location = New System.Drawing.Point(570, 78)
         Me.CheckBoxThyratronStatusBit1.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit1.Name = "CheckBoxThyratronStatusBit1"
         Me.CheckBoxThyratronStatusBit1.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit1.TabIndex = 672
         Me.CheckBoxThyratronStatusBit1.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit1.Visible = False
         '
         'CheckBoxThyratronStatusBit2
         '
         Me.CheckBoxThyratronStatusBit2.AutoCheck = False
         Me.CheckBoxThyratronStatusBit2.AutoSize = True
-        Me.CheckBoxThyratronStatusBit2.Location = New System.Drawing.Point(830, 79)
+        Me.CheckBoxThyratronStatusBit2.Location = New System.Drawing.Point(570, 92)
         Me.CheckBoxThyratronStatusBit2.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit2.Name = "CheckBoxThyratronStatusBit2"
         Me.CheckBoxThyratronStatusBit2.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit2.TabIndex = 671
         Me.CheckBoxThyratronStatusBit2.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit2.Visible = False
         '
         'CheckBoxThyratronStatusBit0
         '
         Me.CheckBoxThyratronStatusBit0.AutoCheck = False
         Me.CheckBoxThyratronStatusBit0.AutoSize = True
-        Me.CheckBoxThyratronStatusBit0.Location = New System.Drawing.Point(830, 51)
+        Me.CheckBoxThyratronStatusBit0.Location = New System.Drawing.Point(570, 64)
         Me.CheckBoxThyratronStatusBit0.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit0.Name = "CheckBoxThyratronStatusBit0"
         Me.CheckBoxThyratronStatusBit0.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit0.TabIndex = 670
         Me.CheckBoxThyratronStatusBit0.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronStatusBit0.Visible = False
         '
         'Label57
         '
         Me.Label57.AutoSize = True
-        Me.Label57.Location = New System.Drawing.Point(684, 79)
+        Me.Label57.Location = New System.Drawing.Point(424, 92)
         Me.Label57.Name = "Label57"
         Me.Label57.Size = New System.Drawing.Size(100, 13)
         Me.Label57.TabIndex = 669
         Me.Label57.Text = "Cathode Under Volt"
+        Me.Label57.Visible = False
         '
         'Label58
         '
         Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(684, 65)
+        Me.Label58.Location = New System.Drawing.Point(424, 78)
         Me.Label58.Name = "Label58"
         Me.Label58.Size = New System.Drawing.Size(94, 13)
         Me.Label58.TabIndex = 668
         Me.Label58.Text = "Cathode Over Volt"
+        Me.Label58.Visible = False
         '
         'Label59
         '
         Me.Label59.AutoSize = True
-        Me.Label59.Location = New System.Drawing.Point(684, 107)
+        Me.Label59.Location = New System.Drawing.Point(424, 120)
         Me.Label59.Name = "Label59"
         Me.Label59.Size = New System.Drawing.Size(102, 13)
         Me.Label59.TabIndex = 667
         Me.Label59.Text = "Cathode Control Sat"
+        Me.Label59.Visible = False
         '
         'CheckBoxThyratronFaultBit3
         '
         Me.CheckBoxThyratronFaultBit3.AutoCheck = False
         Me.CheckBoxThyratronFaultBit3.AutoSize = True
-        Me.CheckBoxThyratronFaultBit3.Location = New System.Drawing.Point(809, 93)
+        Me.CheckBoxThyratronFaultBit3.Location = New System.Drawing.Point(549, 106)
         Me.CheckBoxThyratronFaultBit3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit3.Name = "CheckBoxThyratronFaultBit3"
         Me.CheckBoxThyratronFaultBit3.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit3.TabIndex = 666
         Me.CheckBoxThyratronFaultBit3.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit3.Visible = False
         '
         'CheckBoxThyratronFaultBit1
         '
         Me.CheckBoxThyratronFaultBit1.AutoCheck = False
         Me.CheckBoxThyratronFaultBit1.AutoSize = True
-        Me.CheckBoxThyratronFaultBit1.Location = New System.Drawing.Point(809, 65)
+        Me.CheckBoxThyratronFaultBit1.Location = New System.Drawing.Point(549, 78)
         Me.CheckBoxThyratronFaultBit1.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit1.Name = "CheckBoxThyratronFaultBit1"
         Me.CheckBoxThyratronFaultBit1.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit1.TabIndex = 665
         Me.CheckBoxThyratronFaultBit1.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit1.Visible = False
         '
         'CheckBoxThyratronFaultBit2
         '
         Me.CheckBoxThyratronFaultBit2.AutoCheck = False
         Me.CheckBoxThyratronFaultBit2.AutoSize = True
-        Me.CheckBoxThyratronFaultBit2.Location = New System.Drawing.Point(809, 79)
+        Me.CheckBoxThyratronFaultBit2.Location = New System.Drawing.Point(549, 92)
         Me.CheckBoxThyratronFaultBit2.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit2.Name = "CheckBoxThyratronFaultBit2"
         Me.CheckBoxThyratronFaultBit2.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit2.TabIndex = 664
         Me.CheckBoxThyratronFaultBit2.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit2.Visible = False
         '
         'CheckBoxThyratronFaultBit0
         '
         Me.CheckBoxThyratronFaultBit0.AutoCheck = False
         Me.CheckBoxThyratronFaultBit0.AutoSize = True
-        Me.CheckBoxThyratronFaultBit0.Location = New System.Drawing.Point(809, 51)
+        Me.CheckBoxThyratronFaultBit0.Location = New System.Drawing.Point(549, 64)
         Me.CheckBoxThyratronFaultBit0.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit0.Name = "CheckBoxThyratronFaultBit0"
         Me.CheckBoxThyratronFaultBit0.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit0.TabIndex = 663
         Me.CheckBoxThyratronFaultBit0.UseVisualStyleBackColor = True
+        Me.CheckBoxThyratronFaultBit0.Visible = False
         '
         'Label62
         '
         Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(684, 93)
+        Me.Label62.Location = New System.Drawing.Point(424, 106)
         Me.Label62.Name = "Label62"
         Me.Label62.Size = New System.Drawing.Size(100, 13)
         Me.Label62.TabIndex = 662
         Me.Label62.Text = "Cathode Driver FLT"
+        Me.Label62.Visible = False
         '
         'Label63
         '
         Me.Label63.AutoSize = True
-        Me.Label63.Location = New System.Drawing.Point(684, 51)
+        Me.Label63.Location = New System.Drawing.Point(424, 64)
         Me.Label63.Name = "Label63"
         Me.Label63.Size = New System.Drawing.Size(120, 13)
         Me.Label63.TabIndex = 661
         Me.Label63.Text = "Cathode Over Volt Hard"
+        Me.Label63.Visible = False
         '
         'CheckBox106
         '
         Me.CheckBox106.AutoCheck = False
         Me.CheckBox106.AutoSize = True
-        Me.CheckBox106.Location = New System.Drawing.Point(851, 534)
+        Me.CheckBox106.Location = New System.Drawing.Point(851, 264)
         Me.CheckBox106.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox106.Name = "CheckBox106"
         Me.CheckBox106.Size = New System.Drawing.Size(15, 14)
@@ -3310,7 +3380,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit15.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit15.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit15.Location = New System.Drawing.Point(830, 534)
+        Me.CheckBoxControlBoardStatusBit15.Location = New System.Drawing.Point(830, 264)
         Me.CheckBoxControlBoardStatusBit15.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit15.Name = "CheckBoxControlBoardStatusBit15"
         Me.CheckBoxControlBoardStatusBit15.Size = New System.Drawing.Size(15, 14)
@@ -3321,7 +3391,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit15.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit15.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit15.Location = New System.Drawing.Point(809, 534)
+        Me.CheckBoxControlBoardFaultBit15.Location = New System.Drawing.Point(809, 264)
         Me.CheckBoxControlBoardFaultBit15.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit15.Name = "CheckBoxControlBoardFaultBit15"
         Me.CheckBoxControlBoardFaultBit15.Size = New System.Drawing.Size(15, 14)
@@ -3331,7 +3401,7 @@ Partial Class Form1
         'Label64
         '
         Me.Label64.AutoSize = True
-        Me.Label64.Location = New System.Drawing.Point(684, 534)
+        Me.Label64.Location = New System.Drawing.Point(684, 264)
         Me.Label64.Name = "Label64"
         Me.Label64.Size = New System.Drawing.Size(66, 13)
         Me.Label64.TabIndex = 787
@@ -3341,7 +3411,7 @@ Partial Class Form1
         '
         Me.CheckBox112.AutoCheck = False
         Me.CheckBox112.AutoSize = True
-        Me.CheckBox112.Location = New System.Drawing.Point(851, 520)
+        Me.CheckBox112.Location = New System.Drawing.Point(851, 250)
         Me.CheckBox112.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox112.Name = "CheckBox112"
         Me.CheckBox112.Size = New System.Drawing.Size(15, 14)
@@ -3353,7 +3423,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit14.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit14.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit14.Location = New System.Drawing.Point(830, 520)
+        Me.CheckBoxControlBoardStatusBit14.Location = New System.Drawing.Point(830, 250)
         Me.CheckBoxControlBoardStatusBit14.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit14.Name = "CheckBoxControlBoardStatusBit14"
         Me.CheckBoxControlBoardStatusBit14.Size = New System.Drawing.Size(15, 14)
@@ -3364,7 +3434,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit14.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit14.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit14.Location = New System.Drawing.Point(809, 520)
+        Me.CheckBoxControlBoardFaultBit14.Location = New System.Drawing.Point(809, 250)
         Me.CheckBoxControlBoardFaultBit14.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit14.Name = "CheckBoxControlBoardFaultBit14"
         Me.CheckBoxControlBoardFaultBit14.Size = New System.Drawing.Size(15, 14)
@@ -3375,7 +3445,7 @@ Partial Class Form1
         '
         Me.CheckBox118.AutoCheck = False
         Me.CheckBox118.AutoSize = True
-        Me.CheckBox118.Location = New System.Drawing.Point(851, 506)
+        Me.CheckBox118.Location = New System.Drawing.Point(851, 236)
         Me.CheckBox118.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox118.Name = "CheckBox118"
         Me.CheckBox118.Size = New System.Drawing.Size(15, 14)
@@ -3387,7 +3457,7 @@ Partial Class Form1
         '
         Me.CheckBox120.AutoCheck = False
         Me.CheckBox120.AutoSize = True
-        Me.CheckBox120.Location = New System.Drawing.Point(851, 478)
+        Me.CheckBox120.Location = New System.Drawing.Point(851, 208)
         Me.CheckBox120.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox120.Name = "CheckBox120"
         Me.CheckBox120.Size = New System.Drawing.Size(15, 14)
@@ -3399,7 +3469,7 @@ Partial Class Form1
         '
         Me.CheckBox121.AutoCheck = False
         Me.CheckBox121.AutoSize = True
-        Me.CheckBox121.Location = New System.Drawing.Point(851, 492)
+        Me.CheckBox121.Location = New System.Drawing.Point(851, 222)
         Me.CheckBox121.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox121.Name = "CheckBox121"
         Me.CheckBox121.Size = New System.Drawing.Size(15, 14)
@@ -3411,7 +3481,7 @@ Partial Class Form1
         '
         Me.CheckBox122.AutoCheck = False
         Me.CheckBox122.AutoSize = True
-        Me.CheckBox122.Location = New System.Drawing.Point(851, 464)
+        Me.CheckBox122.Location = New System.Drawing.Point(851, 194)
         Me.CheckBox122.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox122.Name = "CheckBox122"
         Me.CheckBox122.Size = New System.Drawing.Size(15, 14)
@@ -3423,7 +3493,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit13.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit13.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit13.Location = New System.Drawing.Point(830, 506)
+        Me.CheckBoxControlBoardStatusBit13.Location = New System.Drawing.Point(830, 236)
         Me.CheckBoxControlBoardStatusBit13.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit13.Name = "CheckBoxControlBoardStatusBit13"
         Me.CheckBoxControlBoardStatusBit13.Size = New System.Drawing.Size(15, 14)
@@ -3434,7 +3504,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit11.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit11.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit11.Location = New System.Drawing.Point(830, 478)
+        Me.CheckBoxControlBoardStatusBit11.Location = New System.Drawing.Point(830, 208)
         Me.CheckBoxControlBoardStatusBit11.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit11.Name = "CheckBoxControlBoardStatusBit11"
         Me.CheckBoxControlBoardStatusBit11.Size = New System.Drawing.Size(15, 14)
@@ -3445,7 +3515,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit12.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit12.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit12.Location = New System.Drawing.Point(830, 492)
+        Me.CheckBoxControlBoardStatusBit12.Location = New System.Drawing.Point(830, 222)
         Me.CheckBoxControlBoardStatusBit12.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit12.Name = "CheckBoxControlBoardStatusBit12"
         Me.CheckBoxControlBoardStatusBit12.Size = New System.Drawing.Size(15, 14)
@@ -3456,7 +3526,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit10.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit10.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit10.Location = New System.Drawing.Point(830, 464)
+        Me.CheckBoxControlBoardStatusBit10.Location = New System.Drawing.Point(830, 194)
         Me.CheckBoxControlBoardStatusBit10.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit10.Name = "CheckBoxControlBoardStatusBit10"
         Me.CheckBoxControlBoardStatusBit10.Size = New System.Drawing.Size(15, 14)
@@ -3466,7 +3536,7 @@ Partial Class Form1
         'Label69
         '
         Me.Label69.AutoSize = True
-        Me.Label69.Location = New System.Drawing.Point(684, 492)
+        Me.Label69.Location = New System.Drawing.Point(684, 222)
         Me.Label69.Name = "Label69"
         Me.Label69.Size = New System.Drawing.Size(60, 13)
         Me.Label69.TabIndex = 775
@@ -3475,7 +3545,7 @@ Partial Class Form1
         'Label70
         '
         Me.Label70.AutoSize = True
-        Me.Label70.Location = New System.Drawing.Point(684, 478)
+        Me.Label70.Location = New System.Drawing.Point(684, 208)
         Me.Label70.Name = "Label70"
         Me.Label70.Size = New System.Drawing.Size(60, 13)
         Me.Label70.TabIndex = 774
@@ -3484,7 +3554,7 @@ Partial Class Form1
         'Label71
         '
         Me.Label71.AutoSize = True
-        Me.Label71.Location = New System.Drawing.Point(684, 520)
+        Me.Label71.Location = New System.Drawing.Point(684, 250)
         Me.Label71.Name = "Label71"
         Me.Label71.Size = New System.Drawing.Size(60, 13)
         Me.Label71.TabIndex = 773
@@ -3494,7 +3564,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit13.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit13.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit13.Location = New System.Drawing.Point(809, 506)
+        Me.CheckBoxControlBoardFaultBit13.Location = New System.Drawing.Point(809, 236)
         Me.CheckBoxControlBoardFaultBit13.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit13.Name = "CheckBoxControlBoardFaultBit13"
         Me.CheckBoxControlBoardFaultBit13.Size = New System.Drawing.Size(15, 14)
@@ -3505,7 +3575,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit11.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit11.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit11.Location = New System.Drawing.Point(809, 478)
+        Me.CheckBoxControlBoardFaultBit11.Location = New System.Drawing.Point(809, 208)
         Me.CheckBoxControlBoardFaultBit11.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit11.Name = "CheckBoxControlBoardFaultBit11"
         Me.CheckBoxControlBoardFaultBit11.Size = New System.Drawing.Size(15, 14)
@@ -3516,7 +3586,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit12.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit12.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit12.Location = New System.Drawing.Point(809, 492)
+        Me.CheckBoxControlBoardFaultBit12.Location = New System.Drawing.Point(809, 222)
         Me.CheckBoxControlBoardFaultBit12.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit12.Name = "CheckBoxControlBoardFaultBit12"
         Me.CheckBoxControlBoardFaultBit12.Size = New System.Drawing.Size(15, 14)
@@ -3527,7 +3597,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit10.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit10.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit10.Location = New System.Drawing.Point(809, 464)
+        Me.CheckBoxControlBoardFaultBit10.Location = New System.Drawing.Point(809, 194)
         Me.CheckBoxControlBoardFaultBit10.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit10.Name = "CheckBoxControlBoardFaultBit10"
         Me.CheckBoxControlBoardFaultBit10.Size = New System.Drawing.Size(15, 14)
@@ -3537,7 +3607,7 @@ Partial Class Form1
         'Label72
         '
         Me.Label72.AutoSize = True
-        Me.Label72.Location = New System.Drawing.Point(684, 506)
+        Me.Label72.Location = New System.Drawing.Point(684, 236)
         Me.Label72.Name = "Label72"
         Me.Label72.Size = New System.Drawing.Size(60, 13)
         Me.Label72.TabIndex = 768
@@ -3546,7 +3616,7 @@ Partial Class Form1
         'Label73
         '
         Me.Label73.AutoSize = True
-        Me.Label73.Location = New System.Drawing.Point(684, 464)
+        Me.Label73.Location = New System.Drawing.Point(684, 194)
         Me.Label73.Name = "Label73"
         Me.Label73.Size = New System.Drawing.Size(60, 13)
         Me.Label73.TabIndex = 767
@@ -3556,7 +3626,7 @@ Partial Class Form1
         '
         Me.CheckBox131.AutoCheck = False
         Me.CheckBox131.AutoSize = True
-        Me.CheckBox131.Location = New System.Drawing.Point(851, 450)
+        Me.CheckBox131.Location = New System.Drawing.Point(851, 180)
         Me.CheckBox131.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox131.Name = "CheckBox131"
         Me.CheckBox131.Size = New System.Drawing.Size(15, 14)
@@ -3568,7 +3638,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit9.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit9.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit9.Location = New System.Drawing.Point(830, 450)
+        Me.CheckBoxControlBoardStatusBit9.Location = New System.Drawing.Point(830, 180)
         Me.CheckBoxControlBoardStatusBit9.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit9.Name = "CheckBoxControlBoardStatusBit9"
         Me.CheckBoxControlBoardStatusBit9.Size = New System.Drawing.Size(15, 14)
@@ -3579,7 +3649,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit9.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit9.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit9.Location = New System.Drawing.Point(809, 450)
+        Me.CheckBoxControlBoardFaultBit9.Location = New System.Drawing.Point(809, 180)
         Me.CheckBoxControlBoardFaultBit9.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit9.Name = "CheckBoxControlBoardFaultBit9"
         Me.CheckBoxControlBoardFaultBit9.Size = New System.Drawing.Size(15, 14)
@@ -3590,7 +3660,7 @@ Partial Class Form1
         '
         Me.CheckBox134.AutoCheck = False
         Me.CheckBox134.AutoSize = True
-        Me.CheckBox134.Location = New System.Drawing.Point(851, 436)
+        Me.CheckBox134.Location = New System.Drawing.Point(851, 166)
         Me.CheckBox134.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox134.Name = "CheckBox134"
         Me.CheckBox134.Size = New System.Drawing.Size(15, 14)
@@ -3602,7 +3672,7 @@ Partial Class Form1
         '
         Me.CheckBox135.AutoCheck = False
         Me.CheckBox135.AutoSize = True
-        Me.CheckBox135.Location = New System.Drawing.Point(851, 408)
+        Me.CheckBox135.Location = New System.Drawing.Point(851, 138)
         Me.CheckBox135.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox135.Name = "CheckBox135"
         Me.CheckBox135.Size = New System.Drawing.Size(15, 14)
@@ -3614,7 +3684,7 @@ Partial Class Form1
         '
         Me.CheckBox136.AutoCheck = False
         Me.CheckBox136.AutoSize = True
-        Me.CheckBox136.Location = New System.Drawing.Point(851, 422)
+        Me.CheckBox136.Location = New System.Drawing.Point(851, 152)
         Me.CheckBox136.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox136.Name = "CheckBox136"
         Me.CheckBox136.Size = New System.Drawing.Size(15, 14)
@@ -3626,7 +3696,7 @@ Partial Class Form1
         '
         Me.CheckBox137.AutoCheck = False
         Me.CheckBox137.AutoSize = True
-        Me.CheckBox137.Location = New System.Drawing.Point(851, 394)
+        Me.CheckBox137.Location = New System.Drawing.Point(851, 124)
         Me.CheckBox137.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox137.Name = "CheckBox137"
         Me.CheckBox137.Size = New System.Drawing.Size(15, 14)
@@ -3638,7 +3708,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit8.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit8.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit8.Location = New System.Drawing.Point(830, 436)
+        Me.CheckBoxControlBoardStatusBit8.Location = New System.Drawing.Point(830, 166)
         Me.CheckBoxControlBoardStatusBit8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit8.Name = "CheckBoxControlBoardStatusBit8"
         Me.CheckBoxControlBoardStatusBit8.Size = New System.Drawing.Size(15, 14)
@@ -3649,7 +3719,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit6.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit6.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit6.Location = New System.Drawing.Point(830, 408)
+        Me.CheckBoxControlBoardStatusBit6.Location = New System.Drawing.Point(830, 138)
         Me.CheckBoxControlBoardStatusBit6.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit6.Name = "CheckBoxControlBoardStatusBit6"
         Me.CheckBoxControlBoardStatusBit6.Size = New System.Drawing.Size(15, 14)
@@ -3660,7 +3730,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit7.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit7.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit7.Location = New System.Drawing.Point(830, 422)
+        Me.CheckBoxControlBoardStatusBit7.Location = New System.Drawing.Point(830, 152)
         Me.CheckBoxControlBoardStatusBit7.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit7.Name = "CheckBoxControlBoardStatusBit7"
         Me.CheckBoxControlBoardStatusBit7.Size = New System.Drawing.Size(15, 14)
@@ -3671,7 +3741,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit5.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit5.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit5.Location = New System.Drawing.Point(830, 394)
+        Me.CheckBoxControlBoardStatusBit5.Location = New System.Drawing.Point(830, 124)
         Me.CheckBoxControlBoardStatusBit5.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit5.Name = "CheckBoxControlBoardStatusBit5"
         Me.CheckBoxControlBoardStatusBit5.Size = New System.Drawing.Size(15, 14)
@@ -3681,7 +3751,7 @@ Partial Class Form1
         'Label74
         '
         Me.Label74.AutoSize = True
-        Me.Label74.Location = New System.Drawing.Point(684, 422)
+        Me.Label74.Location = New System.Drawing.Point(684, 152)
         Me.Label74.Name = "Label74"
         Me.Label74.Size = New System.Drawing.Size(60, 13)
         Me.Label74.TabIndex = 755
@@ -3690,7 +3760,7 @@ Partial Class Form1
         'Label75
         '
         Me.Label75.AutoSize = True
-        Me.Label75.Location = New System.Drawing.Point(684, 408)
+        Me.Label75.Location = New System.Drawing.Point(684, 138)
         Me.Label75.Name = "Label75"
         Me.Label75.Size = New System.Drawing.Size(60, 13)
         Me.Label75.TabIndex = 754
@@ -3699,7 +3769,7 @@ Partial Class Form1
         'Label76
         '
         Me.Label76.AutoSize = True
-        Me.Label76.Location = New System.Drawing.Point(684, 450)
+        Me.Label76.Location = New System.Drawing.Point(684, 180)
         Me.Label76.Name = "Label76"
         Me.Label76.Size = New System.Drawing.Size(60, 13)
         Me.Label76.TabIndex = 753
@@ -3709,7 +3779,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit8.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit8.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit8.Location = New System.Drawing.Point(809, 436)
+        Me.CheckBoxControlBoardFaultBit8.Location = New System.Drawing.Point(809, 166)
         Me.CheckBoxControlBoardFaultBit8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit8.Name = "CheckBoxControlBoardFaultBit8"
         Me.CheckBoxControlBoardFaultBit8.Size = New System.Drawing.Size(15, 14)
@@ -3720,7 +3790,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit6.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit6.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit6.Location = New System.Drawing.Point(809, 408)
+        Me.CheckBoxControlBoardFaultBit6.Location = New System.Drawing.Point(809, 138)
         Me.CheckBoxControlBoardFaultBit6.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit6.Name = "CheckBoxControlBoardFaultBit6"
         Me.CheckBoxControlBoardFaultBit6.Size = New System.Drawing.Size(15, 14)
@@ -3731,7 +3801,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit7.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit7.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit7.Location = New System.Drawing.Point(809, 422)
+        Me.CheckBoxControlBoardFaultBit7.Location = New System.Drawing.Point(809, 152)
         Me.CheckBoxControlBoardFaultBit7.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit7.Name = "CheckBoxControlBoardFaultBit7"
         Me.CheckBoxControlBoardFaultBit7.Size = New System.Drawing.Size(15, 14)
@@ -3742,7 +3812,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit5.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit5.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit5.Location = New System.Drawing.Point(809, 394)
+        Me.CheckBoxControlBoardFaultBit5.Location = New System.Drawing.Point(809, 124)
         Me.CheckBoxControlBoardFaultBit5.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit5.Name = "CheckBoxControlBoardFaultBit5"
         Me.CheckBoxControlBoardFaultBit5.Size = New System.Drawing.Size(15, 14)
@@ -3752,7 +3822,7 @@ Partial Class Form1
         'Label77
         '
         Me.Label77.AutoSize = True
-        Me.Label77.Location = New System.Drawing.Point(684, 436)
+        Me.Label77.Location = New System.Drawing.Point(684, 166)
         Me.Label77.Name = "Label77"
         Me.Label77.Size = New System.Drawing.Size(60, 13)
         Me.Label77.TabIndex = 748
@@ -3761,7 +3831,7 @@ Partial Class Form1
         'Label78
         '
         Me.Label78.AutoSize = True
-        Me.Label78.Location = New System.Drawing.Point(684, 394)
+        Me.Label78.Location = New System.Drawing.Point(684, 124)
         Me.Label78.Name = "Label78"
         Me.Label78.Size = New System.Drawing.Size(76, 13)
         Me.Label78.TabIndex = 747
@@ -3771,7 +3841,7 @@ Partial Class Form1
         '
         Me.CheckBox146.AutoCheck = False
         Me.CheckBox146.AutoSize = True
-        Me.CheckBox146.Location = New System.Drawing.Point(851, 380)
+        Me.CheckBox146.Location = New System.Drawing.Point(851, 110)
         Me.CheckBox146.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox146.Name = "CheckBox146"
         Me.CheckBox146.Size = New System.Drawing.Size(15, 14)
@@ -3783,7 +3853,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit4.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit4.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit4.Location = New System.Drawing.Point(830, 380)
+        Me.CheckBoxControlBoardStatusBit4.Location = New System.Drawing.Point(830, 110)
         Me.CheckBoxControlBoardStatusBit4.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit4.Name = "CheckBoxControlBoardStatusBit4"
         Me.CheckBoxControlBoardStatusBit4.Size = New System.Drawing.Size(15, 14)
@@ -3794,7 +3864,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit4.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit4.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit4.Location = New System.Drawing.Point(809, 380)
+        Me.CheckBoxControlBoardFaultBit4.Location = New System.Drawing.Point(809, 110)
         Me.CheckBoxControlBoardFaultBit4.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit4.Name = "CheckBoxControlBoardFaultBit4"
         Me.CheckBoxControlBoardFaultBit4.Size = New System.Drawing.Size(15, 14)
@@ -3805,7 +3875,7 @@ Partial Class Form1
         '
         Me.Label79.AutoSize = True
         Me.Label79.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label79.Location = New System.Drawing.Point(684, 297)
+        Me.Label79.Location = New System.Drawing.Point(684, 27)
         Me.Label79.Name = "Label79"
         Me.Label79.Size = New System.Drawing.Size(164, 13)
         Me.Label79.TabIndex = 743
@@ -3815,7 +3885,7 @@ Partial Class Form1
         '
         Me.CheckBox149.AutoCheck = False
         Me.CheckBox149.AutoSize = True
-        Me.CheckBox149.Location = New System.Drawing.Point(851, 366)
+        Me.CheckBox149.Location = New System.Drawing.Point(851, 96)
         Me.CheckBox149.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox149.Name = "CheckBox149"
         Me.CheckBox149.Size = New System.Drawing.Size(15, 14)
@@ -3827,7 +3897,7 @@ Partial Class Form1
         '
         Me.CheckBox150.AutoCheck = False
         Me.CheckBox150.AutoSize = True
-        Me.CheckBox150.Location = New System.Drawing.Point(851, 338)
+        Me.CheckBox150.Location = New System.Drawing.Point(851, 68)
         Me.CheckBox150.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox150.Name = "CheckBox150"
         Me.CheckBox150.Size = New System.Drawing.Size(15, 14)
@@ -3839,7 +3909,7 @@ Partial Class Form1
         '
         Me.CheckBox151.AutoCheck = False
         Me.CheckBox151.AutoSize = True
-        Me.CheckBox151.Location = New System.Drawing.Point(851, 352)
+        Me.CheckBox151.Location = New System.Drawing.Point(851, 82)
         Me.CheckBox151.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox151.Name = "CheckBox151"
         Me.CheckBox151.Size = New System.Drawing.Size(15, 14)
@@ -3851,7 +3921,7 @@ Partial Class Form1
         '
         Me.CheckBox152.AutoCheck = False
         Me.CheckBox152.AutoSize = True
-        Me.CheckBox152.Location = New System.Drawing.Point(851, 324)
+        Me.CheckBox152.Location = New System.Drawing.Point(851, 54)
         Me.CheckBox152.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox152.Name = "CheckBox152"
         Me.CheckBox152.Size = New System.Drawing.Size(15, 14)
@@ -3863,7 +3933,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit3.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit3.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit3.Location = New System.Drawing.Point(830, 366)
+        Me.CheckBoxControlBoardStatusBit3.Location = New System.Drawing.Point(830, 96)
         Me.CheckBoxControlBoardStatusBit3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit3.Name = "CheckBoxControlBoardStatusBit3"
         Me.CheckBoxControlBoardStatusBit3.Size = New System.Drawing.Size(15, 14)
@@ -3874,7 +3944,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit1.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit1.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit1.Location = New System.Drawing.Point(830, 338)
+        Me.CheckBoxControlBoardStatusBit1.Location = New System.Drawing.Point(830, 68)
         Me.CheckBoxControlBoardStatusBit1.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit1.Name = "CheckBoxControlBoardStatusBit1"
         Me.CheckBoxControlBoardStatusBit1.Size = New System.Drawing.Size(15, 14)
@@ -3885,7 +3955,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit2.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit2.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit2.Location = New System.Drawing.Point(830, 352)
+        Me.CheckBoxControlBoardStatusBit2.Location = New System.Drawing.Point(830, 82)
         Me.CheckBoxControlBoardStatusBit2.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit2.Name = "CheckBoxControlBoardStatusBit2"
         Me.CheckBoxControlBoardStatusBit2.Size = New System.Drawing.Size(15, 14)
@@ -3896,7 +3966,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardStatusBit0.AutoCheck = False
         Me.CheckBoxControlBoardStatusBit0.AutoSize = True
-        Me.CheckBoxControlBoardStatusBit0.Location = New System.Drawing.Point(830, 324)
+        Me.CheckBoxControlBoardStatusBit0.Location = New System.Drawing.Point(830, 54)
         Me.CheckBoxControlBoardStatusBit0.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardStatusBit0.Name = "CheckBoxControlBoardStatusBit0"
         Me.CheckBoxControlBoardStatusBit0.Size = New System.Drawing.Size(15, 14)
@@ -3906,7 +3976,7 @@ Partial Class Form1
         'Label80
         '
         Me.Label80.AutoSize = True
-        Me.Label80.Location = New System.Drawing.Point(684, 352)
+        Me.Label80.Location = New System.Drawing.Point(684, 82)
         Me.Label80.Name = "Label80"
         Me.Label80.Size = New System.Drawing.Size(70, 13)
         Me.Label80.TabIndex = 734
@@ -3915,7 +3985,7 @@ Partial Class Form1
         'Label81
         '
         Me.Label81.AutoSize = True
-        Me.Label81.Location = New System.Drawing.Point(684, 338)
+        Me.Label81.Location = New System.Drawing.Point(684, 68)
         Me.Label81.Name = "Label81"
         Me.Label81.Size = New System.Drawing.Size(105, 13)
         Me.Label81.TabIndex = 733
@@ -3924,7 +3994,7 @@ Partial Class Form1
         'Label82
         '
         Me.Label82.AutoSize = True
-        Me.Label82.Location = New System.Drawing.Point(684, 380)
+        Me.Label82.Location = New System.Drawing.Point(684, 110)
         Me.Label82.Name = "Label82"
         Me.Label82.Size = New System.Drawing.Size(64, 13)
         Me.Label82.TabIndex = 732
@@ -3934,7 +4004,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit3.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit3.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit3.Location = New System.Drawing.Point(809, 366)
+        Me.CheckBoxControlBoardFaultBit3.Location = New System.Drawing.Point(809, 96)
         Me.CheckBoxControlBoardFaultBit3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit3.Name = "CheckBoxControlBoardFaultBit3"
         Me.CheckBoxControlBoardFaultBit3.Size = New System.Drawing.Size(15, 14)
@@ -3945,7 +4015,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit1.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit1.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit1.Location = New System.Drawing.Point(809, 338)
+        Me.CheckBoxControlBoardFaultBit1.Location = New System.Drawing.Point(809, 68)
         Me.CheckBoxControlBoardFaultBit1.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit1.Name = "CheckBoxControlBoardFaultBit1"
         Me.CheckBoxControlBoardFaultBit1.Size = New System.Drawing.Size(15, 14)
@@ -3956,7 +4026,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit2.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit2.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit2.Location = New System.Drawing.Point(809, 352)
+        Me.CheckBoxControlBoardFaultBit2.Location = New System.Drawing.Point(809, 82)
         Me.CheckBoxControlBoardFaultBit2.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit2.Name = "CheckBoxControlBoardFaultBit2"
         Me.CheckBoxControlBoardFaultBit2.Size = New System.Drawing.Size(15, 14)
@@ -3967,7 +4037,7 @@ Partial Class Form1
         '
         Me.CheckBoxControlBoardFaultBit0.AutoCheck = False
         Me.CheckBoxControlBoardFaultBit0.AutoSize = True
-        Me.CheckBoxControlBoardFaultBit0.Location = New System.Drawing.Point(809, 324)
+        Me.CheckBoxControlBoardFaultBit0.Location = New System.Drawing.Point(809, 54)
         Me.CheckBoxControlBoardFaultBit0.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxControlBoardFaultBit0.Name = "CheckBoxControlBoardFaultBit0"
         Me.CheckBoxControlBoardFaultBit0.Size = New System.Drawing.Size(15, 14)
@@ -3977,7 +4047,7 @@ Partial Class Form1
         'Label83
         '
         Me.Label83.AutoSize = True
-        Me.Label83.Location = New System.Drawing.Point(684, 366)
+        Me.Label83.Location = New System.Drawing.Point(684, 96)
         Me.Label83.Name = "Label83"
         Me.Label83.Size = New System.Drawing.Size(103, 13)
         Me.Label83.TabIndex = 727
@@ -3986,7 +4056,7 @@ Partial Class Form1
         'Label84
         '
         Me.Label84.AutoSize = True
-        Me.Label84.Location = New System.Drawing.Point(684, 324)
+        Me.Label84.Location = New System.Drawing.Point(684, 54)
         Me.Label84.Name = "Label84"
         Me.Label84.Size = New System.Drawing.Size(110, 13)
         Me.Label84.TabIndex = 726
@@ -3995,7 +4065,7 @@ Partial Class Form1
         'LabelLambdaVmon
         '
         Me.LabelLambdaVmon.AutoSize = True
-        Me.LabelLambdaVmon.Location = New System.Drawing.Point(363, 383)
+        Me.LabelLambdaVmon.Location = New System.Drawing.Point(364, 341)
         Me.LabelLambdaVmon.Name = "LabelLambdaVmon"
         Me.LabelLambdaVmon.Size = New System.Drawing.Size(10, 13)
         Me.LabelLambdaVmon.TabIndex = 792
@@ -4004,7 +4074,7 @@ Partial Class Form1
         'Label86
         '
         Me.Label86.AutoSize = True
-        Me.Label86.Location = New System.Drawing.Point(228, 383)
+        Me.Label86.Location = New System.Drawing.Point(229, 341)
         Me.Label86.Name = "Label86"
         Me.Label86.Size = New System.Drawing.Size(118, 13)
         Me.Label86.TabIndex = 791
@@ -4013,7 +4083,7 @@ Partial Class Form1
         'LabelADCFalseTrigger
         '
         Me.LabelADCFalseTrigger.AutoSize = True
-        Me.LabelADCFalseTrigger.Location = New System.Drawing.Point(819, 622)
+        Me.LabelADCFalseTrigger.Location = New System.Drawing.Point(1038, 382)
         Me.LabelADCFalseTrigger.Name = "LabelADCFalseTrigger"
         Me.LabelADCFalseTrigger.Size = New System.Drawing.Size(10, 13)
         Me.LabelADCFalseTrigger.TabIndex = 802
@@ -4022,7 +4092,7 @@ Partial Class Form1
         'Label89
         '
         Me.Label89.AutoSize = True
-        Me.Label89.Location = New System.Drawing.Point(684, 622)
+        Me.Label89.Location = New System.Drawing.Point(903, 382)
         Me.Label89.Name = "Label89"
         Me.Label89.Size = New System.Drawing.Size(93, 13)
         Me.Label89.TabIndex = 801
@@ -4031,7 +4101,7 @@ Partial Class Form1
         'LabelSPI1BusError
         '
         Me.LabelSPI1BusError.AutoSize = True
-        Me.LabelSPI1BusError.Location = New System.Drawing.Point(819, 596)
+        Me.LabelSPI1BusError.Location = New System.Drawing.Point(1038, 356)
         Me.LabelSPI1BusError.Name = "LabelSPI1BusError"
         Me.LabelSPI1BusError.Size = New System.Drawing.Size(10, 13)
         Me.LabelSPI1BusError.TabIndex = 800
@@ -4040,7 +4110,7 @@ Partial Class Form1
         'Label91
         '
         Me.Label91.AutoSize = True
-        Me.Label91.Location = New System.Drawing.Point(684, 596)
+        Me.Label91.Location = New System.Drawing.Point(903, 356)
         Me.Label91.Name = "Label91"
         Me.Label91.Size = New System.Drawing.Size(81, 13)
         Me.Label91.TabIndex = 799
@@ -4049,7 +4119,7 @@ Partial Class Form1
         'LabelI2CBusError
         '
         Me.LabelI2CBusError.AutoSize = True
-        Me.LabelI2CBusError.Location = New System.Drawing.Point(819, 583)
+        Me.LabelI2CBusError.Location = New System.Drawing.Point(1038, 343)
         Me.LabelI2CBusError.Name = "LabelI2CBusError"
         Me.LabelI2CBusError.Size = New System.Drawing.Size(10, 13)
         Me.LabelI2CBusError.TabIndex = 798
@@ -4058,7 +4128,7 @@ Partial Class Form1
         'Label95
         '
         Me.Label95.AutoSize = True
-        Me.Label95.Location = New System.Drawing.Point(684, 583)
+        Me.Label95.Location = New System.Drawing.Point(903, 343)
         Me.Label95.Name = "Label95"
         Me.Label95.Size = New System.Drawing.Size(74, 13)
         Me.Label95.TabIndex = 797
@@ -4067,7 +4137,7 @@ Partial Class Form1
         'LabelMagnetronVoltageGlitch
         '
         Me.LabelMagnetronVoltageGlitch.AutoSize = True
-        Me.LabelMagnetronVoltageGlitch.Location = New System.Drawing.Point(819, 570)
+        Me.LabelMagnetronVoltageGlitch.Location = New System.Drawing.Point(1038, 330)
         Me.LabelMagnetronVoltageGlitch.Name = "LabelMagnetronVoltageGlitch"
         Me.LabelMagnetronVoltageGlitch.Size = New System.Drawing.Size(10, 13)
         Me.LabelMagnetronVoltageGlitch.TabIndex = 796
@@ -4076,16 +4146,16 @@ Partial Class Form1
         'Label99
         '
         Me.Label99.AutoSize = True
-        Me.Label99.Location = New System.Drawing.Point(684, 570)
+        Me.Label99.Location = New System.Drawing.Point(903, 330)
         Me.Label99.Name = "Label99"
-        Me.Label99.Size = New System.Drawing.Size(109, 13)
+        Me.Label99.Size = New System.Drawing.Size(125, 13)
         Me.Label99.TabIndex = 795
-        Me.Label99.Text = "Enable Cycle Counter"
+        Me.Label99.Text = "Magnetron Voltage glitch"
         '
         'LabelMagnetronCurrentGlitch
         '
         Me.LabelMagnetronCurrentGlitch.AutoSize = True
-        Me.LabelMagnetronCurrentGlitch.Location = New System.Drawing.Point(819, 557)
+        Me.LabelMagnetronCurrentGlitch.Location = New System.Drawing.Point(1038, 317)
         Me.LabelMagnetronCurrentGlitch.Name = "LabelMagnetronCurrentGlitch"
         Me.LabelMagnetronCurrentGlitch.Size = New System.Drawing.Size(10, 13)
         Me.LabelMagnetronCurrentGlitch.TabIndex = 794
@@ -4094,16 +4164,16 @@ Partial Class Form1
         'Label101
         '
         Me.Label101.AutoSize = True
-        Me.Label101.Location = New System.Drawing.Point(684, 557)
+        Me.Label101.Location = New System.Drawing.Point(903, 317)
         Me.Label101.Name = "Label101"
-        Me.Label101.Size = New System.Drawing.Size(104, 13)
+        Me.Label101.Size = New System.Drawing.Size(125, 13)
         Me.Label101.TabIndex = 793
-        Me.Label101.Text = "Reset Pulse Counter"
+        Me.Label101.Text = "Magnetron Current Glitch"
         '
         'LabelReverseScale16BitSaturation
         '
         Me.LabelReverseScale16BitSaturation.AutoSize = True
-        Me.LabelReverseScale16BitSaturation.Location = New System.Drawing.Point(819, 674)
+        Me.LabelReverseScale16BitSaturation.Location = New System.Drawing.Point(1038, 434)
         Me.LabelReverseScale16BitSaturation.Name = "LabelReverseScale16BitSaturation"
         Me.LabelReverseScale16BitSaturation.Size = New System.Drawing.Size(10, 13)
         Me.LabelReverseScale16BitSaturation.TabIndex = 810
@@ -4112,16 +4182,16 @@ Partial Class Form1
         'Label108
         '
         Me.Label108.AutoSize = True
-        Me.Label108.Location = New System.Drawing.Point(684, 674)
+        Me.Label108.Location = New System.Drawing.Point(903, 434)
         Me.Label108.Name = "Label108"
-        Me.Label108.Size = New System.Drawing.Size(127, 13)
+        Me.Label108.Size = New System.Drawing.Size(126, 13)
         Me.Label108.TabIndex = 809
-        Me.Label108.Text = "Last Action (at Recovery)"
+        Me.Label108.Text = "16 Bit Reverse Sat Errors"
         '
         'LabelScale16BitSaturation
         '
         Me.LabelScale16BitSaturation.AutoSize = True
-        Me.LabelScale16BitSaturation.Location = New System.Drawing.Point(819, 661)
+        Me.LabelScale16BitSaturation.Location = New System.Drawing.Point(1038, 421)
         Me.LabelScale16BitSaturation.Name = "LabelScale16BitSaturation"
         Me.LabelScale16BitSaturation.Size = New System.Drawing.Size(10, 13)
         Me.LabelScale16BitSaturation.TabIndex = 808
@@ -4130,16 +4200,16 @@ Partial Class Form1
         'Label119
         '
         Me.Label119.AutoSize = True
-        Me.Label119.Location = New System.Drawing.Point(684, 661)
+        Me.Label119.Location = New System.Drawing.Point(903, 421)
         Me.Label119.Name = "Label119"
-        Me.Label119.Size = New System.Drawing.Size(89, 13)
+        Me.Label119.Size = New System.Drawing.Size(83, 13)
         Me.Label119.TabIndex = 807
-        Me.Label119.Text = "Int1 Timing Errors"
+        Me.Label119.Text = "16 Bit Sat Errors"
         '
         'LabelInvalidSetPoint
         '
         Me.LabelInvalidSetPoint.AutoSize = True
-        Me.LabelInvalidSetPoint.Location = New System.Drawing.Point(819, 648)
+        Me.LabelInvalidSetPoint.Location = New System.Drawing.Point(1038, 408)
         Me.LabelInvalidSetPoint.Name = "LabelInvalidSetPoint"
         Me.LabelInvalidSetPoint.Size = New System.Drawing.Size(10, 13)
         Me.LabelInvalidSetPoint.TabIndex = 806
@@ -4148,7 +4218,7 @@ Partial Class Form1
         'Label123
         '
         Me.Label123.AutoSize = True
-        Me.Label123.Location = New System.Drawing.Point(684, 648)
+        Me.Label123.Location = New System.Drawing.Point(903, 408)
         Me.Label123.Name = "Label123"
         Me.Label123.Size = New System.Drawing.Size(80, 13)
         Me.Label123.TabIndex = 805
@@ -4157,7 +4227,7 @@ Partial Class Form1
         'LabelLTC2656WriteError
         '
         Me.LabelLTC2656WriteError.AutoSize = True
-        Me.LabelLTC2656WriteError.Location = New System.Drawing.Point(819, 635)
+        Me.LabelLTC2656WriteError.Location = New System.Drawing.Point(1038, 395)
         Me.LabelLTC2656WriteError.Name = "LabelLTC2656WriteError"
         Me.LabelLTC2656WriteError.Size = New System.Drawing.Size(10, 13)
         Me.LabelLTC2656WriteError.TabIndex = 804
@@ -4166,7 +4236,7 @@ Partial Class Form1
         'Label126
         '
         Me.Label126.AutoSize = True
-        Me.Label126.Location = New System.Drawing.Point(684, 635)
+        Me.Label126.Location = New System.Drawing.Point(903, 395)
         Me.Label126.Name = "Label126"
         Me.Label126.Size = New System.Drawing.Size(109, 13)
         Me.Label126.TabIndex = 803
@@ -4175,7 +4245,7 @@ Partial Class Form1
         'LabelSPI2BusError
         '
         Me.LabelSPI2BusError.AutoSize = True
-        Me.LabelSPI2BusError.Location = New System.Drawing.Point(819, 609)
+        Me.LabelSPI2BusError.Location = New System.Drawing.Point(1038, 369)
         Me.LabelSPI2BusError.Name = "LabelSPI2BusError"
         Me.LabelSPI2BusError.Size = New System.Drawing.Size(10, 13)
         Me.LabelSPI2BusError.TabIndex = 812
@@ -4184,7 +4254,7 @@ Partial Class Form1
         'Label87
         '
         Me.Label87.AutoSize = True
-        Me.Label87.Location = New System.Drawing.Point(684, 609)
+        Me.Label87.Location = New System.Drawing.Point(903, 369)
         Me.Label87.Name = "Label87"
         Me.Label87.Size = New System.Drawing.Size(76, 13)
         Me.Label87.TabIndex = 811
@@ -4194,7 +4264,7 @@ Partial Class Form1
         '
         Me.CheckBoxIOExpanderError.AutoCheck = False
         Me.CheckBoxIOExpanderError.AutoSize = True
-        Me.CheckBoxIOExpanderError.Location = New System.Drawing.Point(1028, 655)
+        Me.CheckBoxIOExpanderError.Location = New System.Drawing.Point(1124, 635)
         Me.CheckBoxIOExpanderError.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxIOExpanderError.Name = "CheckBoxIOExpanderError"
         Me.CheckBoxIOExpanderError.Size = New System.Drawing.Size(15, 14)
@@ -4204,7 +4274,7 @@ Partial Class Form1
         'Label129
         '
         Me.Label129.AutoSize = True
-        Me.Label129.Location = New System.Drawing.Point(903, 585)
+        Me.Label129.Location = New System.Drawing.Point(903, 622)
         Me.Label129.Name = "Label129"
         Me.Label129.Size = New System.Drawing.Size(93, 13)
         Me.Label129.TabIndex = 821
@@ -4213,7 +4283,7 @@ Partial Class Form1
         'Label130
         '
         Me.Label130.AutoSize = True
-        Me.Label130.Location = New System.Drawing.Point(903, 571)
+        Me.Label130.Location = New System.Drawing.Point(903, 608)
         Me.Label130.Name = "Label130"
         Me.Label130.Size = New System.Drawing.Size(75, 13)
         Me.Label130.TabIndex = 820
@@ -4222,7 +4292,7 @@ Partial Class Form1
         'Label131
         '
         Me.Label131.AutoSize = True
-        Me.Label131.Location = New System.Drawing.Point(903, 655)
+        Me.Label131.Location = New System.Drawing.Point(1033, 635)
         Me.Label131.Name = "Label131"
         Me.Label131.Size = New System.Drawing.Size(91, 13)
         Me.Label131.TabIndex = 819
@@ -4232,7 +4302,7 @@ Partial Class Form1
         '
         Me.CheckBoxIOPUWR.AutoCheck = False
         Me.CheckBoxIOPUWR.AutoSize = True
-        Me.CheckBoxIOPUWR.Location = New System.Drawing.Point(1028, 599)
+        Me.CheckBoxIOPUWR.Location = New System.Drawing.Point(1006, 635)
         Me.CheckBoxIOPUWR.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxIOPUWR.Name = "CheckBoxIOPUWR"
         Me.CheckBoxIOPUWR.Size = New System.Drawing.Size(15, 14)
@@ -4243,7 +4313,7 @@ Partial Class Form1
         '
         Me.CheckBoxTRAPR.AutoCheck = False
         Me.CheckBoxTRAPR.AutoSize = True
-        Me.CheckBoxTRAPR.Location = New System.Drawing.Point(1028, 571)
+        Me.CheckBoxTRAPR.Location = New System.Drawing.Point(1006, 607)
         Me.CheckBoxTRAPR.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxTRAPR.Name = "CheckBoxTRAPR"
         Me.CheckBoxTRAPR.Size = New System.Drawing.Size(15, 14)
@@ -4254,7 +4324,7 @@ Partial Class Form1
         '
         Me.CheckBoxWDT.AutoCheck = False
         Me.CheckBoxWDT.AutoSize = True
-        Me.CheckBoxWDT.Location = New System.Drawing.Point(1028, 585)
+        Me.CheckBoxWDT.Location = New System.Drawing.Point(1006, 621)
         Me.CheckBoxWDT.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxWDT.Name = "CheckBoxWDT"
         Me.CheckBoxWDT.Size = New System.Drawing.Size(15, 14)
@@ -4265,7 +4335,7 @@ Partial Class Form1
         '
         Me.CheckBoxBOR.AutoCheck = False
         Me.CheckBoxBOR.AutoSize = True
-        Me.CheckBoxBOR.Location = New System.Drawing.Point(1028, 557)
+        Me.CheckBoxBOR.Location = New System.Drawing.Point(1006, 593)
         Me.CheckBoxBOR.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxBOR.Name = "CheckBoxBOR"
         Me.CheckBoxBOR.Size = New System.Drawing.Size(15, 14)
@@ -4275,7 +4345,7 @@ Partial Class Form1
         'Label132
         '
         Me.Label132.AutoSize = True
-        Me.Label132.Location = New System.Drawing.Point(903, 599)
+        Me.Label132.Location = New System.Drawing.Point(903, 636)
         Me.Label132.Name = "Label132"
         Me.Label132.Size = New System.Drawing.Size(83, 13)
         Me.Label132.TabIndex = 814
@@ -4284,7 +4354,7 @@ Partial Class Form1
         'Label133
         '
         Me.Label133.AutoSize = True
-        Me.Label133.Location = New System.Drawing.Point(903, 557)
+        Me.Label133.Location = New System.Drawing.Point(903, 594)
         Me.Label133.Name = "Label133"
         Me.Label133.Size = New System.Drawing.Size(88, 13)
         Me.Label133.TabIndex = 813
@@ -4292,7 +4362,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(906, 671)
+        Me.Button1.Location = New System.Drawing.Point(1025, 558)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(114, 23)
         Me.Button1.TabIndex = 832
@@ -4302,7 +4372,7 @@ Partial Class Form1
         'Label85
         '
         Me.Label85.AutoSize = True
-        Me.Label85.Location = New System.Drawing.Point(903, 627)
+        Me.Label85.Location = New System.Drawing.Point(1033, 607)
         Me.Label85.Name = "Label85"
         Me.Label85.Size = New System.Drawing.Size(76, 13)
         Me.Label85.TabIndex = 838
@@ -4311,7 +4381,7 @@ Partial Class Form1
         'Label88
         '
         Me.Label88.AutoSize = True
-        Me.Label88.Location = New System.Drawing.Point(903, 613)
+        Me.Label88.Location = New System.Drawing.Point(1033, 593)
         Me.Label88.Name = "Label88"
         Me.Label88.Size = New System.Drawing.Size(85, 13)
         Me.Label88.TabIndex = 837
@@ -4321,7 +4391,7 @@ Partial Class Form1
         '
         Me.CheckBoxSWReset.AutoCheck = False
         Me.CheckBoxSWReset.AutoSize = True
-        Me.CheckBoxSWReset.Location = New System.Drawing.Point(1028, 641)
+        Me.CheckBoxSWReset.Location = New System.Drawing.Point(1124, 621)
         Me.CheckBoxSWReset.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxSWReset.Name = "CheckBoxSWReset"
         Me.CheckBoxSWReset.Size = New System.Drawing.Size(15, 14)
@@ -4332,7 +4402,7 @@ Partial Class Form1
         '
         Me.CheckBoxPOR.AutoCheck = False
         Me.CheckBoxPOR.AutoSize = True
-        Me.CheckBoxPOR.Location = New System.Drawing.Point(1028, 613)
+        Me.CheckBoxPOR.Location = New System.Drawing.Point(1124, 593)
         Me.CheckBoxPOR.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxPOR.Name = "CheckBoxPOR"
         Me.CheckBoxPOR.Size = New System.Drawing.Size(15, 14)
@@ -4343,7 +4413,7 @@ Partial Class Form1
         '
         Me.CheckBoxExtReset.AutoCheck = False
         Me.CheckBoxExtReset.AutoSize = True
-        Me.CheckBoxExtReset.Location = New System.Drawing.Point(1028, 627)
+        Me.CheckBoxExtReset.Location = New System.Drawing.Point(1124, 607)
         Me.CheckBoxExtReset.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxExtReset.Name = "CheckBoxExtReset"
         Me.CheckBoxExtReset.Size = New System.Drawing.Size(15, 14)
@@ -4353,7 +4423,7 @@ Partial Class Form1
         'Label90
         '
         Me.Label90.AutoSize = True
-        Me.Label90.Location = New System.Drawing.Point(903, 641)
+        Me.Label90.Location = New System.Drawing.Point(1033, 621)
         Me.Label90.Name = "Label90"
         Me.Label90.Size = New System.Drawing.Size(80, 13)
         Me.Label90.TabIndex = 833
@@ -4370,7 +4440,7 @@ Partial Class Form1
         '
         'ButtonSetBaudRate
         '
-        Me.ButtonSetBaudRate.Location = New System.Drawing.Point(88, 613)
+        Me.ButtonSetBaudRate.Location = New System.Drawing.Point(86, 553)
         Me.ButtonSetBaudRate.Name = "ButtonSetBaudRate"
         Me.ButtonSetBaudRate.Size = New System.Drawing.Size(114, 23)
         Me.ButtonSetBaudRate.TabIndex = 841
@@ -4379,7 +4449,7 @@ Partial Class Form1
         '
         'TextBoxBaudRate
         '
-        Me.TextBoxBaudRate.Location = New System.Drawing.Point(11, 615)
+        Me.TextBoxBaudRate.Location = New System.Drawing.Point(9, 555)
         Me.TextBoxBaudRate.Name = "TextBoxBaudRate"
         Me.TextBoxBaudRate.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxBaudRate.TabIndex = 840
@@ -4395,7 +4465,7 @@ Partial Class Form1
         '
         'ToolStripMenuItem1
         '
-        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CalibrationDataToolStripMenuItem, Me.MagnetSupplyCalibrationToolStripMenuItem})
+        Me.ToolStripMenuItem1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.CalibrationDataToolStripMenuItem, Me.MagnetSupplyCalibrationToolStripMenuItem, Me.ETMOverrideModeToolStripMenuItem})
         Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
         Me.ToolStripMenuItem1.Size = New System.Drawing.Size(77, 20)
         Me.ToolStripMenuItem1.Text = "Calibration"
@@ -4411,6 +4481,12 @@ Partial Class Form1
         Me.MagnetSupplyCalibrationToolStripMenuItem.Name = "MagnetSupplyCalibrationToolStripMenuItem"
         Me.MagnetSupplyCalibrationToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
         Me.MagnetSupplyCalibrationToolStripMenuItem.Text = "Calibration Factors"
+        '
+        'ETMOverrideModeToolStripMenuItem
+        '
+        Me.ETMOverrideModeToolStripMenuItem.Name = "ETMOverrideModeToolStripMenuItem"
+        Me.ETMOverrideModeToolStripMenuItem.Size = New System.Drawing.Size(199, 22)
+        Me.ETMOverrideModeToolStripMenuItem.Text = "ETM Override Mode"
         '
         'LocalRemoteToolStripMenuItem
         '
@@ -4434,7 +4510,7 @@ Partial Class Form1
         'LabelGUIVersion
         '
         Me.LabelGUIVersion.AutoSize = True
-        Me.LabelGUIVersion.Location = New System.Drawing.Point(12, 682)
+        Me.LabelGUIVersion.Location = New System.Drawing.Point(10, 622)
         Me.LabelGUIVersion.Name = "LabelGUIVersion"
         Me.LabelGUIVersion.Size = New System.Drawing.Size(45, 13)
         Me.LabelGUIVersion.TabIndex = 844
@@ -4443,7 +4519,7 @@ Partial Class Form1
         'LabelMCUVersion
         '
         Me.LabelMCUVersion.AutoSize = True
-        Me.LabelMCUVersion.Location = New System.Drawing.Point(12, 661)
+        Me.LabelMCUVersion.Location = New System.Drawing.Point(10, 601)
         Me.LabelMCUVersion.Name = "LabelMCUVersion"
         Me.LabelMCUVersion.Size = New System.Drawing.Size(45, 13)
         Me.LabelMCUVersion.TabIndex = 848
@@ -4453,7 +4529,7 @@ Partial Class Form1
         '
         Me.LabelMagnetControlStatus.AutoSize = True
         Me.LabelMagnetControlStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMagnetControlStatus.Location = New System.Drawing.Point(9, 478)
+        Me.LabelMagnetControlStatus.Location = New System.Drawing.Point(5, 421)
         Me.LabelMagnetControlStatus.Name = "LabelMagnetControlStatus"
         Me.LabelMagnetControlStatus.Size = New System.Drawing.Size(61, 13)
         Me.LabelMagnetControlStatus.TabIndex = 852
@@ -4461,28 +4537,152 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(1028, 671)
+        Me.Button2.Location = New System.Drawing.Point(427, 301)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(114, 23)
         Me.Button2.TabIndex = 853
         Me.Button2.Text = "Software Reset"
         Me.Button2.UseVisualStyleBackColor = True
+        Me.Button2.Visible = False
         '
-        'Button3
+        'ButtonSkipWarmup
         '
-        Me.Button3.Location = New System.Drawing.Point(1049, 645)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(93, 23)
-        Me.Button3.TabIndex = 854
-        Me.Button3.Text = "Skip Warmup"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.ButtonSkipWarmup.Location = New System.Drawing.Point(687, 561)
+        Me.ButtonSkipWarmup.Name = "ButtonSkipWarmup"
+        Me.ButtonSkipWarmup.Size = New System.Drawing.Size(93, 23)
+        Me.ButtonSkipWarmup.TabIndex = 854
+        Me.ButtonSkipWarmup.Text = "Skip Warmup"
+        Me.ButtonSkipWarmup.UseVisualStyleBackColor = True
+        Me.ButtonSkipWarmup.Visible = False
+        '
+        'Label92
+        '
+        Me.Label92.AutoSize = True
+        Me.Label92.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label92.Location = New System.Drawing.Point(903, 290)
+        Me.Label92.Name = "Label92"
+        Me.Label92.Size = New System.Drawing.Size(83, 13)
+        Me.Label92.TabIndex = 855
+        Me.Label92.Text = "DEBUG INFO"
+        '
+        'Label97
+        '
+        Me.Label97.AutoSize = True
+        Me.Label97.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label97.Location = New System.Drawing.Point(903, 563)
+        Me.Label97.Name = "Label97"
+        Me.Label97.Size = New System.Drawing.Size(100, 13)
+        Me.Label97.TabIndex = 856
+        Me.Label97.Text = "uP RESET INFO"
+        '
+        'LabelInt1TimingError
+        '
+        Me.LabelInt1TimingError.AutoSize = True
+        Me.LabelInt1TimingError.Location = New System.Drawing.Point(1038, 447)
+        Me.LabelInt1TimingError.Name = "LabelInt1TimingError"
+        Me.LabelInt1TimingError.Size = New System.Drawing.Size(10, 13)
+        Me.LabelInt1TimingError.TabIndex = 858
+        Me.LabelInt1TimingError.Text = "-"
+        '
+        'Label107
+        '
+        Me.Label107.AutoSize = True
+        Me.Label107.Location = New System.Drawing.Point(903, 447)
+        Me.Label107.Name = "Label107"
+        Me.Label107.Size = New System.Drawing.Size(84, 13)
+        Me.Label107.TabIndex = 857
+        Me.Label107.Text = "Int1 Timing Error"
+        '
+        'LabeluPCrashCount
+        '
+        Me.LabeluPCrashCount.AutoSize = True
+        Me.LabeluPCrashCount.Location = New System.Drawing.Point(1038, 461)
+        Me.LabeluPCrashCount.Name = "LabeluPCrashCount"
+        Me.LabeluPCrashCount.Size = New System.Drawing.Size(10, 13)
+        Me.LabeluPCrashCount.TabIndex = 860
+        Me.LabeluPCrashCount.Text = "-"
+        '
+        'Label121
+        '
+        Me.Label121.AutoSize = True
+        Me.Label121.Location = New System.Drawing.Point(903, 461)
+        Me.Label121.Name = "Label121"
+        Me.Label121.Size = New System.Drawing.Size(81, 13)
+        Me.Label121.TabIndex = 859
+        Me.Label121.Text = "uP Crash Count"
+        '
+        'LabelActionBeforeCrash
+        '
+        Me.LabelActionBeforeCrash.AutoSize = True
+        Me.LabelActionBeforeCrash.Location = New System.Drawing.Point(1038, 474)
+        Me.LabelActionBeforeCrash.Name = "LabelActionBeforeCrash"
+        Me.LabelActionBeforeCrash.Size = New System.Drawing.Size(10, 13)
+        Me.LabelActionBeforeCrash.TabIndex = 862
+        Me.LabelActionBeforeCrash.Text = "-"
+        '
+        'Label127
+        '
+        Me.Label127.AutoSize = True
+        Me.Label127.Location = New System.Drawing.Point(903, 474)
+        Me.Label127.Name = "Label127"
+        Me.Label127.Size = New System.Drawing.Size(101, 13)
+        Me.Label127.TabIndex = 861
+        Me.Label127.Text = "Action Before Crash"
+        '
+        'LabelLVDIntCount
+        '
+        Me.LabelLVDIntCount.AutoSize = True
+        Me.LabelLVDIntCount.Location = New System.Drawing.Point(1038, 487)
+        Me.LabelLVDIntCount.Name = "LabelLVDIntCount"
+        Me.LabelLVDIntCount.Size = New System.Drawing.Size(10, 13)
+        Me.LabelLVDIntCount.TabIndex = 864
+        Me.LabelLVDIntCount.Text = "-"
+        '
+        'Label134
+        '
+        Me.Label134.AutoSize = True
+        Me.Label134.Location = New System.Drawing.Point(903, 487)
+        Me.Label134.Name = "Label134"
+        Me.Label134.Size = New System.Drawing.Size(74, 13)
+        Me.Label134.TabIndex = 863
+        Me.Label134.Text = "LVD Int Count"
+        '
+        'LabelOscConBeforeCrash
+        '
+        Me.LabelOscConBeforeCrash.AutoSize = True
+        Me.LabelOscConBeforeCrash.Location = New System.Drawing.Point(1038, 500)
+        Me.LabelOscConBeforeCrash.Name = "LabelOscConBeforeCrash"
+        Me.LabelOscConBeforeCrash.Size = New System.Drawing.Size(10, 13)
+        Me.LabelOscConBeforeCrash.TabIndex = 866
+        Me.LabelOscConBeforeCrash.Text = "-"
+        '
+        'Label136
+        '
+        Me.Label136.AutoSize = True
+        Me.Label136.Location = New System.Drawing.Point(903, 500)
+        Me.Label136.Name = "Label136"
+        Me.Label136.Size = New System.Drawing.Size(116, 13)
+        Me.Label136.TabIndex = 865
+        Me.Label136.Text = "OSCCON Before Crash"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1154, 704)
-        Me.Controls.Add(Me.Button3)
+        Me.ClientSize = New System.Drawing.Size(1154, 662)
+        Me.Controls.Add(Me.LabelOscConBeforeCrash)
+        Me.Controls.Add(Me.Label136)
+        Me.Controls.Add(Me.LabelLVDIntCount)
+        Me.Controls.Add(Me.Label134)
+        Me.Controls.Add(Me.LabelActionBeforeCrash)
+        Me.Controls.Add(Me.Label127)
+        Me.Controls.Add(Me.LabeluPCrashCount)
+        Me.Controls.Add(Me.Label121)
+        Me.Controls.Add(Me.LabelInt1TimingError)
+        Me.Controls.Add(Me.Label107)
+        Me.Controls.Add(Me.Label97)
+        Me.Controls.Add(Me.Label92)
+        Me.Controls.Add(Me.ButtonSkipWarmup)
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.LabelMagnetControlStatus)
         Me.Controls.Add(Me.LabelMCUVersion)
@@ -5283,6 +5483,19 @@ Partial Class Form1
     Friend WithEvents LocalMagnetCurrentToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LabelMagnetControlStatus As System.Windows.Forms.Label
     Friend WithEvents Button2 As System.Windows.Forms.Button
-    Friend WithEvents Button3 As System.Windows.Forms.Button
+    Friend WithEvents ButtonSkipWarmup As System.Windows.Forms.Button
+    Friend WithEvents Label92 As System.Windows.Forms.Label
+    Friend WithEvents Label97 As System.Windows.Forms.Label
+    Friend WithEvents LabelInt1TimingError As System.Windows.Forms.Label
+    Friend WithEvents Label107 As System.Windows.Forms.Label
+    Friend WithEvents LabeluPCrashCount As System.Windows.Forms.Label
+    Friend WithEvents Label121 As System.Windows.Forms.Label
+    Friend WithEvents LabelActionBeforeCrash As System.Windows.Forms.Label
+    Friend WithEvents Label127 As System.Windows.Forms.Label
+    Friend WithEvents LabelLVDIntCount As System.Windows.Forms.Label
+    Friend WithEvents Label134 As System.Windows.Forms.Label
+    Friend WithEvents LabelOscConBeforeCrash As System.Windows.Forms.Label
+    Friend WithEvents Label136 As System.Windows.Forms.Label
+    Friend WithEvents ETMOverrideModeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
