@@ -1211,7 +1211,7 @@ Partial Class Form1
         Me.ButtonSetFilament.Name = "ButtonSetFilament"
         Me.ButtonSetFilament.Size = New System.Drawing.Size(114, 23)
         Me.ButtonSetFilament.TabIndex = 496
-        Me.ButtonSetFilament.Text = "Set Filament Voltage"
+        Me.ButtonSetFilament.Text = "Set Filament Current"
         Me.ButtonSetFilament.UseVisualStyleBackColor = True
         '
         'TextBoxSetFilament

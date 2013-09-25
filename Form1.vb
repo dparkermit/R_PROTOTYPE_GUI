@@ -97,6 +97,7 @@ Public Class Form1
     Public Const RAM_READ_MAGNETRON_HEATER_VOLTAGE_SET_POINT As Byte = &H21
     Public Const RAM_READ_MAGNETRON_HEATER_VOLTAGE_ADC As Byte = &H20
     Public Const RAM_READ_MAGNETRON_HEATER_CURRENT_ADC As Byte = &H22
+    Public Const RAM_READ_MAGNETRON_HEATER_CURRENT_SET_POINT As Byte = &H23
 
 
     Public Const RAM_READ_HV_LAMBDA_SET_POINT_MODE_A As Byte = &H40
@@ -486,8 +487,8 @@ Public Class Form1
         End If
 
         ' Data for the Magnetron Heater
-        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_MAGNETRON_HEATER_VOLTAGE_SET_POINT, 0, 0) = True Then
-            LabelHeaterSetPoint.Text = Math.Round((ReturnData / 1000), 3) & " Volts"
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_MAGNETRON_HEATER_CURRENT_SET_POINT, 0, 0) = True Then
+            LabelHeaterSetPoint.Text = Math.Round((ReturnData / 1000), 3) & " Amps"
         Else
             LabelHeaterSetPoint.Text = "error"
         End If
@@ -638,7 +639,7 @@ Public Class Form1
         End If
 
         If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_AVERAGE_PULSE_ENERGY, 0, 0) = True Then
-            LabelEnergyPerPulse.Text = Math.Round((ReturnData / 100), 2) & " Joules"
+            LabelEnergyPerPulse.Text = Math.Round((ReturnData / 1000), 2) & " Joules"
         Else
             LabelThyrResrHtrSetPoint.Text = "error"
         End If
