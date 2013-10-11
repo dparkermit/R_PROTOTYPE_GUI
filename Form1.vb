@@ -84,6 +84,7 @@ Public Class Form1
     Public Const RAM_READ_STATE As Byte = &H1
     Public Const RAM_READ_VERSION As Byte = &H2
     Public Const RAM_READ_LOCAL_REMOTE_MAGNET_CURRENT_CONTROL As Byte = &H3
+    Public Const RAM_READ_MAGNETRON_TYPE As Byte = &H4
 
 
     Public Const RAM_READ_THYR_CATH_HTR_VOTAGE_SET_POINT As Byte = &H11
@@ -671,9 +672,16 @@ Public Class Form1
         End If
 
         If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_VERSION, 0, 0) = True Then
-            LabelMCUVersion.Text = "MCU Version " & Math.Round((ReturnData), 0)
+            Dim value As Integer = ReturnData
+            LabelMCUVersion.Text = "MCU Version 0x" & value.ToString("X4")
         Else
             LabelMCUVersion.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_MAGNETRON_TYPE, 0, 0) = True Then
+            LabelMagnetronType.Text = "Type = MG" & Math.Round((ReturnData), 0)
+        Else
+            LabelMagnetronType.Text = "error"
         End If
 
         If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_LOCAL_REMOTE_MAGNET_CURRENT_CONTROL, 0, 0) = True Then
@@ -1668,6 +1676,7 @@ Public Class Form1
     Private Sub ButtonUpdateAll_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonUpdateAll.Click
         ReadAllFaults()
         ReadAllFromRam()
+
 
     End Sub
 

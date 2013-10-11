@@ -437,6 +437,7 @@ Partial Class Form1
         Me.Label134 = New System.Windows.Forms.Label()
         Me.LabelOscConBeforeCrash = New System.Windows.Forms.Label()
         Me.Label136 = New System.Windows.Forms.Label()
+        Me.LabelMagnetronType = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -4665,11 +4666,21 @@ Partial Class Form1
         Me.Label136.TabIndex = 865
         Me.Label136.Text = "OSCCON Before Crash"
         '
+        'LabelMagnetronType
+        '
+        Me.LabelMagnetronType.AutoSize = True
+        Me.LabelMagnetronType.Location = New System.Drawing.Point(10, 640)
+        Me.LabelMagnetronType.Name = "LabelMagnetronType"
+        Me.LabelMagnetronType.Size = New System.Drawing.Size(85, 13)
+        Me.LabelMagnetronType.TabIndex = 867
+        Me.LabelMagnetronType.Text = "Magnetron Type"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1154, 662)
+        Me.Controls.Add(Me.LabelMagnetronType)
         Me.Controls.Add(Me.LabelOscConBeforeCrash)
         Me.Controls.Add(Me.Label136)
         Me.Controls.Add(Me.LabelLVDIntCount)
@@ -5497,5 +5508,6 @@ Partial Class Form1
     Friend WithEvents LabelOscConBeforeCrash As System.Windows.Forms.Label
     Friend WithEvents Label136 As System.Windows.Forms.Label
     Friend WithEvents ETMOverrideModeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents LabelMagnetronType As System.Windows.Forms.Label
 
 End Class
