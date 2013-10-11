@@ -29,6 +29,7 @@ Public Class Form1
     Public Const CMD_SET_LAMBDA_VOLTAGE_MODE_A As Byte = &H2A
     Public Const CMD_SET_LAMBDA_VOLTAGE_MODE_B As Byte = &H2D
     Public Const CMD_SET_MAGNETRON_FILAMENT_VOLTAGE As Byte = &H2C
+    Public Const CMD_SET_MAGNETRON_FILAMENT_CURRENT As Byte = &H2E
 
 
 
@@ -38,6 +39,8 @@ Public Class Form1
     Public Const CMD_CLEAR_PROCESSOR_RESET_DATA As Byte = &H40
 
     Public Const CMD_FORCE_SOFTWARE_RESTART As Byte = &HA0
+    Public Const CMD_SOFTWARE_SKIP_WARMUP As Byte = &HA1
+
 
     Public Const CMD_SET_MAGNET_PS_CAL_DATA As Byte = &HD0
     Public Const CMD_READ_MAGNET_PS_CAL_DATA As Byte = &HD1
@@ -75,7 +78,6 @@ Public Class Form1
     Public Const CMD_READ_CNTRL_CAL_DATA As Byte = &HE9
     Public Const CMD_SAVE_CNTRL_CAL_DATA_TO_EEPROM As Byte = &HEA
 
-    Public Const CMD_SOFTWARE_SKIP_WARMUP As Byte = &HA1
 
 
     ' Ram Locations
@@ -487,8 +489,8 @@ Public Class Form1
         End If
 
         ' Data for the Magnetron Heater
-        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_MAGNETRON_HEATER_CURRENT_SET_POINT, 0, 0) = True Then
-            LabelHeaterSetPoint.Text = Math.Round((ReturnData / 1000), 3) & " Amps"
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_MAGNETRON_HEATER_VOLTAGE_SET_POINT, 0, 0) = True Then
+            LabelHeaterSetPoint.Text = Math.Round((ReturnData / 1000), 3) & " Volts"
         Else
             LabelHeaterSetPoint.Text = "error"
         End If
