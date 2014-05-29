@@ -91,6 +91,7 @@ Public Class Form1
     Public Const RAM_READ_THYR_CATH_HTR_VOTAGE_ADC As Byte = &H10
     Public Const RAM_READ_THYR_RESER_HTR_VOLTAGE_SET_POINT As Byte = &H13
     Public Const RAM_READ_THYR_RESER_HTR_VOLTAGE_ADC As Byte = &H12
+    Public Const RAM_READ_CONTROL_BOARD_TYPE As Byte = &H5
 
 
     Public Const RAM_READ_MAGNETRON_MAGNET_CURRENT_SET_POINT As Byte = &H31
@@ -682,6 +683,12 @@ Public Class Form1
             LabelMagnetronType.Text = "Type = MG" & Math.Round((ReturnData), 0)
         Else
             LabelMagnetronType.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_CONTROL_BOARD_TYPE, 0, 0) = True Then
+            LabelControlBoardType.Text = "Type = A" & Math.Round((ReturnData), 0)
+        Else
+            LabelControlBoardType.Text = "error"
         End If
 
         If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_LOCAL_REMOTE_MAGNET_CURRENT_CONTROL, 0, 0) = True Then

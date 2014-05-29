@@ -438,6 +438,7 @@ Partial Class Form1
         Me.LabelOscConBeforeCrash = New System.Windows.Forms.Label()
         Me.Label136 = New System.Windows.Forms.Label()
         Me.LabelMagnetronType = New System.Windows.Forms.Label()
+        Me.LabelControlBoardType = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -2622,7 +2623,7 @@ Partial Class Form1
         '
         Me.CheckBox3.AutoCheck = False
         Me.CheckBox3.AutoSize = True
-        Me.CheckBox3.Location = New System.Drawing.Point(591, 274)
+        Me.CheckBox3.Location = New System.Drawing.Point(643, 264)
         Me.CheckBox3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox3.Name = "CheckBox3"
         Me.CheckBox3.Size = New System.Drawing.Size(15, 14)
@@ -2634,41 +2635,38 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit15.AutoCheck = False
         Me.CheckBoxThyratronStatusBit15.AutoSize = True
-        Me.CheckBoxThyratronStatusBit15.Location = New System.Drawing.Point(570, 274)
+        Me.CheckBoxThyratronStatusBit15.Location = New System.Drawing.Point(622, 264)
         Me.CheckBoxThyratronStatusBit15.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit15.Name = "CheckBoxThyratronStatusBit15"
         Me.CheckBoxThyratronStatusBit15.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit15.TabIndex = 724
         Me.CheckBoxThyratronStatusBit15.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit15.Visible = False
         '
         'CheckBoxThyratronFaultBit15
         '
         Me.CheckBoxThyratronFaultBit15.AutoCheck = False
         Me.CheckBoxThyratronFaultBit15.AutoSize = True
-        Me.CheckBoxThyratronFaultBit15.Location = New System.Drawing.Point(549, 274)
+        Me.CheckBoxThyratronFaultBit15.Location = New System.Drawing.Point(601, 264)
         Me.CheckBoxThyratronFaultBit15.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit15.Name = "CheckBoxThyratronFaultBit15"
         Me.CheckBoxThyratronFaultBit15.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit15.TabIndex = 723
         Me.CheckBoxThyratronFaultBit15.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit15.Visible = False
         '
         'Label38
         '
         Me.Label38.AutoSize = True
-        Me.Label38.Location = New System.Drawing.Point(424, 274)
+        Me.Label38.Location = New System.Drawing.Point(476, 264)
         Me.Label38.Name = "Label38"
         Me.Label38.Size = New System.Drawing.Size(60, 13)
         Me.Label38.TabIndex = 722
         Me.Label38.Text = "Unused #6"
-        Me.Label38.Visible = False
         '
         'CheckBox8
         '
         Me.CheckBox8.AutoCheck = False
         Me.CheckBox8.AutoSize = True
-        Me.CheckBox8.Location = New System.Drawing.Point(591, 260)
+        Me.CheckBox8.Location = New System.Drawing.Point(643, 250)
         Me.CheckBox8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox8.Name = "CheckBox8"
         Me.CheckBox8.Size = New System.Drawing.Size(15, 14)
@@ -2680,31 +2678,29 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit14.AutoCheck = False
         Me.CheckBoxThyratronStatusBit14.AutoSize = True
-        Me.CheckBoxThyratronStatusBit14.Location = New System.Drawing.Point(570, 260)
+        Me.CheckBoxThyratronStatusBit14.Location = New System.Drawing.Point(622, 250)
         Me.CheckBoxThyratronStatusBit14.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit14.Name = "CheckBoxThyratronStatusBit14"
         Me.CheckBoxThyratronStatusBit14.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit14.TabIndex = 720
         Me.CheckBoxThyratronStatusBit14.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit14.Visible = False
         '
         'CheckBoxThyratronFaultBit14
         '
         Me.CheckBoxThyratronFaultBit14.AutoCheck = False
         Me.CheckBoxThyratronFaultBit14.AutoSize = True
-        Me.CheckBoxThyratronFaultBit14.Location = New System.Drawing.Point(549, 260)
+        Me.CheckBoxThyratronFaultBit14.Location = New System.Drawing.Point(601, 250)
         Me.CheckBoxThyratronFaultBit14.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit14.Name = "CheckBoxThyratronFaultBit14"
         Me.CheckBoxThyratronFaultBit14.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit14.TabIndex = 719
         Me.CheckBoxThyratronFaultBit14.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit14.Visible = False
         '
         'CheckBox29
         '
         Me.CheckBox29.AutoCheck = False
         Me.CheckBox29.AutoSize = True
-        Me.CheckBox29.Location = New System.Drawing.Point(591, 246)
+        Me.CheckBox29.Location = New System.Drawing.Point(643, 236)
         Me.CheckBox29.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox29.Name = "CheckBox29"
         Me.CheckBox29.Size = New System.Drawing.Size(15, 14)
@@ -2716,7 +2712,7 @@ Partial Class Form1
         '
         Me.CheckBox30.AutoCheck = False
         Me.CheckBox30.AutoSize = True
-        Me.CheckBox30.Location = New System.Drawing.Point(591, 218)
+        Me.CheckBox30.Location = New System.Drawing.Point(643, 208)
         Me.CheckBox30.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox30.Name = "CheckBox30"
         Me.CheckBox30.Size = New System.Drawing.Size(15, 14)
@@ -2728,7 +2724,7 @@ Partial Class Form1
         '
         Me.CheckBox33.AutoCheck = False
         Me.CheckBox33.AutoSize = True
-        Me.CheckBox33.Location = New System.Drawing.Point(591, 232)
+        Me.CheckBox33.Location = New System.Drawing.Point(643, 222)
         Me.CheckBox33.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox33.Name = "CheckBox33"
         Me.CheckBox33.Size = New System.Drawing.Size(15, 14)
@@ -2740,7 +2736,7 @@ Partial Class Form1
         '
         Me.CheckBox44.AutoCheck = False
         Me.CheckBox44.AutoSize = True
-        Me.CheckBox44.Location = New System.Drawing.Point(591, 204)
+        Me.CheckBox44.Location = New System.Drawing.Point(643, 194)
         Me.CheckBox44.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox44.Name = "CheckBox44"
         Me.CheckBox44.Size = New System.Drawing.Size(15, 14)
@@ -2752,153 +2748,140 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit13.AutoCheck = False
         Me.CheckBoxThyratronStatusBit13.AutoSize = True
-        Me.CheckBoxThyratronStatusBit13.Location = New System.Drawing.Point(570, 246)
+        Me.CheckBoxThyratronStatusBit13.Location = New System.Drawing.Point(622, 236)
         Me.CheckBoxThyratronStatusBit13.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit13.Name = "CheckBoxThyratronStatusBit13"
         Me.CheckBoxThyratronStatusBit13.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit13.TabIndex = 714
         Me.CheckBoxThyratronStatusBit13.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit13.Visible = False
         '
         'CheckBoxThyratronStatusBit11
         '
         Me.CheckBoxThyratronStatusBit11.AutoCheck = False
         Me.CheckBoxThyratronStatusBit11.AutoSize = True
-        Me.CheckBoxThyratronStatusBit11.Location = New System.Drawing.Point(570, 218)
+        Me.CheckBoxThyratronStatusBit11.Location = New System.Drawing.Point(622, 208)
         Me.CheckBoxThyratronStatusBit11.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit11.Name = "CheckBoxThyratronStatusBit11"
         Me.CheckBoxThyratronStatusBit11.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit11.TabIndex = 713
         Me.CheckBoxThyratronStatusBit11.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit11.Visible = False
         '
         'CheckBoxThyratronStatusBit12
         '
         Me.CheckBoxThyratronStatusBit12.AutoCheck = False
         Me.CheckBoxThyratronStatusBit12.AutoSize = True
-        Me.CheckBoxThyratronStatusBit12.Location = New System.Drawing.Point(570, 232)
+        Me.CheckBoxThyratronStatusBit12.Location = New System.Drawing.Point(622, 222)
         Me.CheckBoxThyratronStatusBit12.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit12.Name = "CheckBoxThyratronStatusBit12"
         Me.CheckBoxThyratronStatusBit12.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit12.TabIndex = 712
         Me.CheckBoxThyratronStatusBit12.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit12.Visible = False
         '
         'CheckBoxThyratronStatusBit10
         '
         Me.CheckBoxThyratronStatusBit10.AutoCheck = False
         Me.CheckBoxThyratronStatusBit10.AutoSize = True
-        Me.CheckBoxThyratronStatusBit10.Location = New System.Drawing.Point(570, 204)
+        Me.CheckBoxThyratronStatusBit10.Location = New System.Drawing.Point(622, 194)
         Me.CheckBoxThyratronStatusBit10.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit10.Name = "CheckBoxThyratronStatusBit10"
         Me.CheckBoxThyratronStatusBit10.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit10.TabIndex = 711
         Me.CheckBoxThyratronStatusBit10.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit10.Visible = False
         '
         'Label40
         '
         Me.Label40.AutoSize = True
-        Me.Label40.Location = New System.Drawing.Point(424, 232)
+        Me.Label40.Location = New System.Drawing.Point(476, 222)
         Me.Label40.Name = "Label40"
         Me.Label40.Size = New System.Drawing.Size(60, 13)
         Me.Label40.TabIndex = 710
         Me.Label40.Text = "Unused #3"
-        Me.Label40.Visible = False
         '
         'Label47
         '
         Me.Label47.AutoSize = True
-        Me.Label47.Location = New System.Drawing.Point(424, 218)
+        Me.Label47.Location = New System.Drawing.Point(476, 208)
         Me.Label47.Name = "Label47"
         Me.Label47.Size = New System.Drawing.Size(60, 13)
         Me.Label47.TabIndex = 709
         Me.Label47.Text = "Unused #2"
-        Me.Label47.Visible = False
         '
         'Label48
         '
         Me.Label48.AutoSize = True
-        Me.Label48.Location = New System.Drawing.Point(424, 260)
+        Me.Label48.Location = New System.Drawing.Point(476, 250)
         Me.Label48.Name = "Label48"
         Me.Label48.Size = New System.Drawing.Size(60, 13)
         Me.Label48.TabIndex = 708
         Me.Label48.Text = "Unused #5"
-        Me.Label48.Visible = False
         '
         'CheckBoxThyratronFaultBit13
         '
         Me.CheckBoxThyratronFaultBit13.AutoCheck = False
         Me.CheckBoxThyratronFaultBit13.AutoSize = True
-        Me.CheckBoxThyratronFaultBit13.Location = New System.Drawing.Point(549, 246)
+        Me.CheckBoxThyratronFaultBit13.Location = New System.Drawing.Point(601, 236)
         Me.CheckBoxThyratronFaultBit13.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit13.Name = "CheckBoxThyratronFaultBit13"
         Me.CheckBoxThyratronFaultBit13.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit13.TabIndex = 707
         Me.CheckBoxThyratronFaultBit13.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit13.Visible = False
         '
         'CheckBoxThyratronFaultBit11
         '
         Me.CheckBoxThyratronFaultBit11.AutoCheck = False
         Me.CheckBoxThyratronFaultBit11.AutoSize = True
-        Me.CheckBoxThyratronFaultBit11.Location = New System.Drawing.Point(549, 218)
+        Me.CheckBoxThyratronFaultBit11.Location = New System.Drawing.Point(601, 208)
         Me.CheckBoxThyratronFaultBit11.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit11.Name = "CheckBoxThyratronFaultBit11"
         Me.CheckBoxThyratronFaultBit11.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit11.TabIndex = 706
         Me.CheckBoxThyratronFaultBit11.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit11.Visible = False
         '
         'CheckBoxThyratronFaultBit12
         '
         Me.CheckBoxThyratronFaultBit12.AutoCheck = False
         Me.CheckBoxThyratronFaultBit12.AutoSize = True
-        Me.CheckBoxThyratronFaultBit12.Location = New System.Drawing.Point(549, 232)
+        Me.CheckBoxThyratronFaultBit12.Location = New System.Drawing.Point(601, 222)
         Me.CheckBoxThyratronFaultBit12.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit12.Name = "CheckBoxThyratronFaultBit12"
         Me.CheckBoxThyratronFaultBit12.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit12.TabIndex = 705
         Me.CheckBoxThyratronFaultBit12.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit12.Visible = False
         '
         'CheckBoxThyratronFaultBit10
         '
         Me.CheckBoxThyratronFaultBit10.AutoCheck = False
         Me.CheckBoxThyratronFaultBit10.AutoSize = True
-        Me.CheckBoxThyratronFaultBit10.Location = New System.Drawing.Point(549, 204)
+        Me.CheckBoxThyratronFaultBit10.Location = New System.Drawing.Point(601, 194)
         Me.CheckBoxThyratronFaultBit10.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit10.Name = "CheckBoxThyratronFaultBit10"
         Me.CheckBoxThyratronFaultBit10.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit10.TabIndex = 704
         Me.CheckBoxThyratronFaultBit10.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit10.Visible = False
         '
         'Label49
         '
         Me.Label49.AutoSize = True
-        Me.Label49.Location = New System.Drawing.Point(424, 246)
+        Me.Label49.Location = New System.Drawing.Point(476, 236)
         Me.Label49.Name = "Label49"
         Me.Label49.Size = New System.Drawing.Size(60, 13)
         Me.Label49.TabIndex = 703
         Me.Label49.Text = "Unused #4"
-        Me.Label49.Visible = False
         '
         'Label50
         '
         Me.Label50.AutoSize = True
-        Me.Label50.Location = New System.Drawing.Point(424, 204)
+        Me.Label50.Location = New System.Drawing.Point(476, 194)
         Me.Label50.Name = "Label50"
-        Me.Label50.Size = New System.Drawing.Size(60, 13)
+        Me.Label50.Size = New System.Drawing.Size(68, 13)
         Me.Label50.TabIndex = 702
-        Me.Label50.Text = "Unused #1"
-        Me.Label50.Visible = False
+        Me.Label50.Text = "False Trigger"
         '
         'CheckBox75
         '
         Me.CheckBox75.AutoCheck = False
         Me.CheckBox75.AutoSize = True
-        Me.CheckBox75.Location = New System.Drawing.Point(591, 190)
+        Me.CheckBox75.Location = New System.Drawing.Point(643, 180)
         Me.CheckBox75.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox75.Name = "CheckBox75"
         Me.CheckBox75.Size = New System.Drawing.Size(15, 14)
@@ -2910,31 +2893,29 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit9.AutoCheck = False
         Me.CheckBoxThyratronStatusBit9.AutoSize = True
-        Me.CheckBoxThyratronStatusBit9.Location = New System.Drawing.Point(570, 190)
+        Me.CheckBoxThyratronStatusBit9.Location = New System.Drawing.Point(622, 180)
         Me.CheckBoxThyratronStatusBit9.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit9.Name = "CheckBoxThyratronStatusBit9"
         Me.CheckBoxThyratronStatusBit9.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit9.TabIndex = 700
         Me.CheckBoxThyratronStatusBit9.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit9.Visible = False
         '
         'CheckBoxThyratronFaultBit9
         '
         Me.CheckBoxThyratronFaultBit9.AutoCheck = False
         Me.CheckBoxThyratronFaultBit9.AutoSize = True
-        Me.CheckBoxThyratronFaultBit9.Location = New System.Drawing.Point(549, 190)
+        Me.CheckBoxThyratronFaultBit9.Location = New System.Drawing.Point(601, 180)
         Me.CheckBoxThyratronFaultBit9.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit9.Name = "CheckBoxThyratronFaultBit9"
         Me.CheckBoxThyratronFaultBit9.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit9.TabIndex = 699
         Me.CheckBoxThyratronFaultBit9.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit9.Visible = False
         '
         'CheckBox78
         '
         Me.CheckBox78.AutoCheck = False
         Me.CheckBox78.AutoSize = True
-        Me.CheckBox78.Location = New System.Drawing.Point(591, 176)
+        Me.CheckBox78.Location = New System.Drawing.Point(643, 166)
         Me.CheckBox78.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox78.Name = "CheckBox78"
         Me.CheckBox78.Size = New System.Drawing.Size(15, 14)
@@ -2946,7 +2927,7 @@ Partial Class Form1
         '
         Me.CheckBox79.AutoCheck = False
         Me.CheckBox79.AutoSize = True
-        Me.CheckBox79.Location = New System.Drawing.Point(591, 148)
+        Me.CheckBox79.Location = New System.Drawing.Point(643, 138)
         Me.CheckBox79.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox79.Name = "CheckBox79"
         Me.CheckBox79.Size = New System.Drawing.Size(15, 14)
@@ -2958,7 +2939,7 @@ Partial Class Form1
         '
         Me.CheckBox80.AutoCheck = False
         Me.CheckBox80.AutoSize = True
-        Me.CheckBox80.Location = New System.Drawing.Point(591, 162)
+        Me.CheckBox80.Location = New System.Drawing.Point(643, 152)
         Me.CheckBox80.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox80.Name = "CheckBox80"
         Me.CheckBox80.Size = New System.Drawing.Size(15, 14)
@@ -2970,7 +2951,7 @@ Partial Class Form1
         '
         Me.CheckBox81.AutoCheck = False
         Me.CheckBox81.AutoSize = True
-        Me.CheckBox81.Location = New System.Drawing.Point(591, 134)
+        Me.CheckBox81.Location = New System.Drawing.Point(643, 124)
         Me.CheckBox81.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox81.Name = "CheckBox81"
         Me.CheckBox81.Size = New System.Drawing.Size(15, 14)
@@ -2982,153 +2963,140 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit8.AutoCheck = False
         Me.CheckBoxThyratronStatusBit8.AutoSize = True
-        Me.CheckBoxThyratronStatusBit8.Location = New System.Drawing.Point(570, 176)
+        Me.CheckBoxThyratronStatusBit8.Location = New System.Drawing.Point(622, 166)
         Me.CheckBoxThyratronStatusBit8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit8.Name = "CheckBoxThyratronStatusBit8"
         Me.CheckBoxThyratronStatusBit8.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit8.TabIndex = 694
         Me.CheckBoxThyratronStatusBit8.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit8.Visible = False
         '
         'CheckBoxThyratronStatusBit6
         '
         Me.CheckBoxThyratronStatusBit6.AutoCheck = False
         Me.CheckBoxThyratronStatusBit6.AutoSize = True
-        Me.CheckBoxThyratronStatusBit6.Location = New System.Drawing.Point(570, 148)
+        Me.CheckBoxThyratronStatusBit6.Location = New System.Drawing.Point(622, 138)
         Me.CheckBoxThyratronStatusBit6.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit6.Name = "CheckBoxThyratronStatusBit6"
         Me.CheckBoxThyratronStatusBit6.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit6.TabIndex = 693
         Me.CheckBoxThyratronStatusBit6.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit6.Visible = False
         '
         'CheckBoxThyratronStatusBit7
         '
         Me.CheckBoxThyratronStatusBit7.AutoCheck = False
         Me.CheckBoxThyratronStatusBit7.AutoSize = True
-        Me.CheckBoxThyratronStatusBit7.Location = New System.Drawing.Point(570, 162)
+        Me.CheckBoxThyratronStatusBit7.Location = New System.Drawing.Point(622, 152)
         Me.CheckBoxThyratronStatusBit7.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit7.Name = "CheckBoxThyratronStatusBit7"
         Me.CheckBoxThyratronStatusBit7.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit7.TabIndex = 692
         Me.CheckBoxThyratronStatusBit7.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit7.Visible = False
         '
         'CheckBoxThyratronStatusBit5
         '
         Me.CheckBoxThyratronStatusBit5.AutoCheck = False
         Me.CheckBoxThyratronStatusBit5.AutoSize = True
-        Me.CheckBoxThyratronStatusBit5.Location = New System.Drawing.Point(570, 134)
+        Me.CheckBoxThyratronStatusBit5.Location = New System.Drawing.Point(622, 124)
         Me.CheckBoxThyratronStatusBit5.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit5.Name = "CheckBoxThyratronStatusBit5"
         Me.CheckBoxThyratronStatusBit5.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit5.TabIndex = 691
         Me.CheckBoxThyratronStatusBit5.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit5.Visible = False
         '
         'Label51
         '
         Me.Label51.AutoSize = True
-        Me.Label51.Location = New System.Drawing.Point(424, 162)
+        Me.Label51.Location = New System.Drawing.Point(476, 152)
         Me.Label51.Name = "Label51"
         Me.Label51.Size = New System.Drawing.Size(105, 13)
         Me.Label51.TabIndex = 690
         Me.Label51.Text = "Reservoir Under Volt"
-        Me.Label51.Visible = False
         '
         'Label52
         '
         Me.Label52.AutoSize = True
-        Me.Label52.Location = New System.Drawing.Point(424, 148)
+        Me.Label52.Location = New System.Drawing.Point(476, 138)
         Me.Label52.Name = "Label52"
         Me.Label52.Size = New System.Drawing.Size(99, 13)
         Me.Label52.TabIndex = 689
         Me.Label52.Text = "Reservoir Over Volt"
-        Me.Label52.Visible = False
         '
         'Label53
         '
         Me.Label53.AutoSize = True
-        Me.Label53.Location = New System.Drawing.Point(424, 190)
+        Me.Label53.Location = New System.Drawing.Point(476, 180)
         Me.Label53.Name = "Label53"
         Me.Label53.Size = New System.Drawing.Size(107, 13)
         Me.Label53.TabIndex = 688
         Me.Label53.Text = "Reservoir Control Sat"
-        Me.Label53.Visible = False
         '
         'CheckBoxThyratronFaultBit8
         '
         Me.CheckBoxThyratronFaultBit8.AutoCheck = False
         Me.CheckBoxThyratronFaultBit8.AutoSize = True
-        Me.CheckBoxThyratronFaultBit8.Location = New System.Drawing.Point(549, 176)
+        Me.CheckBoxThyratronFaultBit8.Location = New System.Drawing.Point(601, 166)
         Me.CheckBoxThyratronFaultBit8.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit8.Name = "CheckBoxThyratronFaultBit8"
         Me.CheckBoxThyratronFaultBit8.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit8.TabIndex = 687
         Me.CheckBoxThyratronFaultBit8.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit8.Visible = False
         '
         'CheckBoxThyratronFaultBit6
         '
         Me.CheckBoxThyratronFaultBit6.AutoCheck = False
         Me.CheckBoxThyratronFaultBit6.AutoSize = True
-        Me.CheckBoxThyratronFaultBit6.Location = New System.Drawing.Point(549, 148)
+        Me.CheckBoxThyratronFaultBit6.Location = New System.Drawing.Point(601, 138)
         Me.CheckBoxThyratronFaultBit6.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit6.Name = "CheckBoxThyratronFaultBit6"
         Me.CheckBoxThyratronFaultBit6.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit6.TabIndex = 686
         Me.CheckBoxThyratronFaultBit6.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit6.Visible = False
         '
         'CheckBoxThyratronFaultBit7
         '
         Me.CheckBoxThyratronFaultBit7.AutoCheck = False
         Me.CheckBoxThyratronFaultBit7.AutoSize = True
-        Me.CheckBoxThyratronFaultBit7.Location = New System.Drawing.Point(549, 162)
+        Me.CheckBoxThyratronFaultBit7.Location = New System.Drawing.Point(601, 152)
         Me.CheckBoxThyratronFaultBit7.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit7.Name = "CheckBoxThyratronFaultBit7"
         Me.CheckBoxThyratronFaultBit7.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit7.TabIndex = 685
         Me.CheckBoxThyratronFaultBit7.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit7.Visible = False
         '
         'CheckBoxThyratronFaultBit5
         '
         Me.CheckBoxThyratronFaultBit5.AutoCheck = False
         Me.CheckBoxThyratronFaultBit5.AutoSize = True
-        Me.CheckBoxThyratronFaultBit5.Location = New System.Drawing.Point(549, 134)
+        Me.CheckBoxThyratronFaultBit5.Location = New System.Drawing.Point(601, 124)
         Me.CheckBoxThyratronFaultBit5.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit5.Name = "CheckBoxThyratronFaultBit5"
         Me.CheckBoxThyratronFaultBit5.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit5.TabIndex = 684
         Me.CheckBoxThyratronFaultBit5.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit5.Visible = False
         '
         'Label54
         '
         Me.Label54.AutoSize = True
-        Me.Label54.Location = New System.Drawing.Point(424, 176)
+        Me.Label54.Location = New System.Drawing.Point(476, 166)
         Me.Label54.Name = "Label54"
         Me.Label54.Size = New System.Drawing.Size(105, 13)
         Me.Label54.TabIndex = 683
         Me.Label54.Text = "Reservoir Driver FLT"
-        Me.Label54.Visible = False
         '
         'Label55
         '
         Me.Label55.AutoSize = True
-        Me.Label55.Location = New System.Drawing.Point(424, 134)
+        Me.Label55.Location = New System.Drawing.Point(476, 124)
         Me.Label55.Name = "Label55"
         Me.Label55.Size = New System.Drawing.Size(125, 13)
         Me.Label55.TabIndex = 682
         Me.Label55.Text = "Reservoir Over Volt Hard"
-        Me.Label55.Visible = False
         '
         'CheckBox90
         '
         Me.CheckBox90.AutoCheck = False
         Me.CheckBox90.AutoSize = True
-        Me.CheckBox90.Location = New System.Drawing.Point(591, 120)
+        Me.CheckBox90.Location = New System.Drawing.Point(643, 110)
         Me.CheckBox90.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox90.Name = "CheckBox90"
         Me.CheckBox90.Size = New System.Drawing.Size(15, 14)
@@ -3140,42 +3108,39 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit4.AutoCheck = False
         Me.CheckBoxThyratronStatusBit4.AutoSize = True
-        Me.CheckBoxThyratronStatusBit4.Location = New System.Drawing.Point(570, 120)
+        Me.CheckBoxThyratronStatusBit4.Location = New System.Drawing.Point(622, 110)
         Me.CheckBoxThyratronStatusBit4.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit4.Name = "CheckBoxThyratronStatusBit4"
         Me.CheckBoxThyratronStatusBit4.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit4.TabIndex = 680
         Me.CheckBoxThyratronStatusBit4.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit4.Visible = False
         '
         'CheckBoxThyratronFaultBit4
         '
         Me.CheckBoxThyratronFaultBit4.AutoCheck = False
         Me.CheckBoxThyratronFaultBit4.AutoSize = True
-        Me.CheckBoxThyratronFaultBit4.Location = New System.Drawing.Point(549, 120)
+        Me.CheckBoxThyratronFaultBit4.Location = New System.Drawing.Point(601, 110)
         Me.CheckBoxThyratronFaultBit4.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit4.Name = "CheckBoxThyratronFaultBit4"
         Me.CheckBoxThyratronFaultBit4.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit4.TabIndex = 679
         Me.CheckBoxThyratronFaultBit4.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit4.Visible = False
         '
         'Label56
         '
         Me.Label56.AutoSize = True
         Me.Label56.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label56.Location = New System.Drawing.Point(424, 37)
+        Me.Label56.Location = New System.Drawing.Point(476, 27)
         Me.Label56.Name = "Label56"
         Me.Label56.Size = New System.Drawing.Size(135, 13)
         Me.Label56.TabIndex = 678
         Me.Label56.Text = "THYRATRON FAUTLS"
-        Me.Label56.Visible = False
         '
         'CheckBox93
         '
         Me.CheckBox93.AutoCheck = False
         Me.CheckBox93.AutoSize = True
-        Me.CheckBox93.Location = New System.Drawing.Point(591, 106)
+        Me.CheckBox93.Location = New System.Drawing.Point(643, 96)
         Me.CheckBox93.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox93.Name = "CheckBox93"
         Me.CheckBox93.Size = New System.Drawing.Size(15, 14)
@@ -3187,7 +3152,7 @@ Partial Class Form1
         '
         Me.CheckBox94.AutoCheck = False
         Me.CheckBox94.AutoSize = True
-        Me.CheckBox94.Location = New System.Drawing.Point(591, 78)
+        Me.CheckBox94.Location = New System.Drawing.Point(643, 68)
         Me.CheckBox94.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox94.Name = "CheckBox94"
         Me.CheckBox94.Size = New System.Drawing.Size(15, 14)
@@ -3199,7 +3164,7 @@ Partial Class Form1
         '
         Me.CheckBox95.AutoCheck = False
         Me.CheckBox95.AutoSize = True
-        Me.CheckBox95.Location = New System.Drawing.Point(591, 92)
+        Me.CheckBox95.Location = New System.Drawing.Point(643, 82)
         Me.CheckBox95.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox95.Name = "CheckBox95"
         Me.CheckBox95.Size = New System.Drawing.Size(15, 14)
@@ -3211,7 +3176,7 @@ Partial Class Form1
         '
         Me.CheckBox96.AutoCheck = False
         Me.CheckBox96.AutoSize = True
-        Me.CheckBox96.Location = New System.Drawing.Point(591, 64)
+        Me.CheckBox96.Location = New System.Drawing.Point(643, 54)
         Me.CheckBox96.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBox96.Name = "CheckBox96"
         Me.CheckBox96.Size = New System.Drawing.Size(15, 14)
@@ -3223,147 +3188,134 @@ Partial Class Form1
         '
         Me.CheckBoxThyratronStatusBit3.AutoCheck = False
         Me.CheckBoxThyratronStatusBit3.AutoSize = True
-        Me.CheckBoxThyratronStatusBit3.Location = New System.Drawing.Point(570, 106)
+        Me.CheckBoxThyratronStatusBit3.Location = New System.Drawing.Point(622, 96)
         Me.CheckBoxThyratronStatusBit3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit3.Name = "CheckBoxThyratronStatusBit3"
         Me.CheckBoxThyratronStatusBit3.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit3.TabIndex = 673
         Me.CheckBoxThyratronStatusBit3.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit3.Visible = False
         '
         'CheckBoxThyratronStatusBit1
         '
         Me.CheckBoxThyratronStatusBit1.AutoCheck = False
         Me.CheckBoxThyratronStatusBit1.AutoSize = True
-        Me.CheckBoxThyratronStatusBit1.Location = New System.Drawing.Point(570, 78)
+        Me.CheckBoxThyratronStatusBit1.Location = New System.Drawing.Point(622, 68)
         Me.CheckBoxThyratronStatusBit1.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit1.Name = "CheckBoxThyratronStatusBit1"
         Me.CheckBoxThyratronStatusBit1.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit1.TabIndex = 672
         Me.CheckBoxThyratronStatusBit1.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit1.Visible = False
         '
         'CheckBoxThyratronStatusBit2
         '
         Me.CheckBoxThyratronStatusBit2.AutoCheck = False
         Me.CheckBoxThyratronStatusBit2.AutoSize = True
-        Me.CheckBoxThyratronStatusBit2.Location = New System.Drawing.Point(570, 92)
+        Me.CheckBoxThyratronStatusBit2.Location = New System.Drawing.Point(622, 82)
         Me.CheckBoxThyratronStatusBit2.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit2.Name = "CheckBoxThyratronStatusBit2"
         Me.CheckBoxThyratronStatusBit2.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit2.TabIndex = 671
         Me.CheckBoxThyratronStatusBit2.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit2.Visible = False
         '
         'CheckBoxThyratronStatusBit0
         '
         Me.CheckBoxThyratronStatusBit0.AutoCheck = False
         Me.CheckBoxThyratronStatusBit0.AutoSize = True
-        Me.CheckBoxThyratronStatusBit0.Location = New System.Drawing.Point(570, 64)
+        Me.CheckBoxThyratronStatusBit0.Location = New System.Drawing.Point(622, 54)
         Me.CheckBoxThyratronStatusBit0.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronStatusBit0.Name = "CheckBoxThyratronStatusBit0"
         Me.CheckBoxThyratronStatusBit0.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronStatusBit0.TabIndex = 670
         Me.CheckBoxThyratronStatusBit0.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronStatusBit0.Visible = False
         '
         'Label57
         '
         Me.Label57.AutoSize = True
-        Me.Label57.Location = New System.Drawing.Point(424, 92)
+        Me.Label57.Location = New System.Drawing.Point(476, 82)
         Me.Label57.Name = "Label57"
         Me.Label57.Size = New System.Drawing.Size(100, 13)
         Me.Label57.TabIndex = 669
         Me.Label57.Text = "Cathode Under Volt"
-        Me.Label57.Visible = False
         '
         'Label58
         '
         Me.Label58.AutoSize = True
-        Me.Label58.Location = New System.Drawing.Point(424, 78)
+        Me.Label58.Location = New System.Drawing.Point(476, 68)
         Me.Label58.Name = "Label58"
         Me.Label58.Size = New System.Drawing.Size(94, 13)
         Me.Label58.TabIndex = 668
         Me.Label58.Text = "Cathode Over Volt"
-        Me.Label58.Visible = False
         '
         'Label59
         '
         Me.Label59.AutoSize = True
-        Me.Label59.Location = New System.Drawing.Point(424, 120)
+        Me.Label59.Location = New System.Drawing.Point(476, 110)
         Me.Label59.Name = "Label59"
         Me.Label59.Size = New System.Drawing.Size(102, 13)
         Me.Label59.TabIndex = 667
         Me.Label59.Text = "Cathode Control Sat"
-        Me.Label59.Visible = False
         '
         'CheckBoxThyratronFaultBit3
         '
         Me.CheckBoxThyratronFaultBit3.AutoCheck = False
         Me.CheckBoxThyratronFaultBit3.AutoSize = True
-        Me.CheckBoxThyratronFaultBit3.Location = New System.Drawing.Point(549, 106)
+        Me.CheckBoxThyratronFaultBit3.Location = New System.Drawing.Point(601, 96)
         Me.CheckBoxThyratronFaultBit3.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit3.Name = "CheckBoxThyratronFaultBit3"
         Me.CheckBoxThyratronFaultBit3.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit3.TabIndex = 666
         Me.CheckBoxThyratronFaultBit3.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit3.Visible = False
         '
         'CheckBoxThyratronFaultBit1
         '
         Me.CheckBoxThyratronFaultBit1.AutoCheck = False
         Me.CheckBoxThyratronFaultBit1.AutoSize = True
-        Me.CheckBoxThyratronFaultBit1.Location = New System.Drawing.Point(549, 78)
+        Me.CheckBoxThyratronFaultBit1.Location = New System.Drawing.Point(601, 68)
         Me.CheckBoxThyratronFaultBit1.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit1.Name = "CheckBoxThyratronFaultBit1"
         Me.CheckBoxThyratronFaultBit1.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit1.TabIndex = 665
         Me.CheckBoxThyratronFaultBit1.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit1.Visible = False
         '
         'CheckBoxThyratronFaultBit2
         '
         Me.CheckBoxThyratronFaultBit2.AutoCheck = False
         Me.CheckBoxThyratronFaultBit2.AutoSize = True
-        Me.CheckBoxThyratronFaultBit2.Location = New System.Drawing.Point(549, 92)
+        Me.CheckBoxThyratronFaultBit2.Location = New System.Drawing.Point(601, 82)
         Me.CheckBoxThyratronFaultBit2.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit2.Name = "CheckBoxThyratronFaultBit2"
         Me.CheckBoxThyratronFaultBit2.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit2.TabIndex = 664
         Me.CheckBoxThyratronFaultBit2.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit2.Visible = False
         '
         'CheckBoxThyratronFaultBit0
         '
         Me.CheckBoxThyratronFaultBit0.AutoCheck = False
         Me.CheckBoxThyratronFaultBit0.AutoSize = True
-        Me.CheckBoxThyratronFaultBit0.Location = New System.Drawing.Point(549, 64)
+        Me.CheckBoxThyratronFaultBit0.Location = New System.Drawing.Point(601, 54)
         Me.CheckBoxThyratronFaultBit0.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxThyratronFaultBit0.Name = "CheckBoxThyratronFaultBit0"
         Me.CheckBoxThyratronFaultBit0.Size = New System.Drawing.Size(15, 14)
         Me.CheckBoxThyratronFaultBit0.TabIndex = 663
         Me.CheckBoxThyratronFaultBit0.UseVisualStyleBackColor = True
-        Me.CheckBoxThyratronFaultBit0.Visible = False
         '
         'Label62
         '
         Me.Label62.AutoSize = True
-        Me.Label62.Location = New System.Drawing.Point(424, 106)
+        Me.Label62.Location = New System.Drawing.Point(476, 96)
         Me.Label62.Name = "Label62"
         Me.Label62.Size = New System.Drawing.Size(100, 13)
         Me.Label62.TabIndex = 662
         Me.Label62.Text = "Cathode Driver FLT"
-        Me.Label62.Visible = False
         '
         'Label63
         '
         Me.Label63.AutoSize = True
-        Me.Label63.Location = New System.Drawing.Point(424, 64)
+        Me.Label63.Location = New System.Drawing.Point(476, 54)
         Me.Label63.Name = "Label63"
         Me.Label63.Size = New System.Drawing.Size(120, 13)
         Me.Label63.TabIndex = 661
         Me.Label63.Text = "Cathode Over Volt Hard"
-        Me.Label63.Visible = False
         '
         'CheckBox106
         '
@@ -4675,11 +4627,21 @@ Partial Class Form1
         Me.LabelMagnetronType.TabIndex = 867
         Me.LabelMagnetronType.Text = "Magnetron Type"
         '
+        'LabelControlBoardType
+        '
+        Me.LabelControlBoardType.AutoSize = True
+        Me.LabelControlBoardType.Location = New System.Drawing.Point(10, 661)
+        Me.LabelControlBoardType.Name = "LabelControlBoardType"
+        Me.LabelControlBoardType.Size = New System.Drawing.Size(71, 13)
+        Me.LabelControlBoardType.TabIndex = 868
+        Me.LabelControlBoardType.Text = "Control Board"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1154, 662)
+        Me.ClientSize = New System.Drawing.Size(1154, 683)
+        Me.Controls.Add(Me.LabelControlBoardType)
         Me.Controls.Add(Me.LabelMagnetronType)
         Me.Controls.Add(Me.LabelOscConBeforeCrash)
         Me.Controls.Add(Me.Label136)
@@ -5509,5 +5471,6 @@ Partial Class Form1
     Friend WithEvents Label136 As System.Windows.Forms.Label
     Friend WithEvents ETMOverrideModeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LabelMagnetronType As System.Windows.Forms.Label
+    Friend WithEvents LabelControlBoardType As System.Windows.Forms.Label
 
 End Class
