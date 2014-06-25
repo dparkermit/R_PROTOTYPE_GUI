@@ -1707,8 +1707,8 @@ Public Class Form1
         file.Write(LabelPulseVoltageModeB.Text & " , ")
 
         file.Write(LabelPRF.Text & " , ")
-        file.Write(Label10.Text & " , ")
-        file.Write(Label86.Text & " , ")
+        file.Write(LabelLambdaVpeak.Text & " , ")
+        file.Write(LabelLambdaVmon.Text & " , ")
 
         file.Write(LabelPulsesHVon.Text & " , ")
         file.Write(LabelArcsHVOn.Text & " , ")
