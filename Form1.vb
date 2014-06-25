@@ -282,6 +282,39 @@ Public Class Form1
         ButtonSetMagnet.Visible = False
 
 
+        Dim filePath As String
+        filePath = System.IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.MyDocuments, "ETM_Modulator_Log.csv")
+        Dim file As System.IO.StreamWriter
+        file = My.Computer.FileSystem.OpenTextFileWriter(filePath, True)
+   
+
+        file.Write("Time ,")
+        file.Write("State ,")
+        file.Write("Magnet Imon ,")
+        file.Write("Heater Vmon ,")
+
+        file.Write("Mode A Set Point ,")
+        file.Write("Pulse Current Mode A ,")
+        file.Write("Pulse Voltage Mode A ,")
+
+        file.Write("Mode B Set Point ,")
+        file.Write("Pulse Current Mode B ,")
+        file.Write("Pulse Voltage Mode B ,")
+
+        file.Write("PRF ,")
+        file.Write("Lambda Vpeak ,")
+        file.Write("Lambda Vmon ,")
+
+        file.Write("Pulses ,")
+        file.Write("Arcs ,")
+        file.Write("Pulses Total ,")
+        file.Write("Arcs Total")
+
+        file.WriteLine("")
+
+        file.Close()
+
+
     End Sub
 
 
@@ -1662,15 +1695,28 @@ Public Class Form1
         file = My.Computer.FileSystem.OpenTextFileWriter(filePath, True)
         file.Write(LabelTime.Text & " , ")
         file.Write(LabelState.Text & " , ")
-        file.Write("Magnet Imon , " & LabelMagnetIMON.Text & " , ")
-        file.Write("Heater Vmon , " & LabelHeaterVmon.Text & " , ")
-        file.Write("Pulse Current Mode A , " & LabelPulseCurrentModeA.Text & " , ")
-        file.Write("Pulse Current Mode B , " & LabelPulseCurrentModeB.Text & " , ")
-        file.Write("Pulses , " & LabelPulsesHVon.Text & " , ")
-        file.Write("Arcs , " & LabelArcsHVOn.Text & " , ")
-        file.Write("Pulses Total , " & LabelPulsesTotal.Text & " , ")
-        file.Write("Arcs Total , " & LabelArcsTotal.Text)
+        file.Write(LabelMagnetIMON.Text & " , ")
+        file.Write(LabelHeaterVmon.Text & " , ")
+
+        file.Write(LabelLambdaSetPointModeA.Text & " , ")
+        file.Write(LabelPulseCurrentModeA.Text & " , ")
+        file.Write(LabelPulseVoltageModeA.Text & " , ")
+
+        file.Write(LabelLambdaSetPointModeB.Text & " , ")
+        file.Write(LabelPulseCurrentModeB.Text & " , ")
+        file.Write(LabelPulseVoltageModeB.Text & " , ")
+
+        file.Write(LabelPRF.Text & " , ")
+        file.Write(Label10.Text & " , ")
+        file.Write(Label86.Text & " , ")
+
+        file.Write(LabelPulsesHVon.Text & " , ")
+        file.Write(LabelArcsHVOn.Text & " , ")
+        file.Write(LabelPulsesTotal.Text & " , ")
+        file.Write(LabelArcsTotal.Text)
+
         file.WriteLine("")
+
         file.Close()
     End Sub
 
