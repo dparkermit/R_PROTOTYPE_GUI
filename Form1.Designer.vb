@@ -439,6 +439,20 @@ Partial Class Form1
         Me.Label136 = New System.Windows.Forms.Label()
         Me.LabelMagnetronType = New System.Windows.Forms.Label()
         Me.LabelControlBoardType = New System.Windows.Forms.Label()
+        Me.ButtonSetModeBTargetI = New System.Windows.Forms.Button()
+        Me.TextBoxModeBTargetI = New System.Windows.Forms.TextBox()
+        Me.ButtonSetModeATargetI = New System.Windows.Forms.Button()
+        Me.TextBoxModeATargetI = New System.Windows.Forms.TextBox()
+        Me.LabelModeBTargetISetPoint = New System.Windows.Forms.Label()
+        Me.Label113 = New System.Windows.Forms.Label()
+        Me.LabelModeATargetISetPoint = New System.Windows.Forms.Label()
+        Me.Label128 = New System.Windows.Forms.Label()
+        Me.LabelModeBTargetIMonitor = New System.Windows.Forms.Label()
+        Me.Label125 = New System.Windows.Forms.Label()
+        Me.LabelModeATargetIMonitor = New System.Windows.Forms.Label()
+        Me.Label137 = New System.Windows.Forms.Label()
+        Me.ButtonStartDataLogging = New System.Windows.Forms.Button()
+        Me.ButtonStopDataLogging = New System.Windows.Forms.Button()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -446,13 +460,14 @@ Partial Class Form1
         '
         Me.SerialPortETM.BaudRate = 125000
         Me.SerialPortETM.DtrEnable = True
+        Me.SerialPortETM.ReadBufferSize = 32768
         Me.SerialPortETM.ReadTimeout = 100
         Me.SerialPortETM.RtsEnable = True
         '
         'LabelComMsg
         '
         Me.LabelComMsg.AutoSize = True
-        Me.LabelComMsg.Location = New System.Drawing.Point(10, 513)
+        Me.LabelComMsg.Location = New System.Drawing.Point(303, 649)
         Me.LabelComMsg.Name = "LabelComMsg"
         Me.LabelComMsg.Size = New System.Drawing.Size(98, 13)
         Me.LabelComMsg.TabIndex = 1
@@ -461,7 +476,7 @@ Partial Class Form1
         'ComboBoxComPorts
         '
         Me.ComboBoxComPorts.FormattingEnabled = True
-        Me.ComboBoxComPorts.Location = New System.Drawing.Point(9, 529)
+        Me.ComboBoxComPorts.Location = New System.Drawing.Point(302, 665)
         Me.ComboBoxComPorts.Name = "ComboBoxComPorts"
         Me.ComboBoxComPorts.Size = New System.Drawing.Size(121, 21)
         Me.ComboBoxComPorts.TabIndex = 6
@@ -543,7 +558,7 @@ Partial Class Form1
         'LabelLambdaVpeak
         '
         Me.LabelLambdaVpeak.AutoSize = True
-        Me.LabelLambdaVpeak.Location = New System.Drawing.Point(364, 302)
+        Me.LabelLambdaVpeak.Location = New System.Drawing.Point(363, 335)
         Me.LabelLambdaVpeak.Name = "LabelLambdaVpeak"
         Me.LabelLambdaVpeak.Size = New System.Drawing.Size(10, 13)
         Me.LabelLambdaVpeak.TabIndex = 18
@@ -552,7 +567,7 @@ Partial Class Form1
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(229, 302)
+        Me.Label10.Location = New System.Drawing.Point(228, 335)
         Me.Label10.Name = "Label10"
         Me.Label10.Size = New System.Drawing.Size(122, 13)
         Me.Label10.TabIndex = 17
@@ -580,7 +595,7 @@ Partial Class Form1
         'LabelThyrHeaterVmon
         '
         Me.LabelThyrHeaterVmon.AutoSize = True
-        Me.LabelThyrHeaterVmon.Location = New System.Drawing.Point(560, 356)
+        Me.LabelThyrHeaterVmon.Location = New System.Drawing.Point(635, 409)
         Me.LabelThyrHeaterVmon.Name = "LabelThyrHeaterVmon"
         Me.LabelThyrHeaterVmon.Size = New System.Drawing.Size(10, 13)
         Me.LabelThyrHeaterVmon.TabIndex = 22
@@ -590,7 +605,7 @@ Partial Class Form1
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(424, 356)
+        Me.Label14.Location = New System.Drawing.Point(499, 409)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(88, 13)
         Me.Label14.TabIndex = 21
@@ -600,7 +615,7 @@ Partial Class Form1
         'LabelThyrHtrSetPoint
         '
         Me.LabelThyrHtrSetPoint.AutoSize = True
-        Me.LabelThyrHtrSetPoint.Location = New System.Drawing.Point(560, 343)
+        Me.LabelThyrHtrSetPoint.Location = New System.Drawing.Point(635, 396)
         Me.LabelThyrHtrSetPoint.Name = "LabelThyrHtrSetPoint"
         Me.LabelThyrHtrSetPoint.Size = New System.Drawing.Size(10, 13)
         Me.LabelThyrHtrSetPoint.TabIndex = 20
@@ -611,7 +626,7 @@ Partial Class Form1
         '
         Me.Label16.AutoSize = True
         Me.Label16.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label16.Location = New System.Drawing.Point(424, 343)
+        Me.Label16.Location = New System.Drawing.Point(499, 396)
         Me.Label16.Name = "Label16"
         Me.Label16.Size = New System.Drawing.Size(106, 13)
         Me.Label16.TabIndex = 19
@@ -621,7 +636,7 @@ Partial Class Form1
         'LabelThyrResrHeaterVmon
         '
         Me.LabelThyrResrHeaterVmon.AutoSize = True
-        Me.LabelThyrResrHeaterVmon.Location = New System.Drawing.Point(560, 406)
+        Me.LabelThyrResrHeaterVmon.Location = New System.Drawing.Point(635, 459)
         Me.LabelThyrResrHeaterVmon.Name = "LabelThyrResrHeaterVmon"
         Me.LabelThyrResrHeaterVmon.Size = New System.Drawing.Size(10, 13)
         Me.LabelThyrResrHeaterVmon.TabIndex = 26
@@ -631,7 +646,7 @@ Partial Class Form1
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(424, 406)
+        Me.Label18.Location = New System.Drawing.Point(499, 459)
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(113, 13)
         Me.Label18.TabIndex = 25
@@ -641,7 +656,7 @@ Partial Class Form1
         'LabelThyrResrHtrSetPoint
         '
         Me.LabelThyrResrHtrSetPoint.AutoSize = True
-        Me.LabelThyrResrHtrSetPoint.Location = New System.Drawing.Point(560, 393)
+        Me.LabelThyrResrHtrSetPoint.Location = New System.Drawing.Point(635, 446)
         Me.LabelThyrResrHtrSetPoint.Name = "LabelThyrResrHtrSetPoint"
         Me.LabelThyrResrHtrSetPoint.Size = New System.Drawing.Size(10, 13)
         Me.LabelThyrResrHtrSetPoint.TabIndex = 24
@@ -652,7 +667,7 @@ Partial Class Form1
         '
         Me.Label20.AutoSize = True
         Me.Label20.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label20.Location = New System.Drawing.Point(424, 393)
+        Me.Label20.Location = New System.Drawing.Point(499, 446)
         Me.Label20.Name = "Label20"
         Me.Label20.Size = New System.Drawing.Size(106, 13)
         Me.Label20.TabIndex = 23
@@ -662,7 +677,7 @@ Partial Class Form1
         'LabelPulseVoltageModeA
         '
         Me.LabelPulseVoltageModeA.AutoSize = True
-        Me.LabelPulseVoltageModeA.Location = New System.Drawing.Point(142, 153)
+        Me.LabelPulseVoltageModeA.Location = New System.Drawing.Point(142, 163)
         Me.LabelPulseVoltageModeA.Name = "LabelPulseVoltageModeA"
         Me.LabelPulseVoltageModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltageModeA.TabIndex = 28
@@ -671,7 +686,7 @@ Partial Class Form1
         'Label22
         '
         Me.Label22.AutoSize = True
-        Me.Label22.Location = New System.Drawing.Point(5, 151)
+        Me.Label22.Location = New System.Drawing.Point(5, 161)
         Me.Label22.Name = "Label22"
         Me.Label22.Size = New System.Drawing.Size(72, 13)
         Me.Label22.TabIndex = 27
@@ -680,7 +695,7 @@ Partial Class Form1
         'LabelPulseCurrentModeA
         '
         Me.LabelPulseCurrentModeA.AutoSize = True
-        Me.LabelPulseCurrentModeA.Location = New System.Drawing.Point(142, 166)
+        Me.LabelPulseCurrentModeA.Location = New System.Drawing.Point(142, 176)
         Me.LabelPulseCurrentModeA.Name = "LabelPulseCurrentModeA"
         Me.LabelPulseCurrentModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentModeA.TabIndex = 30
@@ -689,7 +704,7 @@ Partial Class Form1
         'Label24
         '
         Me.Label24.AutoSize = True
-        Me.Label24.Location = New System.Drawing.Point(5, 164)
+        Me.Label24.Location = New System.Drawing.Point(5, 174)
         Me.Label24.Name = "Label24"
         Me.Label24.Size = New System.Drawing.Size(70, 13)
         Me.Label24.TabIndex = 29
@@ -698,7 +713,7 @@ Partial Class Form1
         'LabelPulseCurrentMinModeA
         '
         Me.LabelPulseCurrentMinModeA.AutoSize = True
-        Me.LabelPulseCurrentMinModeA.Location = New System.Drawing.Point(142, 179)
+        Me.LabelPulseCurrentMinModeA.Location = New System.Drawing.Point(142, 189)
         Me.LabelPulseCurrentMinModeA.Name = "LabelPulseCurrentMinModeA"
         Me.LabelPulseCurrentMinModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentMinModeA.TabIndex = 32
@@ -707,7 +722,7 @@ Partial Class Form1
         'Label26
         '
         Me.Label26.AutoSize = True
-        Me.Label26.Location = New System.Drawing.Point(5, 177)
+        Me.Label26.Location = New System.Drawing.Point(5, 187)
         Me.Label26.Name = "Label26"
         Me.Label26.Size = New System.Drawing.Size(90, 13)
         Me.Label26.TabIndex = 31
@@ -752,7 +767,7 @@ Partial Class Form1
         'LabelPulseCurrentMaxModeA
         '
         Me.LabelPulseCurrentMaxModeA.AutoSize = True
-        Me.LabelPulseCurrentMaxModeA.Location = New System.Drawing.Point(142, 192)
+        Me.LabelPulseCurrentMaxModeA.Location = New System.Drawing.Point(142, 202)
         Me.LabelPulseCurrentMaxModeA.Name = "LabelPulseCurrentMaxModeA"
         Me.LabelPulseCurrentMaxModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentMaxModeA.TabIndex = 38
@@ -761,7 +776,7 @@ Partial Class Form1
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(5, 190)
+        Me.Label3.Location = New System.Drawing.Point(5, 200)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(93, 13)
         Me.Label3.TabIndex = 37
@@ -1013,14 +1028,14 @@ Partial Class Form1
         '
         'TextBoxSetLambdaModeA
         '
-        Me.TextBoxSetLambdaModeA.Location = New System.Drawing.Point(13, 381)
+        Me.TextBoxSetLambdaModeA.Location = New System.Drawing.Point(14, 445)
         Me.TextBoxSetLambdaModeA.Name = "TextBoxSetLambdaModeA"
         Me.TextBoxSetLambdaModeA.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxSetLambdaModeA.TabIndex = 439
         '
         'ButtonSetLambdaModeA
         '
-        Me.ButtonSetLambdaModeA.Location = New System.Drawing.Point(90, 378)
+        Me.ButtonSetLambdaModeA.Location = New System.Drawing.Point(91, 442)
         Me.ButtonSetLambdaModeA.Name = "ButtonSetLambdaModeA"
         Me.ButtonSetLambdaModeA.Size = New System.Drawing.Size(114, 23)
         Me.ButtonSetLambdaModeA.TabIndex = 440
@@ -1029,7 +1044,7 @@ Partial Class Form1
         '
         'ButtonSetMagnet
         '
-        Me.ButtonSetMagnet.Location = New System.Drawing.Point(90, 451)
+        Me.ButtonSetMagnet.Location = New System.Drawing.Point(91, 557)
         Me.ButtonSetMagnet.Name = "ButtonSetMagnet"
         Me.ButtonSetMagnet.Size = New System.Drawing.Size(114, 23)
         Me.ButtonSetMagnet.TabIndex = 442
@@ -1038,7 +1053,7 @@ Partial Class Form1
         '
         'TextBoxSetMagnet
         '
-        Me.TextBoxSetMagnet.Location = New System.Drawing.Point(13, 454)
+        Me.TextBoxSetMagnet.Location = New System.Drawing.Point(14, 560)
         Me.TextBoxSetMagnet.Name = "TextBoxSetMagnet"
         Me.TextBoxSetMagnet.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxSetMagnet.TabIndex = 441
@@ -1046,7 +1061,7 @@ Partial Class Form1
         'LabelEnergyPerPulse
         '
         Me.LabelEnergyPerPulse.AutoSize = True
-        Me.LabelEnergyPerPulse.Location = New System.Drawing.Point(364, 276)
+        Me.LabelEnergyPerPulse.Location = New System.Drawing.Point(363, 309)
         Me.LabelEnergyPerPulse.Name = "LabelEnergyPerPulse"
         Me.LabelEnergyPerPulse.Size = New System.Drawing.Size(10, 13)
         Me.LabelEnergyPerPulse.TabIndex = 447
@@ -1055,7 +1070,7 @@ Partial Class Form1
         'Label94
         '
         Me.Label94.AutoSize = True
-        Me.Label94.Location = New System.Drawing.Point(229, 276)
+        Me.Label94.Location = New System.Drawing.Point(228, 309)
         Me.Label94.Name = "Label94"
         Me.Label94.Size = New System.Drawing.Size(88, 13)
         Me.Label94.TabIndex = 446
@@ -1064,7 +1079,7 @@ Partial Class Form1
         'LabelPRF
         '
         Me.LabelPRF.AutoSize = True
-        Me.LabelPRF.Location = New System.Drawing.Point(364, 289)
+        Me.LabelPRF.Location = New System.Drawing.Point(363, 322)
         Me.LabelPRF.Name = "LabelPRF"
         Me.LabelPRF.Size = New System.Drawing.Size(10, 13)
         Me.LabelPRF.TabIndex = 449
@@ -1073,7 +1088,7 @@ Partial Class Form1
         'Label96
         '
         Me.Label96.AutoSize = True
-        Me.Label96.Location = New System.Drawing.Point(229, 289)
+        Me.Label96.Location = New System.Drawing.Point(228, 322)
         Me.Label96.Name = "Label96"
         Me.Label96.Size = New System.Drawing.Size(28, 13)
         Me.Label96.TabIndex = 448
@@ -1082,7 +1097,7 @@ Partial Class Form1
         'LabelMagnetronPower
         '
         Me.LabelMagnetronPower.AutoSize = True
-        Me.LabelMagnetronPower.Location = New System.Drawing.Point(364, 264)
+        Me.LabelMagnetronPower.Location = New System.Drawing.Point(363, 297)
         Me.LabelMagnetronPower.Name = "LabelMagnetronPower"
         Me.LabelMagnetronPower.Size = New System.Drawing.Size(10, 13)
         Me.LabelMagnetronPower.TabIndex = 451
@@ -1091,7 +1106,7 @@ Partial Class Form1
         'Label98
         '
         Me.Label98.AutoSize = True
-        Me.Label98.Location = New System.Drawing.Point(229, 264)
+        Me.Label98.Location = New System.Drawing.Point(228, 297)
         Me.Label98.Name = "Label98"
         Me.Label98.Size = New System.Drawing.Size(118, 13)
         Me.Label98.TabIndex = 450
@@ -1100,7 +1115,7 @@ Partial Class Form1
         'Label102
         '
         Me.Label102.AutoSize = True
-        Me.Label102.Location = New System.Drawing.Point(5, 264)
+        Me.Label102.Location = New System.Drawing.Point(4, 297)
         Me.Label102.Name = "Label102"
         Me.Label102.Size = New System.Drawing.Size(81, 13)
         Me.Label102.TabIndex = 481
@@ -1109,7 +1124,7 @@ Partial Class Form1
         'Label104
         '
         Me.Label104.AutoSize = True
-        Me.Label104.Location = New System.Drawing.Point(5, 276)
+        Me.Label104.Location = New System.Drawing.Point(4, 309)
         Me.Label104.Name = "Label104"
         Me.Label104.Size = New System.Drawing.Size(71, 13)
         Me.Label104.TabIndex = 482
@@ -1118,7 +1133,7 @@ Partial Class Form1
         'Label105
         '
         Me.Label105.AutoSize = True
-        Me.Label105.Location = New System.Drawing.Point(4, 302)
+        Me.Label105.Location = New System.Drawing.Point(3, 335)
         Me.Label105.Name = "Label105"
         Me.Label105.Size = New System.Drawing.Size(61, 13)
         Me.Label105.TabIndex = 484
@@ -1127,7 +1142,7 @@ Partial Class Form1
         'Label106
         '
         Me.Label106.AutoSize = True
-        Me.Label106.Location = New System.Drawing.Point(4, 289)
+        Me.Label106.Location = New System.Drawing.Point(3, 322)
         Me.Label106.Name = "Label106"
         Me.Label106.Size = New System.Drawing.Size(71, 13)
         Me.Label106.TabIndex = 483
@@ -1136,7 +1151,7 @@ Partial Class Form1
         'LabelArcsTotal
         '
         Me.LabelArcsTotal.AutoSize = True
-        Me.LabelArcsTotal.Location = New System.Drawing.Point(142, 302)
+        Me.LabelArcsTotal.Location = New System.Drawing.Point(141, 335)
         Me.LabelArcsTotal.Name = "LabelArcsTotal"
         Me.LabelArcsTotal.Size = New System.Drawing.Size(10, 13)
         Me.LabelArcsTotal.TabIndex = 488
@@ -1145,7 +1160,7 @@ Partial Class Form1
         'LabelPulsesTotal
         '
         Me.LabelPulsesTotal.AutoSize = True
-        Me.LabelPulsesTotal.Location = New System.Drawing.Point(142, 289)
+        Me.LabelPulsesTotal.Location = New System.Drawing.Point(141, 322)
         Me.LabelPulsesTotal.Name = "LabelPulsesTotal"
         Me.LabelPulsesTotal.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulsesTotal.TabIndex = 487
@@ -1154,7 +1169,7 @@ Partial Class Form1
         'LabelArcsHVOn
         '
         Me.LabelArcsHVOn.AutoSize = True
-        Me.LabelArcsHVOn.Location = New System.Drawing.Point(142, 276)
+        Me.LabelArcsHVOn.Location = New System.Drawing.Point(141, 309)
         Me.LabelArcsHVOn.Name = "LabelArcsHVOn"
         Me.LabelArcsHVOn.Size = New System.Drawing.Size(10, 13)
         Me.LabelArcsHVOn.TabIndex = 486
@@ -1163,7 +1178,7 @@ Partial Class Form1
         'LabelPulsesHVon
         '
         Me.LabelPulsesHVon.AutoSize = True
-        Me.LabelPulsesHVon.Location = New System.Drawing.Point(142, 264)
+        Me.LabelPulsesHVon.Location = New System.Drawing.Point(141, 297)
         Me.LabelPulsesHVon.Name = "LabelPulsesHVon"
         Me.LabelPulsesHVon.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulsesHVon.TabIndex = 485
@@ -1172,7 +1187,7 @@ Partial Class Form1
         'LabelTime
         '
         Me.LabelTime.AutoSize = True
-        Me.LabelTime.Location = New System.Drawing.Point(5, 328)
+        Me.LabelTime.Location = New System.Drawing.Point(4, 361)
         Me.LabelTime.Name = "LabelTime"
         Me.LabelTime.Size = New System.Drawing.Size(10, 13)
         Me.LabelTime.TabIndex = 492
@@ -1182,7 +1197,7 @@ Partial Class Form1
         '
         Me.Label103.AutoSize = True
         Me.Label103.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label103.Location = New System.Drawing.Point(229, 248)
+        Me.Label103.Location = New System.Drawing.Point(228, 281)
         Me.Label103.Name = "Label103"
         Me.Label103.Size = New System.Drawing.Size(106, 13)
         Me.Label103.TabIndex = 493
@@ -1209,7 +1224,7 @@ Partial Class Form1
         '
         'ButtonSetFilament
         '
-        Me.ButtonSetFilament.Location = New System.Drawing.Point(305, 452)
+        Me.ButtonSetFilament.Location = New System.Drawing.Point(306, 558)
         Me.ButtonSetFilament.Name = "ButtonSetFilament"
         Me.ButtonSetFilament.Size = New System.Drawing.Size(114, 23)
         Me.ButtonSetFilament.TabIndex = 496
@@ -1218,14 +1233,14 @@ Partial Class Form1
         '
         'TextBoxSetFilament
         '
-        Me.TextBoxSetFilament.Location = New System.Drawing.Point(228, 454)
+        Me.TextBoxSetFilament.Location = New System.Drawing.Point(229, 560)
         Me.TextBoxSetFilament.Name = "TextBoxSetFilament"
         Me.TextBoxSetFilament.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxSetFilament.TabIndex = 495
         '
         'ButtonSetLambdaModeB
         '
-        Me.ButtonSetLambdaModeB.Location = New System.Drawing.Point(305, 378)
+        Me.ButtonSetLambdaModeB.Location = New System.Drawing.Point(306, 442)
         Me.ButtonSetLambdaModeB.Name = "ButtonSetLambdaModeB"
         Me.ButtonSetLambdaModeB.Size = New System.Drawing.Size(114, 23)
         Me.ButtonSetLambdaModeB.TabIndex = 498
@@ -1234,7 +1249,7 @@ Partial Class Form1
         '
         'TextBoxSetLambdaModeB
         '
-        Me.TextBoxSetLambdaModeB.Location = New System.Drawing.Point(228, 381)
+        Me.TextBoxSetLambdaModeB.Location = New System.Drawing.Point(229, 445)
         Me.TextBoxSetLambdaModeB.Name = "TextBoxSetLambdaModeB"
         Me.TextBoxSetLambdaModeB.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxSetLambdaModeB.TabIndex = 497
@@ -1261,7 +1276,7 @@ Partial Class Form1
         'LabelPulseVoltagetMaxModeA
         '
         Me.LabelPulseVoltagetMaxModeA.AutoSize = True
-        Me.LabelPulseVoltagetMaxModeA.Location = New System.Drawing.Point(142, 218)
+        Me.LabelPulseVoltagetMaxModeA.Location = New System.Drawing.Point(142, 228)
         Me.LabelPulseVoltagetMaxModeA.Name = "LabelPulseVoltagetMaxModeA"
         Me.LabelPulseVoltagetMaxModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltagetMaxModeA.TabIndex = 504
@@ -1270,7 +1285,7 @@ Partial Class Form1
         'Label109
         '
         Me.Label109.AutoSize = True
-        Me.Label109.Location = New System.Drawing.Point(5, 216)
+        Me.Label109.Location = New System.Drawing.Point(5, 226)
         Me.Label109.Name = "Label109"
         Me.Label109.Size = New System.Drawing.Size(95, 13)
         Me.Label109.TabIndex = 503
@@ -1279,7 +1294,7 @@ Partial Class Form1
         'LabelPulseVoltagetMinModeA
         '
         Me.LabelPulseVoltagetMinModeA.AutoSize = True
-        Me.LabelPulseVoltagetMinModeA.Location = New System.Drawing.Point(142, 205)
+        Me.LabelPulseVoltagetMinModeA.Location = New System.Drawing.Point(142, 215)
         Me.LabelPulseVoltagetMinModeA.Name = "LabelPulseVoltagetMinModeA"
         Me.LabelPulseVoltagetMinModeA.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltagetMinModeA.TabIndex = 502
@@ -1288,7 +1303,7 @@ Partial Class Form1
         'Label112
         '
         Me.Label112.AutoSize = True
-        Me.Label112.Location = New System.Drawing.Point(5, 203)
+        Me.Label112.Location = New System.Drawing.Point(5, 213)
         Me.Label112.Name = "Label112"
         Me.Label112.Size = New System.Drawing.Size(92, 13)
         Me.Label112.TabIndex = 501
@@ -1297,7 +1312,7 @@ Partial Class Form1
         'LabelPulseVoltagetMaxModeB
         '
         Me.LabelPulseVoltagetMaxModeB.AutoSize = True
-        Me.LabelPulseVoltagetMaxModeB.Location = New System.Drawing.Point(364, 216)
+        Me.LabelPulseVoltagetMaxModeB.Location = New System.Drawing.Point(364, 226)
         Me.LabelPulseVoltagetMaxModeB.Name = "LabelPulseVoltagetMaxModeB"
         Me.LabelPulseVoltagetMaxModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltagetMaxModeB.TabIndex = 516
@@ -1306,7 +1321,7 @@ Partial Class Form1
         'Label114
         '
         Me.Label114.AutoSize = True
-        Me.Label114.Location = New System.Drawing.Point(229, 216)
+        Me.Label114.Location = New System.Drawing.Point(229, 226)
         Me.Label114.Name = "Label114"
         Me.Label114.Size = New System.Drawing.Size(95, 13)
         Me.Label114.TabIndex = 515
@@ -1315,7 +1330,7 @@ Partial Class Form1
         'LabelPulseVoltagetMinModeB
         '
         Me.LabelPulseVoltagetMinModeB.AutoSize = True
-        Me.LabelPulseVoltagetMinModeB.Location = New System.Drawing.Point(364, 203)
+        Me.LabelPulseVoltagetMinModeB.Location = New System.Drawing.Point(364, 213)
         Me.LabelPulseVoltagetMinModeB.Name = "LabelPulseVoltagetMinModeB"
         Me.LabelPulseVoltagetMinModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltagetMinModeB.TabIndex = 514
@@ -1324,7 +1339,7 @@ Partial Class Form1
         'Label116
         '
         Me.Label116.AutoSize = True
-        Me.Label116.Location = New System.Drawing.Point(229, 203)
+        Me.Label116.Location = New System.Drawing.Point(229, 213)
         Me.Label116.Name = "Label116"
         Me.Label116.Size = New System.Drawing.Size(92, 13)
         Me.Label116.TabIndex = 513
@@ -1333,7 +1348,7 @@ Partial Class Form1
         'LabelPulseCurrentMaxModeB
         '
         Me.LabelPulseCurrentMaxModeB.AutoSize = True
-        Me.LabelPulseCurrentMaxModeB.Location = New System.Drawing.Point(364, 190)
+        Me.LabelPulseCurrentMaxModeB.Location = New System.Drawing.Point(364, 200)
         Me.LabelPulseCurrentMaxModeB.Name = "LabelPulseCurrentMaxModeB"
         Me.LabelPulseCurrentMaxModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentMaxModeB.TabIndex = 512
@@ -1342,7 +1357,7 @@ Partial Class Form1
         'Label118
         '
         Me.Label118.AutoSize = True
-        Me.Label118.Location = New System.Drawing.Point(229, 190)
+        Me.Label118.Location = New System.Drawing.Point(229, 200)
         Me.Label118.Name = "Label118"
         Me.Label118.Size = New System.Drawing.Size(93, 13)
         Me.Label118.TabIndex = 511
@@ -1351,7 +1366,7 @@ Partial Class Form1
         'LabelPulseCurrentMinModeB
         '
         Me.LabelPulseCurrentMinModeB.AutoSize = True
-        Me.LabelPulseCurrentMinModeB.Location = New System.Drawing.Point(364, 177)
+        Me.LabelPulseCurrentMinModeB.Location = New System.Drawing.Point(364, 187)
         Me.LabelPulseCurrentMinModeB.Name = "LabelPulseCurrentMinModeB"
         Me.LabelPulseCurrentMinModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentMinModeB.TabIndex = 510
@@ -1360,7 +1375,7 @@ Partial Class Form1
         'Label120
         '
         Me.Label120.AutoSize = True
-        Me.Label120.Location = New System.Drawing.Point(229, 177)
+        Me.Label120.Location = New System.Drawing.Point(229, 187)
         Me.Label120.Name = "Label120"
         Me.Label120.Size = New System.Drawing.Size(90, 13)
         Me.Label120.TabIndex = 509
@@ -1369,7 +1384,7 @@ Partial Class Form1
         'LabelPulseCurrentModeB
         '
         Me.LabelPulseCurrentModeB.AutoSize = True
-        Me.LabelPulseCurrentModeB.Location = New System.Drawing.Point(364, 164)
+        Me.LabelPulseCurrentModeB.Location = New System.Drawing.Point(364, 174)
         Me.LabelPulseCurrentModeB.Name = "LabelPulseCurrentModeB"
         Me.LabelPulseCurrentModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseCurrentModeB.TabIndex = 508
@@ -1378,7 +1393,7 @@ Partial Class Form1
         'Label122
         '
         Me.Label122.AutoSize = True
-        Me.Label122.Location = New System.Drawing.Point(229, 164)
+        Me.Label122.Location = New System.Drawing.Point(229, 174)
         Me.Label122.Name = "Label122"
         Me.Label122.Size = New System.Drawing.Size(70, 13)
         Me.Label122.TabIndex = 507
@@ -1387,7 +1402,7 @@ Partial Class Form1
         'LabelPulseVoltageModeB
         '
         Me.LabelPulseVoltageModeB.AutoSize = True
-        Me.LabelPulseVoltageModeB.Location = New System.Drawing.Point(364, 151)
+        Me.LabelPulseVoltageModeB.Location = New System.Drawing.Point(364, 161)
         Me.LabelPulseVoltageModeB.Name = "LabelPulseVoltageModeB"
         Me.LabelPulseVoltageModeB.Size = New System.Drawing.Size(10, 13)
         Me.LabelPulseVoltageModeB.TabIndex = 506
@@ -1396,7 +1411,7 @@ Partial Class Form1
         'Label124
         '
         Me.Label124.AutoSize = True
-        Me.Label124.Location = New System.Drawing.Point(229, 151)
+        Me.Label124.Location = New System.Drawing.Point(229, 161)
         Me.Label124.Name = "Label124"
         Me.Label124.Size = New System.Drawing.Size(72, 13)
         Me.Label124.TabIndex = 505
@@ -1405,7 +1420,7 @@ Partial Class Form1
         'LabelMagnetronCurrent
         '
         Me.LabelMagnetronCurrent.AutoSize = True
-        Me.LabelMagnetronCurrent.Location = New System.Drawing.Point(364, 328)
+        Me.LabelMagnetronCurrent.Location = New System.Drawing.Point(363, 361)
         Me.LabelMagnetronCurrent.Name = "LabelMagnetronCurrent"
         Me.LabelMagnetronCurrent.Size = New System.Drawing.Size(10, 13)
         Me.LabelMagnetronCurrent.TabIndex = 520
@@ -1414,7 +1429,7 @@ Partial Class Form1
         'Label110
         '
         Me.Label110.AutoSize = True
-        Me.Label110.Location = New System.Drawing.Point(229, 328)
+        Me.Label110.Location = New System.Drawing.Point(228, 361)
         Me.Label110.Name = "Label110"
         Me.Label110.Size = New System.Drawing.Size(114, 13)
         Me.Label110.TabIndex = 519
@@ -1423,7 +1438,7 @@ Partial Class Form1
         'LabelMagnetronVoltage
         '
         Me.LabelMagnetronVoltage.AutoSize = True
-        Me.LabelMagnetronVoltage.Location = New System.Drawing.Point(364, 315)
+        Me.LabelMagnetronVoltage.Location = New System.Drawing.Point(363, 348)
         Me.LabelMagnetronVoltage.Name = "LabelMagnetronVoltage"
         Me.LabelMagnetronVoltage.Size = New System.Drawing.Size(10, 13)
         Me.LabelMagnetronVoltage.TabIndex = 518
@@ -1432,7 +1447,7 @@ Partial Class Form1
         'Label115
         '
         Me.Label115.AutoSize = True
-        Me.Label115.Location = New System.Drawing.Point(229, 315)
+        Me.Label115.Location = New System.Drawing.Point(228, 348)
         Me.Label115.Name = "Label115"
         Me.Label115.Size = New System.Drawing.Size(116, 13)
         Me.Label115.TabIndex = 517
@@ -1442,7 +1457,7 @@ Partial Class Form1
         '
         Me.Label117.AutoSize = True
         Me.Label117.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label117.Location = New System.Drawing.Point(6, 248)
+        Me.Label117.Location = New System.Drawing.Point(5, 281)
         Me.Label117.Name = "Label117"
         Me.Label117.Size = New System.Drawing.Size(57, 13)
         Me.Label117.TabIndex = 521
@@ -4018,7 +4033,7 @@ Partial Class Form1
         'LabelLambdaVmon
         '
         Me.LabelLambdaVmon.AutoSize = True
-        Me.LabelLambdaVmon.Location = New System.Drawing.Point(364, 341)
+        Me.LabelLambdaVmon.Location = New System.Drawing.Point(363, 374)
         Me.LabelLambdaVmon.Name = "LabelLambdaVmon"
         Me.LabelLambdaVmon.Size = New System.Drawing.Size(10, 13)
         Me.LabelLambdaVmon.TabIndex = 792
@@ -4027,7 +4042,7 @@ Partial Class Form1
         'Label86
         '
         Me.Label86.AutoSize = True
-        Me.Label86.Location = New System.Drawing.Point(229, 341)
+        Me.Label86.Location = New System.Drawing.Point(228, 374)
         Me.Label86.Name = "Label86"
         Me.Label86.Size = New System.Drawing.Size(118, 13)
         Me.Label86.TabIndex = 791
@@ -4393,7 +4408,7 @@ Partial Class Form1
         '
         'ButtonSetBaudRate
         '
-        Me.ButtonSetBaudRate.Location = New System.Drawing.Point(86, 553)
+        Me.ButtonSetBaudRate.Location = New System.Drawing.Point(379, 689)
         Me.ButtonSetBaudRate.Name = "ButtonSetBaudRate"
         Me.ButtonSetBaudRate.Size = New System.Drawing.Size(114, 23)
         Me.ButtonSetBaudRate.TabIndex = 841
@@ -4402,7 +4417,7 @@ Partial Class Form1
         '
         'TextBoxBaudRate
         '
-        Me.TextBoxBaudRate.Location = New System.Drawing.Point(9, 555)
+        Me.TextBoxBaudRate.Location = New System.Drawing.Point(302, 691)
         Me.TextBoxBaudRate.Name = "TextBoxBaudRate"
         Me.TextBoxBaudRate.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxBaudRate.TabIndex = 840
@@ -4463,7 +4478,7 @@ Partial Class Form1
         'LabelGUIVersion
         '
         Me.LabelGUIVersion.AutoSize = True
-        Me.LabelGUIVersion.Location = New System.Drawing.Point(10, 622)
+        Me.LabelGUIVersion.Location = New System.Drawing.Point(9, 649)
         Me.LabelGUIVersion.Name = "LabelGUIVersion"
         Me.LabelGUIVersion.Size = New System.Drawing.Size(45, 13)
         Me.LabelGUIVersion.TabIndex = 844
@@ -4472,7 +4487,7 @@ Partial Class Form1
         'LabelMCUVersion
         '
         Me.LabelMCUVersion.AutoSize = True
-        Me.LabelMCUVersion.Location = New System.Drawing.Point(10, 601)
+        Me.LabelMCUVersion.Location = New System.Drawing.Point(9, 628)
         Me.LabelMCUVersion.Name = "LabelMCUVersion"
         Me.LabelMCUVersion.Size = New System.Drawing.Size(45, 13)
         Me.LabelMCUVersion.TabIndex = 848
@@ -4482,7 +4497,7 @@ Partial Class Form1
         '
         Me.LabelMagnetControlStatus.AutoSize = True
         Me.LabelMagnetControlStatus.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelMagnetControlStatus.Location = New System.Drawing.Point(5, 421)
+        Me.LabelMagnetControlStatus.Location = New System.Drawing.Point(6, 527)
         Me.LabelMagnetControlStatus.Name = "LabelMagnetControlStatus"
         Me.LabelMagnetControlStatus.Size = New System.Drawing.Size(61, 13)
         Me.LabelMagnetControlStatus.TabIndex = 852
@@ -4490,7 +4505,7 @@ Partial Class Form1
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(427, 301)
+        Me.Button2.Location = New System.Drawing.Point(502, 354)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(114, 23)
         Me.Button2.TabIndex = 853
@@ -4621,7 +4636,7 @@ Partial Class Form1
         'LabelMagnetronType
         '
         Me.LabelMagnetronType.AutoSize = True
-        Me.LabelMagnetronType.Location = New System.Drawing.Point(10, 640)
+        Me.LabelMagnetronType.Location = New System.Drawing.Point(9, 667)
         Me.LabelMagnetronType.Name = "LabelMagnetronType"
         Me.LabelMagnetronType.Size = New System.Drawing.Size(85, 13)
         Me.LabelMagnetronType.TabIndex = 867
@@ -4630,17 +4645,154 @@ Partial Class Form1
         'LabelControlBoardType
         '
         Me.LabelControlBoardType.AutoSize = True
-        Me.LabelControlBoardType.Location = New System.Drawing.Point(10, 661)
+        Me.LabelControlBoardType.Location = New System.Drawing.Point(9, 688)
         Me.LabelControlBoardType.Name = "LabelControlBoardType"
         Me.LabelControlBoardType.Size = New System.Drawing.Size(71, 13)
         Me.LabelControlBoardType.TabIndex = 868
         Me.LabelControlBoardType.Text = "Control Board"
         '
+        'ButtonSetModeBTargetI
+        '
+        Me.ButtonSetModeBTargetI.Location = New System.Drawing.Point(305, 482)
+        Me.ButtonSetModeBTargetI.Name = "ButtonSetModeBTargetI"
+        Me.ButtonSetModeBTargetI.Size = New System.Drawing.Size(114, 23)
+        Me.ButtonSetModeBTargetI.TabIndex = 872
+        Me.ButtonSetModeBTargetI.Text = "Mode B I TGT"
+        Me.ButtonSetModeBTargetI.UseVisualStyleBackColor = True
+        '
+        'TextBoxModeBTargetI
+        '
+        Me.TextBoxModeBTargetI.Location = New System.Drawing.Point(228, 485)
+        Me.TextBoxModeBTargetI.Name = "TextBoxModeBTargetI"
+        Me.TextBoxModeBTargetI.Size = New System.Drawing.Size(71, 20)
+        Me.TextBoxModeBTargetI.TabIndex = 871
+        '
+        'ButtonSetModeATargetI
+        '
+        Me.ButtonSetModeATargetI.Location = New System.Drawing.Point(90, 482)
+        Me.ButtonSetModeATargetI.Name = "ButtonSetModeATargetI"
+        Me.ButtonSetModeATargetI.Size = New System.Drawing.Size(114, 23)
+        Me.ButtonSetModeATargetI.TabIndex = 870
+        Me.ButtonSetModeATargetI.Text = "Mode A I TGT"
+        Me.ButtonSetModeATargetI.UseVisualStyleBackColor = True
+        '
+        'TextBoxModeATargetI
+        '
+        Me.TextBoxModeATargetI.Location = New System.Drawing.Point(13, 485)
+        Me.TextBoxModeATargetI.Name = "TextBoxModeATargetI"
+        Me.TextBoxModeATargetI.Size = New System.Drawing.Size(71, 20)
+        Me.TextBoxModeATargetI.TabIndex = 869
+        '
+        'LabelModeBTargetISetPoint
+        '
+        Me.LabelModeBTargetISetPoint.AutoSize = True
+        Me.LabelModeBTargetISetPoint.Location = New System.Drawing.Point(364, 148)
+        Me.LabelModeBTargetISetPoint.Name = "LabelModeBTargetISetPoint"
+        Me.LabelModeBTargetISetPoint.Size = New System.Drawing.Size(10, 13)
+        Me.LabelModeBTargetISetPoint.TabIndex = 876
+        Me.LabelModeBTargetISetPoint.Text = "-"
+        '
+        'Label113
+        '
+        Me.Label113.AutoSize = True
+        Me.Label113.Location = New System.Drawing.Point(229, 148)
+        Me.Label113.Name = "Label113"
+        Me.Label113.Size = New System.Drawing.Size(90, 13)
+        Me.Label113.TabIndex = 875
+        Me.Label113.Text = "Target I Set Point"
+        '
+        'LabelModeATargetISetPoint
+        '
+        Me.LabelModeATargetISetPoint.AutoSize = True
+        Me.LabelModeATargetISetPoint.Location = New System.Drawing.Point(142, 150)
+        Me.LabelModeATargetISetPoint.Name = "LabelModeATargetISetPoint"
+        Me.LabelModeATargetISetPoint.Size = New System.Drawing.Size(10, 13)
+        Me.LabelModeATargetISetPoint.TabIndex = 874
+        Me.LabelModeATargetISetPoint.Text = "-"
+        '
+        'Label128
+        '
+        Me.Label128.AutoSize = True
+        Me.Label128.Location = New System.Drawing.Point(5, 148)
+        Me.Label128.Name = "Label128"
+        Me.Label128.Size = New System.Drawing.Size(90, 13)
+        Me.Label128.TabIndex = 873
+        Me.Label128.Text = "Target I Set Point"
+        '
+        'LabelModeBTargetIMonitor
+        '
+        Me.LabelModeBTargetIMonitor.AutoSize = True
+        Me.LabelModeBTargetIMonitor.Location = New System.Drawing.Point(364, 239)
+        Me.LabelModeBTargetIMonitor.Name = "LabelModeBTargetIMonitor"
+        Me.LabelModeBTargetIMonitor.Size = New System.Drawing.Size(10, 13)
+        Me.LabelModeBTargetIMonitor.TabIndex = 880
+        Me.LabelModeBTargetIMonitor.Text = "-"
+        '
+        'Label125
+        '
+        Me.Label125.AutoSize = True
+        Me.Label125.Location = New System.Drawing.Point(229, 239)
+        Me.Label125.Name = "Label125"
+        Me.Label125.Size = New System.Drawing.Size(82, 13)
+        Me.Label125.TabIndex = 879
+        Me.Label125.Text = "Target I Monitor"
+        '
+        'LabelModeATargetIMonitor
+        '
+        Me.LabelModeATargetIMonitor.AutoSize = True
+        Me.LabelModeATargetIMonitor.Location = New System.Drawing.Point(142, 241)
+        Me.LabelModeATargetIMonitor.Name = "LabelModeATargetIMonitor"
+        Me.LabelModeATargetIMonitor.Size = New System.Drawing.Size(10, 13)
+        Me.LabelModeATargetIMonitor.TabIndex = 878
+        Me.LabelModeATargetIMonitor.Text = "-"
+        '
+        'Label137
+        '
+        Me.Label137.AutoSize = True
+        Me.Label137.Location = New System.Drawing.Point(5, 239)
+        Me.Label137.Name = "Label137"
+        Me.Label137.Size = New System.Drawing.Size(82, 13)
+        Me.Label137.TabIndex = 877
+        Me.Label137.Text = "Target I Monitor"
+        '
+        'ButtonStartDataLogging
+        '
+        Me.ButtonStartDataLogging.Location = New System.Drawing.Point(443, 603)
+        Me.ButtonStartDataLogging.Name = "ButtonStartDataLogging"
+        Me.ButtonStartDataLogging.Size = New System.Drawing.Size(93, 23)
+        Me.ButtonStartDataLogging.TabIndex = 881
+        Me.ButtonStartDataLogging.Text = "Start Logging"
+        Me.ButtonStartDataLogging.UseVisualStyleBackColor = True
+        '
+        'ButtonStopDataLogging
+        '
+        Me.ButtonStopDataLogging.Enabled = False
+        Me.ButtonStopDataLogging.Location = New System.Drawing.Point(542, 602)
+        Me.ButtonStopDataLogging.Name = "ButtonStopDataLogging"
+        Me.ButtonStopDataLogging.Size = New System.Drawing.Size(93, 23)
+        Me.ButtonStopDataLogging.TabIndex = 882
+        Me.ButtonStopDataLogging.Text = "Stop Logging"
+        Me.ButtonStopDataLogging.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1154, 683)
+        Me.ClientSize = New System.Drawing.Size(1154, 712)
+        Me.Controls.Add(Me.ButtonStopDataLogging)
+        Me.Controls.Add(Me.ButtonStartDataLogging)
+        Me.Controls.Add(Me.LabelModeBTargetIMonitor)
+        Me.Controls.Add(Me.Label125)
+        Me.Controls.Add(Me.LabelModeATargetIMonitor)
+        Me.Controls.Add(Me.Label137)
+        Me.Controls.Add(Me.LabelModeBTargetISetPoint)
+        Me.Controls.Add(Me.Label113)
+        Me.Controls.Add(Me.LabelModeATargetISetPoint)
+        Me.Controls.Add(Me.Label128)
+        Me.Controls.Add(Me.ButtonSetModeBTargetI)
+        Me.Controls.Add(Me.TextBoxModeBTargetI)
+        Me.Controls.Add(Me.ButtonSetModeATargetI)
+        Me.Controls.Add(Me.TextBoxModeATargetI)
         Me.Controls.Add(Me.LabelControlBoardType)
         Me.Controls.Add(Me.LabelMagnetronType)
         Me.Controls.Add(Me.LabelOscConBeforeCrash)
@@ -5472,5 +5624,19 @@ Partial Class Form1
     Friend WithEvents ETMOverrideModeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LabelMagnetronType As System.Windows.Forms.Label
     Friend WithEvents LabelControlBoardType As System.Windows.Forms.Label
+    Friend WithEvents ButtonSetModeBTargetI As System.Windows.Forms.Button
+    Friend WithEvents TextBoxModeBTargetI As System.Windows.Forms.TextBox
+    Friend WithEvents ButtonSetModeATargetI As System.Windows.Forms.Button
+    Friend WithEvents TextBoxModeATargetI As System.Windows.Forms.TextBox
+    Friend WithEvents LabelModeBTargetISetPoint As System.Windows.Forms.Label
+    Friend WithEvents Label113 As System.Windows.Forms.Label
+    Friend WithEvents LabelModeATargetISetPoint As System.Windows.Forms.Label
+    Friend WithEvents Label128 As System.Windows.Forms.Label
+    Friend WithEvents LabelModeBTargetIMonitor As System.Windows.Forms.Label
+    Friend WithEvents Label125 As System.Windows.Forms.Label
+    Friend WithEvents LabelModeATargetIMonitor As System.Windows.Forms.Label
+    Friend WithEvents Label137 As System.Windows.Forms.Label
+    Friend WithEvents ButtonStartDataLogging As System.Windows.Forms.Button
+    Friend WithEvents ButtonStopDataLogging As System.Windows.Forms.Button
 
 End Class

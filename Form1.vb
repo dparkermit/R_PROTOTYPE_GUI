@@ -13,8 +13,10 @@ Public Class Form1
     Public Const SYNC_3_SEND As Byte = &HF3
     Public Const SYNC_3_RECIEVE As Byte = &HF4
     Public Const COMMAND_LENGTH As Byte = 9
-
-
+    Dim DataLogging As Boolean
+    Dim fastfileName As String
+    Dim fastfilePath As String
+    Dim fastfile As System.IO.StreamWriter
 
     'Commands
 
@@ -37,6 +39,12 @@ Public Class Form1
 
 
     Public Const CMD_CLEAR_PROCESSOR_RESET_DATA As Byte = &H40
+
+    Public Const CMD_DATA_LOGGING As Byte = &H50
+    Public Const CMD_SET_HIGH_ENERGY_TARGET_CURRENT_SETPOINT As Byte = &H51
+    Public Const CMD_SET_LOW_ENERGY_TARGET_CURRENT_SETPOINT As Byte = &H52
+
+
 
     Public Const CMD_FORCE_SOFTWARE_RESTART As Byte = &HA0
     Public Const CMD_SOFTWARE_SKIP_WARMUP As Byte = &HA1
@@ -179,6 +187,11 @@ Public Class Form1
     Public Const RAM_READ_COUNT_LVD_INTERRUPT As Byte = &HAD
     Public Const RAM_READ_LAST_OSCCON_BEFORE_CRASH As Byte = &HAE
 
+
+    Public Const RAM_READ_HIGH_TARGET_CURRENT_SET_POINT As Byte = &HB0
+    Public Const RAM_READ_LOW_TARGET_CURRENT_SET_POINT As Byte = &HB1
+    Public Const RAM_READ_HIGH_TARGET_CURRENT_READING As Byte = &HB2
+    Public Const RAM_READ_LOW_TARGET_CURRENT_READING As Byte = &HB3
 
 
 
@@ -375,6 +388,8 @@ Public Class Form1
     Public Function SendAndValidateCommand(ByVal commandB As Byte, ByVal locationB As Byte, ByVal DataHB As Byte, ByVal DataLB As Byte) As Boolean
         Dim valid_command As Boolean = False
         Dim CheckSum As UInt16 = 0
+
+
 
 
         SerialCommandTransmitBuffer(0) = SYNC_1
@@ -876,6 +891,29 @@ Public Class Form1
             LabelOscConBeforeCrash.Text = "error"
         End If
 
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_HIGH_TARGET_CURRENT_SET_POINT, 0, 0) = True Then
+            LabelModeATargetISetPoint.Text = ReturnData
+        Else
+            LabelModeATargetISetPoint.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_LOW_TARGET_CURRENT_SET_POINT, 0, 0) = True Then
+            LabelModeBTargetISetPoint.Text = ReturnData
+        Else
+            LabelModeBTargetISetPoint.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_HIGH_TARGET_CURRENT_READING, 0, 0) = True Then
+            LabelModeATargetIMonitor.Text = ReturnData
+        Else
+            LabelModeATargetIMonitor.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_LOW_TARGET_CURRENT_READING, 0, 0) = True Then
+            LabelModeBTargetIMonitor.Text = ReturnData
+        Else
+            LabelModeBTargetIMonitor.Text = "error"
+        End If
 
         LabelTime.Text = DateTime.Now
 
@@ -1650,7 +1688,7 @@ Public Class Form1
         Else
             MsgBox("Set Lambda Voltage Command Failed")
         End If
-        ReadAllFromRam()
+        'ReadAllFromRam()
     End Sub
 
 
@@ -1668,7 +1706,7 @@ Public Class Form1
         Else
             MsgBox("Set Lambda Voltage Command Failed")
         End If
-        ReadAllFromRam()
+        'ReadAllFromRam()
     End Sub
 
     Private Sub ButtonSetMagnet_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonSetMagnet.Click
@@ -1684,7 +1722,7 @@ Public Class Form1
         Else
             MsgBox("Set Magnet Current Command Failed")
         End If
-        ReadAllFromRam()
+        'ReadAllFromRam()
     End Sub
 
 
@@ -1750,7 +1788,7 @@ Public Class Form1
         Else
             MsgBox("Set Filament Voltage Command Failed")
         End If
-        ReadAllFromRam()
+        'ReadAllFromRam()
     End Sub
 
 
@@ -1818,7 +1856,7 @@ Public Class Form1
     Private Sub RemoteMagnetCurrentToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles RemoteMagnetCurrentToolStripMenuItem.Click
         If SendAndValidateCommand(CMD_SET_MAGNETRON_CURRENT_REMOTE_MODE, 0, 0, 0) = True Then
             ' the command Succeded
-            ReadAllFromRam()
+            'ReadAllFromRam()
         Else
             MsgBox("Duh!!!!")
         End If
@@ -1827,7 +1865,7 @@ Public Class Form1
     Private Sub LocalMagnetCurrentToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LocalMagnetCurrentToolStripMenuItem.Click
         If SendAndValidateCommand(CMD_SET_MAGNETRON_CURRENT_LOCAL_MODE, 0, 0, 0) = True Then
             '  the command Succeded
-            ReadAllFromRam()
+            'ReadAllFromRam()
         Else
             MsgBox("Duh!!!!")
         End If
@@ -1857,4 +1895,182 @@ Public Class Form1
         End If
 
     End Sub
+
+    Private Sub ButtonSetModeATargetI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonSetModeATargetI.Click
+        Dim ProgramWord As UInt16
+        Dim ProgramHB As Byte
+        Dim ProgramLB As Byte
+        ProgramWord = TextBoxModeATargetI.Text
+        ProgramHB = Int(ProgramWord / 256)
+        ProgramLB = ProgramWord Mod 256
+
+        If SendAndValidateCommand(CMD_SET_HIGH_ENERGY_TARGET_CURRENT_SETPOINT, 0, ProgramHB, ProgramLB) = True Then
+            ' the command Succeded
+        Else
+            MsgBox("Set Lambda Voltage Command Failed")
+        End If
+    End Sub
+
+    Private Sub ButtonSetModeBTargetI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonSetModeBTargetI.Click
+        Dim ProgramWord As UInt16
+        Dim ProgramHB As Byte
+        Dim ProgramLB As Byte
+        ProgramWord = TextBoxModeBTargetI.Text
+        ProgramHB = Int(ProgramWord / 256)
+        ProgramLB = ProgramWord Mod 256
+
+        If SendAndValidateCommand(CMD_SET_LOW_ENERGY_TARGET_CURRENT_SETPOINT, 0, ProgramHB, ProgramLB) = True Then
+            ' the command Succeded
+        Else
+            MsgBox("Set Lambda Voltage Command Failed")
+        End If
+    End Sub
+
+    Private Sub ButtonStartDataLogging_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonStartDataLogging.Click
+        Timer1.Enabled = False
+        SendAndValidateCommand(CMD_DATA_LOGGING, 1, 0, 0)
+        ButtonStartDataLogging.Enabled = False
+        ButtonStopDataLogging.Enabled = True
+        DataLogging = True
+        LogDataFast()
+    End Sub
+
+    Private Sub ButtonStopDataLogging_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonStopDataLogging.Click
+        DataLogging = False
+        SendAndValidateCommand(CMD_DATA_LOGGING, 0, 0, 0)
+        ButtonStartDataLogging.Enabled = True
+        ButtonStopDataLogging.Enabled = False
+        Timer1.Enabled = True
+    End Sub
+
+    Private Sub OpenLogFile()
+
+
+        fastfileName = "ETM_PFN_Log_" & DateTime.Now.ToString("yyyy_MM_dd_HH_mm") & ".csv"
+        fastfilePath = System.IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.MyDocuments, fastfileName)
+        fastfile = My.Computer.FileSystem.OpenTextFileWriter(fastfilePath, True)
+
+        fastfile.Write("Time , ")
+        fastfile.Write("High Target Imon , ")
+        fastfile.Write("Low Target Imon , ")
+        fastfile.Write("High Offset , ")
+        fastfile.Write("Low Offset , ")
+        fastfile.Write("Pulses , ")
+        fastfile.Write("Magnetron Reading")
+        fastfile.WriteLine("")
+    End Sub
+
+    Private Sub CLoseLogFile()
+        fastfile.Close()
+    End Sub
+
+    Private Function ConvertToSignedByte(ByVal value_unsigned As Byte) As Int16
+        Dim ReturnDataSigned As Int16
+        ReturnDataSigned = 0
+        Try
+            If value_unsigned <= 127 Then
+                ReturnDataSigned = value_unsigned
+            Else
+                ReturnDataSigned = value_unsigned - 255
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+        Return ReturnDataSigned
+    End Function
+
+    Private Sub LogDataFast()
+        Dim temp_unsigned As UInt16
+        Dim data_byte As Byte
+  
+
+        Dim linac_high_energy_target_current_adc_reading As UInt16
+        Dim linac_low_energy_target_current_adc_reading As UInt16
+        Dim linac_high_energy_program_offset As Int32
+        Dim linac_low_energy_program_offset As Int32
+        Dim pulse_counter_this_run As UInt16
+        Dim pulse_magnetron_current_adc_reading As UInt16
+
+
+        OpenSerialPortETM()
+        OpenLogFile()
+        Do While DataLogging = True
+            Application.DoEvents()
+            Try
+                If SerialPortETM.BytesToRead >= 11 Then
+                    data_byte = SerialPortETM.ReadByte
+                    If data_byte = &HFE Then
+                        temp_unsigned = SerialPortETM.ReadByte
+                        temp_unsigned = temp_unsigned * 256
+                        temp_unsigned = temp_unsigned + SerialPortETM.ReadByte
+                        linac_high_energy_target_current_adc_reading = temp_unsigned
+                        LabelModeATargetIMonitor.Text = linac_high_energy_target_current_adc_reading
+                        
+                        temp_unsigned = SerialPortETM.ReadByte
+                        temp_unsigned = temp_unsigned * 256
+                        temp_unsigned = temp_unsigned + SerialPortETM.ReadByte
+                        linac_low_energy_target_current_adc_reading = temp_unsigned
+                        LabelModeBTargetIMonitor.Text = linac_low_energy_target_current_adc_reading
+
+                        temp_unsigned = SerialPortETM.ReadByte
+                        temp_unsigned = temp_unsigned * 256
+                        temp_unsigned = temp_unsigned + SerialPortETM.ReadByte
+                        linac_high_energy_program_offset = ConvertToSignedInteger(temp_unsigned)
+
+                        temp_unsigned = SerialPortETM.ReadByte
+                        temp_unsigned = temp_unsigned * 256
+                        temp_unsigned = temp_unsigned + SerialPortETM.ReadByte
+                        linac_low_energy_program_offset = ConvertToSignedInteger(temp_unsigned)
+
+                        temp_unsigned = SerialPortETM.ReadByte
+                        temp_unsigned = temp_unsigned * 256
+                        temp_unsigned = temp_unsigned + SerialPortETM.ReadByte
+                        pulse_counter_this_run = temp_unsigned
+
+                        temp_unsigned = SerialPortETM.ReadByte
+                        temp_unsigned = temp_unsigned * 256
+                        temp_unsigned = temp_unsigned + SerialPortETM.ReadByte
+                        pulse_magnetron_current_adc_reading = temp_unsigned
+
+
+                        fastfile.Write(DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") & " , ")
+                        fastfile.Write(linac_high_energy_target_current_adc_reading & " , ")
+                        fastfile.Write(linac_low_energy_target_current_adc_reading & " , ")
+                        fastfile.Write(linac_high_energy_program_offset & " , ")
+                        fastfile.Write(linac_low_energy_program_offset & " , ")
+                        fastfile.Write(pulse_counter_this_run & " , ")
+                        fastfile.Write(pulse_magnetron_current_adc_reading)
+                        fastfile.WriteLine("")
+                    End If
+                End If
+            Catch ex As Exception
+                DataLogging = False
+            End Try
+
+        Loop
+
+        CLoseLogFile()
+        CloseSerialPortETM()
+
+    End Sub
+
+    Private Function ConvertToSignedInteger(ByVal value_unsigned As UInt16) As Int32
+        Dim ReturnDataSigned As Int32
+        ReturnDataSigned = 0
+        Try
+            If value_unsigned <= (2 ^ 15 - 1) Then
+                ReturnDataSigned = value_unsigned
+            Else
+                ReturnDataSigned = value_unsigned - (2 ^ 16)
+            End If
+
+        Catch ex As Exception
+
+        End Try
+
+        Return ReturnDataSigned
+    End Function
+
 End Class
