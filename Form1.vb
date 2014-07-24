@@ -1999,15 +1999,18 @@ Public Class Form1
         Do While DataLogging = True
             Application.DoEvents()
             Try
-                If SerialPortETM.BytesToRead >= 11 Then
+                If SerialPortETM.BytesToRead >= 16 Then
                     data_byte = SerialPortETM.ReadByte
                     If data_byte = &HFE Then
+                        data_byte = SerialPortETM.ReadByte
+                        data_byte = SerialPortETM.ReadByte
+                        data_byte = SerialPortETM.ReadByte
                         temp_unsigned = SerialPortETM.ReadByte
                         temp_unsigned = temp_unsigned * 256
                         temp_unsigned = temp_unsigned + SerialPortETM.ReadByte
                         linac_high_energy_target_current_adc_reading = temp_unsigned
                         LabelModeATargetIMonitor.Text = linac_high_energy_target_current_adc_reading
-                        
+
                         temp_unsigned = SerialPortETM.ReadByte
                         temp_unsigned = temp_unsigned * 256
                         temp_unsigned = temp_unsigned + SerialPortETM.ReadByte
@@ -2035,13 +2038,14 @@ Public Class Form1
                         pulse_magnetron_current_adc_reading = temp_unsigned
 
 
-                        fastfile.Write(DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") & " , ")
+                        fastfile.Write(DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") & " " & DateTime.Now.Millisecond & " , ")
                         fastfile.Write(linac_high_energy_target_current_adc_reading & " , ")
                         fastfile.Write(linac_low_energy_target_current_adc_reading & " , ")
                         fastfile.Write(linac_high_energy_program_offset & " , ")
                         fastfile.Write(linac_low_energy_program_offset & " , ")
                         fastfile.Write(pulse_counter_this_run & " , ")
-                        fastfile.Write(pulse_magnetron_current_adc_reading)
+                        fastfile.Write(pulse_magnetron_current_adc_reading & " , ")
+                        fastfile.Write(SerialPortETM.BytesToRead)
                         fastfile.WriteLine("")
                     End If
                 End If

@@ -459,10 +459,9 @@ Partial Class Form1
         'SerialPortETM
         '
         Me.SerialPortETM.BaudRate = 125000
-        Me.SerialPortETM.DtrEnable = True
-        Me.SerialPortETM.ReadBufferSize = 32768
+        Me.SerialPortETM.ReadBufferSize = 8192
         Me.SerialPortETM.ReadTimeout = 100
-        Me.SerialPortETM.RtsEnable = True
+        Me.SerialPortETM.WriteBufferSize = 8192
         '
         'LabelComMsg
         '
