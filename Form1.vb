@@ -299,7 +299,7 @@ Public Class Form1
         filePath = System.IO.Path.Combine(My.Computer.FileSystem.SpecialDirectories.MyDocuments, "ETM_Modulator_Log.csv")
         Dim file As System.IO.StreamWriter
         file = My.Computer.FileSystem.OpenTextFileWriter(filePath, True)
-   
+
 
         file.Write("Time ,")
         file.Write("State ,")
@@ -541,6 +541,12 @@ Public Class Form1
         ' Data for the Magnetron Heater
         If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_MAGNETRON_HEATER_VOLTAGE_SET_POINT, 0, 0) = True Then
             LabelHeaterSetPoint.Text = Math.Round((ReturnData / 1000), 3) & " Volts"
+        Else
+            LabelHeaterSetPoint.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_MAGNETRON_HEATER_CURRENT_SET_POINT, 0, 0) = True Then
+            LabelHeaterISetPoint.Text = Math.Round((ReturnData / 1000), 3) & " Amps"
         Else
             LabelHeaterSetPoint.Text = "error"
         End If
@@ -2076,5 +2082,22 @@ Public Class Form1
 
         Return ReturnDataSigned
     End Function
+
+    Private Sub ButtonSetFilamentCurrent_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonSetFilamentCurrent.Click
+        Dim ProgramWord As UInt16
+        Dim ProgramHB As Byte
+        Dim ProgramLB As Byte
+        ProgramWord = TextBoxSetFilament.Text * 1000
+        ProgramHB = Int(ProgramWord / 256)
+        ProgramLB = ProgramWord Mod 256
+
+        If SendAndValidateCommand(CMD_SET_MAGNETRON_FILAMENT_CURRENT, 0, ProgramHB, ProgramLB) = True Then
+            ' the command Succeded
+        Else
+            MsgBox("Set Filament Voltage Command Failed")
+        End If
+        'ReadAllFromRam()
+    End Sub
+
 
 End Class

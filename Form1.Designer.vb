@@ -453,6 +453,9 @@ Partial Class Form1
         Me.Label137 = New System.Windows.Forms.Label()
         Me.ButtonStartDataLogging = New System.Windows.Forms.Button()
         Me.ButtonStopDataLogging = New System.Windows.Forms.Button()
+        Me.ButtonSetFilamentCurrent = New System.Windows.Forms.Button()
+        Me.LabelHeaterISetPoint = New System.Windows.Forms.Label()
+        Me.Label135 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -532,9 +535,9 @@ Partial Class Form1
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.Location = New System.Drawing.Point(228, 80)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(101, 13)
+        Me.Label6.Size = New System.Drawing.Size(113, 13)
         Me.Label6.TabIndex = 11
-        Me.Label6.Text = "Heater Set Point"
+        Me.Label6.Text = "Heater V Set Point"
         '
         'LabelHeaterVmon
         '
@@ -4773,11 +4776,42 @@ Partial Class Form1
         Me.ButtonStopDataLogging.Text = "Stop Logging"
         Me.ButtonStopDataLogging.UseVisualStyleBackColor = True
         '
+        'ButtonSetFilamentCurrent
+        '
+        Me.ButtonSetFilamentCurrent.Location = New System.Drawing.Point(306, 584)
+        Me.ButtonSetFilamentCurrent.Name = "ButtonSetFilamentCurrent"
+        Me.ButtonSetFilamentCurrent.Size = New System.Drawing.Size(114, 23)
+        Me.ButtonSetFilamentCurrent.TabIndex = 883
+        Me.ButtonSetFilamentCurrent.Text = "Set Filament Current"
+        Me.ButtonSetFilamentCurrent.UseVisualStyleBackColor = True
+        '
+        'LabelHeaterISetPoint
+        '
+        Me.LabelHeaterISetPoint.AutoSize = True
+        Me.LabelHeaterISetPoint.Location = New System.Drawing.Point(365, 69)
+        Me.LabelHeaterISetPoint.Name = "LabelHeaterISetPoint"
+        Me.LabelHeaterISetPoint.Size = New System.Drawing.Size(10, 13)
+        Me.LabelHeaterISetPoint.TabIndex = 885
+        Me.LabelHeaterISetPoint.Text = "-"
+        '
+        'Label135
+        '
+        Me.Label135.AutoSize = True
+        Me.Label135.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label135.Location = New System.Drawing.Point(228, 67)
+        Me.Label135.Name = "Label135"
+        Me.Label135.Size = New System.Drawing.Size(109, 13)
+        Me.Label135.TabIndex = 884
+        Me.Label135.Text = "Heater I Set Point"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1154, 712)
+        Me.Controls.Add(Me.LabelHeaterISetPoint)
+        Me.Controls.Add(Me.Label135)
+        Me.Controls.Add(Me.ButtonSetFilamentCurrent)
         Me.Controls.Add(Me.ButtonStopDataLogging)
         Me.Controls.Add(Me.ButtonStartDataLogging)
         Me.Controls.Add(Me.LabelModeBTargetIMonitor)
@@ -5637,5 +5671,8 @@ Partial Class Form1
     Friend WithEvents Label137 As System.Windows.Forms.Label
     Friend WithEvents ButtonStartDataLogging As System.Windows.Forms.Button
     Friend WithEvents ButtonStopDataLogging As System.Windows.Forms.Button
+    Friend WithEvents ButtonSetFilamentCurrent As System.Windows.Forms.Button
+    Friend WithEvents LabelHeaterISetPoint As System.Windows.Forms.Label
+    Friend WithEvents Label135 As System.Windows.Forms.Label
 
 End Class
