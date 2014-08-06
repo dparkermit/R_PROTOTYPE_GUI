@@ -186,6 +186,7 @@ Public Class Form1
     Public Const RAM_READ_LAST_ACTION_BEFORE_CRASH As Byte = &HAC
     Public Const RAM_READ_COUNT_LVD_INTERRUPT As Byte = &HAD
     Public Const RAM_READ_LAST_OSCCON_BEFORE_CRASH As Byte = &HAE
+    Public Const RAM_READ_PULSE_LATCH_RESET_ERROR As Byte = &HAF
 
 
     Public Const RAM_READ_HIGH_TARGET_CURRENT_SET_POINT As Byte = &HB0
@@ -896,6 +897,13 @@ Public Class Form1
         Else
             LabelOscConBeforeCrash.Text = "error"
         End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_PULSE_LATCH_RESET_ERROR, 0, 0) = True Then
+            LabelPulseLatchError.Text = ReturnData
+        Else
+            LabelPulseLatchError.Text = "error"
+        End If
+
 
         If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_HIGH_TARGET_CURRENT_SET_POINT, 0, 0) = True Then
             LabelModeATargetISetPoint.Text = ReturnData
@@ -2100,4 +2108,14 @@ Public Class Form1
     End Sub
 
 
+    Private Sub FilamentCurrentControlModeToolStripMenuItem_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles FilamentCurrentControlModeToolStripMenuItem.Click
+        If ButtonSetFilament.Enabled Then
+            ButtonSetFilament.Enabled = False
+            ButtonSetFilamentCurrent.Enabled = True
+        Else
+            ButtonSetFilament.Enabled = True
+            ButtonSetFilamentCurrent.Enabled = False
+        End If
+    
+    End Sub
 End Class

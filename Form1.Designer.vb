@@ -456,6 +456,9 @@ Partial Class Form1
         Me.ButtonSetFilamentCurrent = New System.Windows.Forms.Button()
         Me.LabelHeaterISetPoint = New System.Windows.Forms.Label()
         Me.Label135 = New System.Windows.Forms.Label()
+        Me.LabelPulseLatchError = New System.Windows.Forms.Label()
+        Me.Label138 = New System.Windows.Forms.Label()
+        Me.FilamentCurrentControlModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -4460,7 +4463,7 @@ Partial Class Form1
         '
         'LocalRemoteToolStripMenuItem
         '
-        Me.LocalRemoteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RemoteMagnetCurrentToolStripMenuItem, Me.LocalMagnetCurrentToolStripMenuItem})
+        Me.LocalRemoteToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RemoteMagnetCurrentToolStripMenuItem, Me.LocalMagnetCurrentToolStripMenuItem, Me.FilamentCurrentControlModeToolStripMenuItem})
         Me.LocalRemoteToolStripMenuItem.Name = "LocalRemoteToolStripMenuItem"
         Me.LocalRemoteToolStripMenuItem.Size = New System.Drawing.Size(93, 20)
         Me.LocalRemoteToolStripMenuItem.Text = "Local/Remote"
@@ -4778,6 +4781,7 @@ Partial Class Form1
         '
         'ButtonSetFilamentCurrent
         '
+        Me.ButtonSetFilamentCurrent.Enabled = False
         Me.ButtonSetFilamentCurrent.Location = New System.Drawing.Point(306, 584)
         Me.ButtonSetFilamentCurrent.Name = "ButtonSetFilamentCurrent"
         Me.ButtonSetFilamentCurrent.Size = New System.Drawing.Size(114, 23)
@@ -4804,11 +4808,37 @@ Partial Class Form1
         Me.Label135.TabIndex = 884
         Me.Label135.Text = "Heater I Set Point"
         '
+        'LabelPulseLatchError
+        '
+        Me.LabelPulseLatchError.AutoSize = True
+        Me.LabelPulseLatchError.Location = New System.Drawing.Point(1038, 513)
+        Me.LabelPulseLatchError.Name = "LabelPulseLatchError"
+        Me.LabelPulseLatchError.Size = New System.Drawing.Size(10, 13)
+        Me.LabelPulseLatchError.TabIndex = 887
+        Me.LabelPulseLatchError.Text = "-"
+        '
+        'Label138
+        '
+        Me.Label138.AutoSize = True
+        Me.Label138.Location = New System.Drawing.Point(903, 513)
+        Me.Label138.Name = "Label138"
+        Me.Label138.Size = New System.Drawing.Size(88, 13)
+        Me.Label138.TabIndex = 886
+        Me.Label138.Text = "Pulse Latch Error"
+        '
+        'FilamentCurrentControlModeToolStripMenuItem
+        '
+        Me.FilamentCurrentControlModeToolStripMenuItem.Name = "FilamentCurrentControlModeToolStripMenuItem"
+        Me.FilamentCurrentControlModeToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.FilamentCurrentControlModeToolStripMenuItem.Text = "Toggle Filament Control Mode"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1154, 712)
+        Me.Controls.Add(Me.LabelPulseLatchError)
+        Me.Controls.Add(Me.Label138)
         Me.Controls.Add(Me.LabelHeaterISetPoint)
         Me.Controls.Add(Me.Label135)
         Me.Controls.Add(Me.ButtonSetFilamentCurrent)
@@ -5674,5 +5704,8 @@ Partial Class Form1
     Friend WithEvents ButtonSetFilamentCurrent As System.Windows.Forms.Button
     Friend WithEvents LabelHeaterISetPoint As System.Windows.Forms.Label
     Friend WithEvents Label135 As System.Windows.Forms.Label
+    Friend WithEvents LabelPulseLatchError As System.Windows.Forms.Label
+    Friend WithEvents Label138 As System.Windows.Forms.Label
+    Friend WithEvents FilamentCurrentControlModeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
 
 End Class
