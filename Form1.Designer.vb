@@ -420,6 +420,7 @@ Partial Class Form1
         Me.LocalRemoteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RemoteMagnetCurrentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LocalMagnetCurrentToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.FilamentCurrentControlModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LabelGUIVersion = New System.Windows.Forms.Label()
         Me.LabelMCUVersion = New System.Windows.Forms.Label()
         Me.LabelMagnetControlStatus = New System.Windows.Forms.Label()
@@ -458,7 +459,20 @@ Partial Class Form1
         Me.Label135 = New System.Windows.Forms.Label()
         Me.LabelPulseLatchError = New System.Windows.Forms.Label()
         Me.Label138 = New System.Windows.Forms.Label()
-        Me.FilamentCurrentControlModeToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ButtonLowEnergyAdjustNumPulses = New System.Windows.Forms.Button()
+        Me.TextBoxLowEnergyAdjustPulses = New System.Windows.Forms.TextBox()
+        Me.ButtonLowEnergyAdjustMag = New System.Windows.Forms.Button()
+        Me.TextBoxLowEnergyAdjustMag = New System.Windows.Forms.TextBox()
+        Me.ButtonLowEnergyAdjDir = New System.Windows.Forms.Button()
+        Me.TextBoxLowEnergyAdjDir = New System.Windows.Forms.TextBox()
+        Me.LabelTargetAdjustInitial = New System.Windows.Forms.Label()
+        Me.Label141 = New System.Windows.Forms.Label()
+        Me.LabelTargetAdjustMaxTime = New System.Windows.Forms.Label()
+        Me.Label143 = New System.Windows.Forms.Label()
+        Me.LabelTargetAdjustMaxMag = New System.Windows.Forms.Label()
+        Me.Label145 = New System.Windows.Forms.Label()
+        Me.LabelTargetAdjustPulse = New System.Windows.Forms.Label()
+        Me.Label147 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -4471,14 +4485,20 @@ Partial Class Form1
         'RemoteMagnetCurrentToolStripMenuItem
         '
         Me.RemoteMagnetCurrentToolStripMenuItem.Name = "RemoteMagnetCurrentToolStripMenuItem"
-        Me.RemoteMagnetCurrentToolStripMenuItem.Size = New System.Drawing.Size(227, 22)
+        Me.RemoteMagnetCurrentToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.RemoteMagnetCurrentToolStripMenuItem.Text = "Mode A Sets Magnet Current"
         '
         'LocalMagnetCurrentToolStripMenuItem
         '
         Me.LocalMagnetCurrentToolStripMenuItem.Name = "LocalMagnetCurrentToolStripMenuItem"
-        Me.LocalMagnetCurrentToolStripMenuItem.Size = New System.Drawing.Size(227, 22)
+        Me.LocalMagnetCurrentToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
         Me.LocalMagnetCurrentToolStripMenuItem.Text = "GUI Sets Magnet Current"
+        '
+        'FilamentCurrentControlModeToolStripMenuItem
+        '
+        Me.FilamentCurrentControlModeToolStripMenuItem.Name = "FilamentCurrentControlModeToolStripMenuItem"
+        Me.FilamentCurrentControlModeToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
+        Me.FilamentCurrentControlModeToolStripMenuItem.Text = "Toggle Filament Control Mode"
         '
         'LabelGUIVersion
         '
@@ -4826,17 +4846,145 @@ Partial Class Form1
         Me.Label138.TabIndex = 886
         Me.Label138.Text = "Pulse Latch Error"
         '
-        'FilamentCurrentControlModeToolStripMenuItem
+        'ButtonLowEnergyAdjustNumPulses
         '
-        Me.FilamentCurrentControlModeToolStripMenuItem.Name = "FilamentCurrentControlModeToolStripMenuItem"
-        Me.FilamentCurrentControlModeToolStripMenuItem.Size = New System.Drawing.Size(237, 22)
-        Me.FilamentCurrentControlModeToolStripMenuItem.Text = "Toggle Filament Control Mode"
+        Me.ButtonLowEnergyAdjustNumPulses.Location = New System.Drawing.Point(622, 633)
+        Me.ButtonLowEnergyAdjustNumPulses.Name = "ButtonLowEnergyAdjustNumPulses"
+        Me.ButtonLowEnergyAdjustNumPulses.Size = New System.Drawing.Size(114, 23)
+        Me.ButtonLowEnergyAdjustNumPulses.TabIndex = 889
+        Me.ButtonLowEnergyAdjustNumPulses.Text = "# Pulses"
+        Me.ButtonLowEnergyAdjustNumPulses.UseVisualStyleBackColor = True
+        '
+        'TextBoxLowEnergyAdjustPulses
+        '
+        Me.TextBoxLowEnergyAdjustPulses.Location = New System.Drawing.Point(545, 636)
+        Me.TextBoxLowEnergyAdjustPulses.Name = "TextBoxLowEnergyAdjustPulses"
+        Me.TextBoxLowEnergyAdjustPulses.Size = New System.Drawing.Size(71, 20)
+        Me.TextBoxLowEnergyAdjustPulses.TabIndex = 888
+        '
+        'ButtonLowEnergyAdjustMag
+        '
+        Me.ButtonLowEnergyAdjustMag.Location = New System.Drawing.Point(622, 659)
+        Me.ButtonLowEnergyAdjustMag.Name = "ButtonLowEnergyAdjustMag"
+        Me.ButtonLowEnergyAdjustMag.Size = New System.Drawing.Size(114, 23)
+        Me.ButtonLowEnergyAdjustMag.TabIndex = 891
+        Me.ButtonLowEnergyAdjustMag.Text = "Magnitude"
+        Me.ButtonLowEnergyAdjustMag.UseVisualStyleBackColor = True
+        '
+        'TextBoxLowEnergyAdjustMag
+        '
+        Me.TextBoxLowEnergyAdjustMag.Location = New System.Drawing.Point(545, 662)
+        Me.TextBoxLowEnergyAdjustMag.Name = "TextBoxLowEnergyAdjustMag"
+        Me.TextBoxLowEnergyAdjustMag.Size = New System.Drawing.Size(71, 20)
+        Me.TextBoxLowEnergyAdjustMag.TabIndex = 890
+        '
+        'ButtonLowEnergyAdjDir
+        '
+        Me.ButtonLowEnergyAdjDir.Location = New System.Drawing.Point(622, 685)
+        Me.ButtonLowEnergyAdjDir.Name = "ButtonLowEnergyAdjDir"
+        Me.ButtonLowEnergyAdjDir.Size = New System.Drawing.Size(114, 23)
+        Me.ButtonLowEnergyAdjDir.TabIndex = 893
+        Me.ButtonLowEnergyAdjDir.Text = "Max Cooldown Sec"
+        Me.ButtonLowEnergyAdjDir.UseVisualStyleBackColor = True
+        '
+        'TextBoxLowEnergyAdjDir
+        '
+        Me.TextBoxLowEnergyAdjDir.Location = New System.Drawing.Point(545, 688)
+        Me.TextBoxLowEnergyAdjDir.Name = "TextBoxLowEnergyAdjDir"
+        Me.TextBoxLowEnergyAdjDir.Size = New System.Drawing.Size(71, 20)
+        Me.TextBoxLowEnergyAdjDir.TabIndex = 892
+        '
+        'LabelTargetAdjustInitial
+        '
+        Me.LabelTargetAdjustInitial.AutoSize = True
+        Me.LabelTargetAdjustInitial.Location = New System.Drawing.Point(838, 698)
+        Me.LabelTargetAdjustInitial.Name = "LabelTargetAdjustInitial"
+        Me.LabelTargetAdjustInitial.Size = New System.Drawing.Size(10, 13)
+        Me.LabelTargetAdjustInitial.TabIndex = 901
+        Me.LabelTargetAdjustInitial.Text = "-"
+        '
+        'Label141
+        '
+        Me.Label141.AutoSize = True
+        Me.Label141.Location = New System.Drawing.Point(742, 698)
+        Me.Label141.Name = "Label141"
+        Me.Label141.Size = New System.Drawing.Size(55, 13)
+        Me.Label141.TabIndex = 900
+        Me.Label141.Text = "Initial Mag"
+        '
+        'LabelTargetAdjustMaxTime
+        '
+        Me.LabelTargetAdjustMaxTime.AutoSize = True
+        Me.LabelTargetAdjustMaxTime.Location = New System.Drawing.Point(838, 685)
+        Me.LabelTargetAdjustMaxTime.Name = "LabelTargetAdjustMaxTime"
+        Me.LabelTargetAdjustMaxTime.Size = New System.Drawing.Size(10, 13)
+        Me.LabelTargetAdjustMaxTime.TabIndex = 899
+        Me.LabelTargetAdjustMaxTime.Text = "-"
+        '
+        'Label143
+        '
+        Me.Label143.AutoSize = True
+        Me.Label143.Location = New System.Drawing.Point(742, 685)
+        Me.Label143.Name = "Label143"
+        Me.Label143.Size = New System.Drawing.Size(77, 13)
+        Me.Label143.TabIndex = 898
+        Me.Label143.Text = "Time Max Mag"
+        '
+        'LabelTargetAdjustMaxMag
+        '
+        Me.LabelTargetAdjustMaxMag.AutoSize = True
+        Me.LabelTargetAdjustMaxMag.Location = New System.Drawing.Point(838, 672)
+        Me.LabelTargetAdjustMaxMag.Name = "LabelTargetAdjustMaxMag"
+        Me.LabelTargetAdjustMaxMag.Size = New System.Drawing.Size(10, 13)
+        Me.LabelTargetAdjustMaxMag.TabIndex = 897
+        Me.LabelTargetAdjustMaxMag.Text = "-"
+        '
+        'Label145
+        '
+        Me.Label145.AutoSize = True
+        Me.Label145.Location = New System.Drawing.Point(742, 672)
+        Me.Label145.Name = "Label145"
+        Me.Label145.Size = New System.Drawing.Size(51, 13)
+        Me.Label145.TabIndex = 896
+        Me.Label145.Text = "Max Mag"
+        '
+        'LabelTargetAdjustPulse
+        '
+        Me.LabelTargetAdjustPulse.AutoSize = True
+        Me.LabelTargetAdjustPulse.Location = New System.Drawing.Point(838, 659)
+        Me.LabelTargetAdjustPulse.Name = "LabelTargetAdjustPulse"
+        Me.LabelTargetAdjustPulse.Size = New System.Drawing.Size(10, 13)
+        Me.LabelTargetAdjustPulse.TabIndex = 895
+        Me.LabelTargetAdjustPulse.Text = "-"
+        '
+        'Label147
+        '
+        Me.Label147.AutoSize = True
+        Me.Label147.Location = New System.Drawing.Point(742, 659)
+        Me.Label147.Name = "Label147"
+        Me.Label147.Size = New System.Drawing.Size(43, 13)
+        Me.Label147.TabIndex = 894
+        Me.Label147.Text = "# Pulse"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1154, 712)
+        Me.Controls.Add(Me.LabelTargetAdjustInitial)
+        Me.Controls.Add(Me.Label141)
+        Me.Controls.Add(Me.LabelTargetAdjustMaxTime)
+        Me.Controls.Add(Me.Label143)
+        Me.Controls.Add(Me.LabelTargetAdjustMaxMag)
+        Me.Controls.Add(Me.Label145)
+        Me.Controls.Add(Me.LabelTargetAdjustPulse)
+        Me.Controls.Add(Me.Label147)
+        Me.Controls.Add(Me.ButtonLowEnergyAdjDir)
+        Me.Controls.Add(Me.TextBoxLowEnergyAdjDir)
+        Me.Controls.Add(Me.ButtonLowEnergyAdjustMag)
+        Me.Controls.Add(Me.TextBoxLowEnergyAdjustMag)
+        Me.Controls.Add(Me.ButtonLowEnergyAdjustNumPulses)
+        Me.Controls.Add(Me.TextBoxLowEnergyAdjustPulses)
         Me.Controls.Add(Me.LabelPulseLatchError)
         Me.Controls.Add(Me.Label138)
         Me.Controls.Add(Me.LabelHeaterISetPoint)
@@ -5707,5 +5855,19 @@ Partial Class Form1
     Friend WithEvents LabelPulseLatchError As System.Windows.Forms.Label
     Friend WithEvents Label138 As System.Windows.Forms.Label
     Friend WithEvents FilamentCurrentControlModeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
+    Friend WithEvents ButtonLowEnergyAdjustNumPulses As System.Windows.Forms.Button
+    Friend WithEvents TextBoxLowEnergyAdjustPulses As System.Windows.Forms.TextBox
+    Friend WithEvents ButtonLowEnergyAdjustMag As System.Windows.Forms.Button
+    Friend WithEvents TextBoxLowEnergyAdjustMag As System.Windows.Forms.TextBox
+    Friend WithEvents ButtonLowEnergyAdjDir As System.Windows.Forms.Button
+    Friend WithEvents TextBoxLowEnergyAdjDir As System.Windows.Forms.TextBox
+    Friend WithEvents LabelTargetAdjustInitial As System.Windows.Forms.Label
+    Friend WithEvents Label141 As System.Windows.Forms.Label
+    Friend WithEvents LabelTargetAdjustMaxTime As System.Windows.Forms.Label
+    Friend WithEvents Label143 As System.Windows.Forms.Label
+    Friend WithEvents LabelTargetAdjustMaxMag As System.Windows.Forms.Label
+    Friend WithEvents Label145 As System.Windows.Forms.Label
+    Friend WithEvents LabelTargetAdjustPulse As System.Windows.Forms.Label
+    Friend WithEvents Label147 As System.Windows.Forms.Label
 
 End Class

@@ -43,7 +43,9 @@ Public Class Form1
     Public Const CMD_DATA_LOGGING As Byte = &H50
     Public Const CMD_SET_HIGH_ENERGY_TARGET_CURRENT_SETPOINT As Byte = &H51
     Public Const CMD_SET_LOW_ENERGY_TARGET_CURRENT_SETPOINT As Byte = &H52
-
+    Public Const CMD_SET_TARGET_CURRENT_STARTUP_PULSES As Byte = &H53
+    Public Const CMD_SET_TARGET_CURRENT_STARTUP_MAGNITUDE As Byte = &H54
+    Public Const CMD_SET_TARGET_CURRENT_STARTUP_DIRECTION As Byte = &H55
 
 
     Public Const CMD_FORCE_SOFTWARE_RESTART As Byte = &HA0
@@ -193,7 +195,10 @@ Public Class Form1
     Public Const RAM_READ_LOW_TARGET_CURRENT_SET_POINT As Byte = &HB1
     Public Const RAM_READ_HIGH_TARGET_CURRENT_READING As Byte = &HB2
     Public Const RAM_READ_LOW_TARGET_CURRENT_READING As Byte = &HB3
-
+    Public Const RAM_READ_TARGET_ADJUST_MAX_PULSES As Byte = &HB4
+    Public Const RAM_READ_TARGET_ADJUST_MAX_MAGNITUDE As Byte = &HB5
+    Public Const RAM_READ_TARGET_ADJUST_MAX_COOLDOWN As Byte = &HB6
+    Public Const RAM_READ_TARGET_ADJUST_INITIAL_MAGNITUDE As Byte = &HB7
 
 
     Public Const EEPROM_V_SET_POINT As Byte = 0
@@ -928,6 +933,32 @@ Public Class Form1
         Else
             LabelModeBTargetIMonitor.Text = "error"
         End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_TARGET_ADJUST_MAX_MAGNITUDE, 0, 0) = True Then
+            LabelTargetAdjustMaxMag.Text = ReturnData
+        Else
+            LabelTargetAdjustMaxMag.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_TARGET_ADJUST_MAX_COOLDOWN, 0, 0) = True Then
+            LabelTargetAdjustMaxTime.Text = ReturnData
+        Else
+            LabelTargetAdjustMaxTime.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_TARGET_ADJUST_MAX_PULSES, 0, 0) = True Then
+            LabelTargetAdjustPulse.Text = ReturnData
+        Else
+            LabelTargetAdjustPulse.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_TARGET_ADJUST_INITIAL_MAGNITUDE, 0, 0) = True Then
+            LabelTargetAdjustInitial.Text = ReturnData
+        Else
+            LabelTargetAdjustInitial.Text = "error"
+        End If
+
+
 
         LabelTime.Text = DateTime.Now
 
@@ -1967,6 +1998,7 @@ Public Class Form1
         fastfile.Write("Time , ")
         fastfile.Write("High Target Imon , ")
         fastfile.Write("Low Target Imon , ")
+        fastfile.Write("Current Adjust , ")
         fastfile.Write("High Offset , ")
         fastfile.Write("Low Offset , ")
         fastfile.Write("Pulses , ")
@@ -2006,7 +2038,7 @@ Public Class Form1
         Dim linac_low_energy_program_offset As Int32
         Dim pulse_counter_this_run As UInt16
         Dim pulse_magnetron_current_adc_reading As UInt16
-
+        Dim low_energy_target_current_adjust As UInt16
 
         OpenSerialPortETM()
         OpenLogFile()
@@ -2017,8 +2049,12 @@ Public Class Form1
                     data_byte = SerialPortETM.ReadByte
                     If data_byte = &HFE Then
                         data_byte = SerialPortETM.ReadByte
-                        data_byte = SerialPortETM.ReadByte
-                        data_byte = SerialPortETM.ReadByte
+
+                        temp_unsigned = SerialPortETM.ReadByte
+                        temp_unsigned = temp_unsigned * 256
+                        temp_unsigned = temp_unsigned + SerialPortETM.ReadByte
+                        low_energy_target_current_adjust = temp_unsigned
+
                         temp_unsigned = SerialPortETM.ReadByte
                         temp_unsigned = temp_unsigned * 256
                         temp_unsigned = temp_unsigned + SerialPortETM.ReadByte
@@ -2055,6 +2091,7 @@ Public Class Form1
                         fastfile.Write(DateTime.Now.ToString("yyyy_MM_dd_HH_mm_ss") & " " & DateTime.Now.Millisecond & " , ")
                         fastfile.Write(linac_high_energy_target_current_adc_reading & " , ")
                         fastfile.Write(linac_low_energy_target_current_adc_reading & " , ")
+                        fastfile.Write(low_energy_target_current_adjust & " , ")
                         fastfile.Write(linac_high_energy_program_offset & " , ")
                         fastfile.Write(linac_low_energy_program_offset & " , ")
                         fastfile.Write(pulse_counter_this_run & " , ")
@@ -2117,5 +2154,50 @@ Public Class Form1
             ButtonSetFilamentCurrent.Enabled = False
         End If
     
+    End Sub
+
+    Private Sub ButtonLowEnergyAdjustNumPulses_Click(sender As System.Object, e As System.EventArgs) Handles ButtonLowEnergyAdjustNumPulses.Click
+        Dim ProgramWord As UInt16
+        Dim ProgramHB As Byte
+        Dim ProgramLB As Byte
+        ProgramWord = TextBoxLowEnergyAdjustPulses.Text
+        ProgramHB = Int(ProgramWord / 256)
+        ProgramLB = ProgramWord Mod 256
+
+        If SendAndValidateCommand(CMD_SET_TARGET_CURRENT_STARTUP_PULSES, 0, ProgramHB, ProgramLB) = True Then
+            ' the command Succeded
+        Else
+            MsgBox("Set Lambda Voltage Command Failed")
+        End If
+    End Sub
+
+    Private Sub ButtonLowEnergyAdjustMag_Click(sender As System.Object, e As System.EventArgs) Handles ButtonLowEnergyAdjustMag.Click
+        Dim ProgramWord As UInt16
+        Dim ProgramHB As Byte
+        Dim ProgramLB As Byte
+        ProgramWord = TextBoxLowEnergyAdjustMag.Text
+        ProgramHB = Int(ProgramWord / 256)
+        ProgramLB = ProgramWord Mod 256
+
+        If SendAndValidateCommand(CMD_SET_TARGET_CURRENT_STARTUP_MAGNITUDE, 0, ProgramHB, ProgramLB) = True Then
+            ' the command Succeded
+        Else
+            MsgBox("Set Lambda Voltage Command Failed")
+        End If
+    End Sub
+
+    Private Sub ButtonLowEnergyAdjDir_Click(sender As System.Object, e As System.EventArgs) Handles ButtonLowEnergyAdjDir.Click
+        Dim ProgramWord As UInt16
+        Dim ProgramHB As Byte
+        Dim ProgramLB As Byte
+        ProgramWord = TextBoxLowEnergyAdjDir.Text * 100
+        ProgramHB = Int(ProgramWord / 256)
+        ProgramLB = ProgramWord Mod 256
+
+        If SendAndValidateCommand(CMD_SET_TARGET_CURRENT_STARTUP_DIRECTION, 0, ProgramHB, ProgramLB) = True Then
+            ' the command Succeded
+        Else
+            MsgBox("Set Lambda Voltage Command Failed")
+        End If
     End Sub
 End Class
