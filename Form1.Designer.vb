@@ -440,8 +440,8 @@ Partial Class Form1
         Me.Label136 = New System.Windows.Forms.Label()
         Me.LabelMagnetronType = New System.Windows.Forms.Label()
         Me.LabelControlBoardType = New System.Windows.Forms.Label()
-        Me.ButtonSetModeBTargetI = New System.Windows.Forms.Button()
-        Me.TextBoxModeBTargetI = New System.Windows.Forms.TextBox()
+        Me.ButtonSetPortalTargetI = New System.Windows.Forms.Button()
+        Me.TextBoxPortalTargetI = New System.Windows.Forms.TextBox()
         Me.ButtonSetModeATargetI = New System.Windows.Forms.Button()
         Me.TextBoxModeATargetI = New System.Windows.Forms.TextBox()
         Me.LabelModeBTargetISetPoint = New System.Windows.Forms.Label()
@@ -473,6 +473,8 @@ Partial Class Form1
         Me.Label145 = New System.Windows.Forms.Label()
         Me.LabelTargetAdjustPulse = New System.Windows.Forms.Label()
         Me.Label147 = New System.Windows.Forms.Label()
+        Me.ButtonSetGantryTargetI = New System.Windows.Forms.Button()
+        Me.TextBoxGantryTargetI = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -4676,21 +4678,21 @@ Partial Class Form1
         Me.LabelControlBoardType.TabIndex = 868
         Me.LabelControlBoardType.Text = "Control Board"
         '
-        'ButtonSetModeBTargetI
+        'ButtonSetPortalTargetI
         '
-        Me.ButtonSetModeBTargetI.Location = New System.Drawing.Point(305, 482)
-        Me.ButtonSetModeBTargetI.Name = "ButtonSetModeBTargetI"
-        Me.ButtonSetModeBTargetI.Size = New System.Drawing.Size(114, 23)
-        Me.ButtonSetModeBTargetI.TabIndex = 872
-        Me.ButtonSetModeBTargetI.Text = "Mode B I TGT"
-        Me.ButtonSetModeBTargetI.UseVisualStyleBackColor = True
+        Me.ButtonSetPortalTargetI.Location = New System.Drawing.Point(305, 482)
+        Me.ButtonSetPortalTargetI.Name = "ButtonSetPortalTargetI"
+        Me.ButtonSetPortalTargetI.Size = New System.Drawing.Size(114, 23)
+        Me.ButtonSetPortalTargetI.TabIndex = 872
+        Me.ButtonSetPortalTargetI.Text = "Portal TGT"
+        Me.ButtonSetPortalTargetI.UseVisualStyleBackColor = True
         '
-        'TextBoxModeBTargetI
+        'TextBoxPortalTargetI
         '
-        Me.TextBoxModeBTargetI.Location = New System.Drawing.Point(228, 485)
-        Me.TextBoxModeBTargetI.Name = "TextBoxModeBTargetI"
-        Me.TextBoxModeBTargetI.Size = New System.Drawing.Size(71, 20)
-        Me.TextBoxModeBTargetI.TabIndex = 871
+        Me.TextBoxPortalTargetI.Location = New System.Drawing.Point(228, 485)
+        Me.TextBoxPortalTargetI.Name = "TextBoxPortalTargetI"
+        Me.TextBoxPortalTargetI.Size = New System.Drawing.Size(71, 20)
+        Me.TextBoxPortalTargetI.TabIndex = 871
         '
         'ButtonSetModeATargetI
         '
@@ -4966,11 +4968,29 @@ Partial Class Form1
         Me.Label147.TabIndex = 894
         Me.Label147.Text = "# Pulse"
         '
+        'ButtonSetGantryTargetI
+        '
+        Me.ButtonSetGantryTargetI.Location = New System.Drawing.Point(304, 508)
+        Me.ButtonSetGantryTargetI.Name = "ButtonSetGantryTargetI"
+        Me.ButtonSetGantryTargetI.Size = New System.Drawing.Size(114, 23)
+        Me.ButtonSetGantryTargetI.TabIndex = 903
+        Me.ButtonSetGantryTargetI.Text = "Gantry TGT"
+        Me.ButtonSetGantryTargetI.UseVisualStyleBackColor = True
+        '
+        'TextBoxGantryTargetI
+        '
+        Me.TextBoxGantryTargetI.Location = New System.Drawing.Point(227, 511)
+        Me.TextBoxGantryTargetI.Name = "TextBoxGantryTargetI"
+        Me.TextBoxGantryTargetI.Size = New System.Drawing.Size(71, 20)
+        Me.TextBoxGantryTargetI.TabIndex = 902
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1154, 712)
+        Me.Controls.Add(Me.ButtonSetGantryTargetI)
+        Me.Controls.Add(Me.TextBoxGantryTargetI)
         Me.Controls.Add(Me.LabelTargetAdjustInitial)
         Me.Controls.Add(Me.Label141)
         Me.Controls.Add(Me.LabelTargetAdjustMaxTime)
@@ -5000,8 +5020,8 @@ Partial Class Form1
         Me.Controls.Add(Me.Label113)
         Me.Controls.Add(Me.LabelModeATargetISetPoint)
         Me.Controls.Add(Me.Label128)
-        Me.Controls.Add(Me.ButtonSetModeBTargetI)
-        Me.Controls.Add(Me.TextBoxModeBTargetI)
+        Me.Controls.Add(Me.ButtonSetPortalTargetI)
+        Me.Controls.Add(Me.TextBoxPortalTargetI)
         Me.Controls.Add(Me.ButtonSetModeATargetI)
         Me.Controls.Add(Me.TextBoxModeATargetI)
         Me.Controls.Add(Me.LabelControlBoardType)
@@ -5835,8 +5855,8 @@ Partial Class Form1
     Friend WithEvents ETMOverrideModeToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
     Friend WithEvents LabelMagnetronType As System.Windows.Forms.Label
     Friend WithEvents LabelControlBoardType As System.Windows.Forms.Label
-    Friend WithEvents ButtonSetModeBTargetI As System.Windows.Forms.Button
-    Friend WithEvents TextBoxModeBTargetI As System.Windows.Forms.TextBox
+    Friend WithEvents ButtonSetPortalTargetI As System.Windows.Forms.Button
+    Friend WithEvents TextBoxPortalTargetI As System.Windows.Forms.TextBox
     Friend WithEvents ButtonSetModeATargetI As System.Windows.Forms.Button
     Friend WithEvents TextBoxModeATargetI As System.Windows.Forms.TextBox
     Friend WithEvents LabelModeBTargetISetPoint As System.Windows.Forms.Label
@@ -5869,5 +5889,7 @@ Partial Class Form1
     Friend WithEvents Label145 As System.Windows.Forms.Label
     Friend WithEvents LabelTargetAdjustPulse As System.Windows.Forms.Label
     Friend WithEvents Label147 As System.Windows.Forms.Label
+    Friend WithEvents ButtonSetGantryTargetI As System.Windows.Forms.Button
+    Friend WithEvents TextBoxGantryTargetI As System.Windows.Forms.TextBox
 
 End Class

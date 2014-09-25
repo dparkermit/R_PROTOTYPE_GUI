@@ -42,11 +42,11 @@ Public Class Form1
 
     Public Const CMD_DATA_LOGGING As Byte = &H50
     Public Const CMD_SET_HIGH_ENERGY_TARGET_CURRENT_SETPOINT As Byte = &H51
-    Public Const CMD_SET_LOW_ENERGY_TARGET_CURRENT_SETPOINT As Byte = &H52
+    Public Const CMD_SET_LOW_ENERGY_PORTAL_TARGET_CURRENT_SETPOINT As Byte = &H52
     Public Const CMD_SET_TARGET_CURRENT_STARTUP_PULSES As Byte = &H53
     Public Const CMD_SET_TARGET_CURRENT_STARTUP_MAGNITUDE As Byte = &H54
     Public Const CMD_SET_TARGET_CURRENT_STARTUP_DIRECTION As Byte = &H55
-
+    Public Const CMD_SET_LOW_ENERGY_GANTRY_TARGET_CURRENT_SETPOINT As Byte = &H56
 
     Public Const CMD_FORCE_SOFTWARE_RESTART As Byte = &HA0
     Public Const CMD_SOFTWARE_SKIP_WARMUP As Byte = &HA1
@@ -1956,20 +1956,6 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub ButtonSetModeBTargetI_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonSetModeBTargetI.Click
-        Dim ProgramWord As UInt16
-        Dim ProgramHB As Byte
-        Dim ProgramLB As Byte
-        ProgramWord = TextBoxModeBTargetI.Text
-        ProgramHB = Int(ProgramWord / 256)
-        ProgramLB = ProgramWord Mod 256
-
-        If SendAndValidateCommand(CMD_SET_LOW_ENERGY_TARGET_CURRENT_SETPOINT, 0, ProgramHB, ProgramLB) = True Then
-            ' the command Succeded
-        Else
-            MsgBox("Set Lambda Voltage Command Failed")
-        End If
-    End Sub
 
     Private Sub ButtonStartDataLogging_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ButtonStartDataLogging.Click
         Timer1.Enabled = False
@@ -2195,6 +2181,36 @@ Public Class Form1
         ProgramLB = ProgramWord Mod 256
 
         If SendAndValidateCommand(CMD_SET_TARGET_CURRENT_STARTUP_DIRECTION, 0, ProgramHB, ProgramLB) = True Then
+            ' the command Succeded
+        Else
+            MsgBox("Set Lambda Voltage Command Failed")
+        End If
+    End Sub
+
+    Private Sub ButtonSetPortalTargetI_Click(sender As System.Object, e As System.EventArgs) Handles ButtonSetPortalTargetI.Click
+        Dim ProgramWord As UInt16
+        Dim ProgramHB As Byte
+        Dim ProgramLB As Byte
+        ProgramWord = TextBoxPortalTargetI.Text
+        ProgramHB = Int(ProgramWord / 256)
+        ProgramLB = ProgramWord Mod 256
+
+        If SendAndValidateCommand(CMD_SET_LOW_ENERGY_PORTAL_TARGET_CURRENT_SETPOINT, 0, ProgramHB, ProgramLB) = True Then
+            ' the command Succeded
+        Else
+            MsgBox("Set Lambda Voltage Command Failed")
+        End If
+    End Sub
+
+    Private Sub ButtonSetGantryTargetI_Click(sender As System.Object, e As System.EventArgs) Handles ButtonSetGantryTargetI.Click
+        Dim ProgramWord As UInt16
+        Dim ProgramHB As Byte
+        Dim ProgramLB As Byte
+        ProgramWord = TextBoxGantryTargetI.Text
+        ProgramHB = Int(ProgramWord / 256)
+        ProgramLB = ProgramWord Mod 256
+
+        If SendAndValidateCommand(CMD_SET_LOW_ENERGY_GANTRY_TARGET_CURRENT_SETPOINT, 0, ProgramHB, ProgramLB) = True Then
             ' the command Succeded
         Else
             MsgBox("Set Lambda Voltage Command Failed")
