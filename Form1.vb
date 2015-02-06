@@ -47,6 +47,7 @@ Public Class Form1
     Public Const CMD_SET_TARGET_CURRENT_STARTUP_MAGNITUDE As Byte = &H54
     Public Const CMD_SET_TARGET_CURRENT_STARTUP_DIRECTION As Byte = &H55
     Public Const CMD_SET_LOW_ENERGY_GANTRY_TARGET_CURRENT_SETPOINT As Byte = &H56
+    Public Const CMD_SET_FILAMENT_OFFSET As Byte = &H57
 
     Public Const CMD_FORCE_SOFTWARE_RESTART As Byte = &HA0
     Public Const CMD_SOFTWARE_SKIP_WARMUP As Byte = &HA1
@@ -138,6 +139,7 @@ Public Class Form1
     Public Const RAM_READ_AVERAGE_MAGNETRON_INPUT_POWER As Byte = &H62
     Public Const RAM_READ_HV_LAMBDA_VPEAK_ADC As Byte = &H63
     Public Const RAM_READ_HV_LAMBDA_VMON_ADC As Byte = &H64
+    Public Const RAM_READ_FILAMENT_OFFSET As Byte = &H65
 
 
     Public Const RAM_READ_PULSE_MODE_A_FILTERED_CURRENT As Byte = &H70
@@ -958,7 +960,11 @@ Public Class Form1
             LabelTargetAdjustInitial.Text = "error"
         End If
 
-
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_FILAMENT_OFFSET, 0, 0) = True Then
+            LabelFilamentOffset.Text = ConvertToSignedInteger(ReturnData)
+        Else
+            LabelFilamentOffset.Text = "error"
+        End If
 
         LabelTime.Text = DateTime.Now
 
@@ -2211,6 +2217,26 @@ Public Class Form1
         ProgramLB = ProgramWord Mod 256
 
         If SendAndValidateCommand(CMD_SET_LOW_ENERGY_GANTRY_TARGET_CURRENT_SETPOINT, 0, ProgramHB, ProgramLB) = True Then
+            ' the command Succeded
+        Else
+            MsgBox("Set Lambda Voltage Command Failed")
+        End If
+    End Sub
+
+    Private Sub ButtonFilamentOffset_Click(sender As System.Object, e As System.EventArgs) Handles ButtonFilamentOffset.Click
+        Dim Input As Int32
+        Dim ProgramWord As UInt16
+        Dim ProgramHB As Byte
+        Dim ProgramLB As Byte
+        Input = TextBoxFilamentOffset.Text
+        If Input < 0 Then
+            Input = Input + 2 ^ 16
+        End If
+        ProgramWord = Input
+        ProgramHB = Int(ProgramWord / 256)
+        ProgramLB = ProgramWord Mod 256
+
+        If SendAndValidateCommand(CMD_SET_FILAMENT_OFFSET, 0, ProgramHB, ProgramLB) = True Then
             ' the command Succeded
         Else
             MsgBox("Set Lambda Voltage Command Failed")

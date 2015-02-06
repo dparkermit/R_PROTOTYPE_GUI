@@ -475,6 +475,10 @@ Partial Class Form1
         Me.Label147 = New System.Windows.Forms.Label()
         Me.ButtonSetGantryTargetI = New System.Windows.Forms.Button()
         Me.TextBoxGantryTargetI = New System.Windows.Forms.TextBox()
+        Me.TextBoxFilamentOffset = New System.Windows.Forms.TextBox()
+        Me.ButtonFilamentOffset = New System.Windows.Forms.Button()
+        Me.Label100 = New System.Windows.Forms.Label()
+        Me.LabelFilamentOffset = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -4984,11 +4988,49 @@ Partial Class Form1
         Me.TextBoxGantryTargetI.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxGantryTargetI.TabIndex = 902
         '
+        'TextBoxFilamentOffset
+        '
+        Me.TextBoxFilamentOffset.Location = New System.Drawing.Point(907, 691)
+        Me.TextBoxFilamentOffset.Name = "TextBoxFilamentOffset"
+        Me.TextBoxFilamentOffset.Size = New System.Drawing.Size(71, 20)
+        Me.TextBoxFilamentOffset.TabIndex = 904
+        '
+        'ButtonFilamentOffset
+        '
+        Me.ButtonFilamentOffset.Location = New System.Drawing.Point(984, 689)
+        Me.ButtonFilamentOffset.Name = "ButtonFilamentOffset"
+        Me.ButtonFilamentOffset.Size = New System.Drawing.Size(114, 23)
+        Me.ButtonFilamentOffset.TabIndex = 905
+        Me.ButtonFilamentOffset.Text = "Set Filament Offset"
+        Me.ButtonFilamentOffset.UseVisualStyleBackColor = True
+        '
+        'Label100
+        '
+        Me.Label100.AutoSize = True
+        Me.Label100.Location = New System.Drawing.Point(907, 673)
+        Me.Label100.Name = "Label100"
+        Me.Label100.Size = New System.Drawing.Size(77, 13)
+        Me.Label100.TabIndex = 906
+        Me.Label100.Text = "Filament Offset"
+        '
+        'LabelFilamentOffset
+        '
+        Me.LabelFilamentOffset.AutoSize = True
+        Me.LabelFilamentOffset.Location = New System.Drawing.Point(986, 673)
+        Me.LabelFilamentOffset.Name = "LabelFilamentOffset"
+        Me.LabelFilamentOffset.Size = New System.Drawing.Size(10, 13)
+        Me.LabelFilamentOffset.TabIndex = 907
+        Me.LabelFilamentOffset.Text = "-"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1154, 712)
+        Me.Controls.Add(Me.LabelFilamentOffset)
+        Me.Controls.Add(Me.Label100)
+        Me.Controls.Add(Me.ButtonFilamentOffset)
+        Me.Controls.Add(Me.TextBoxFilamentOffset)
         Me.Controls.Add(Me.ButtonSetGantryTargetI)
         Me.Controls.Add(Me.TextBoxGantryTargetI)
         Me.Controls.Add(Me.LabelTargetAdjustInitial)
@@ -5891,5 +5933,9 @@ Partial Class Form1
     Friend WithEvents Label147 As System.Windows.Forms.Label
     Friend WithEvents ButtonSetGantryTargetI As System.Windows.Forms.Button
     Friend WithEvents TextBoxGantryTargetI As System.Windows.Forms.TextBox
+    Friend WithEvents TextBoxFilamentOffset As System.Windows.Forms.TextBox
+    Friend WithEvents ButtonFilamentOffset As System.Windows.Forms.Button
+    Friend WithEvents Label100 As System.Windows.Forms.Label
+    Friend WithEvents LabelFilamentOffset As System.Windows.Forms.Label
 
 End Class
