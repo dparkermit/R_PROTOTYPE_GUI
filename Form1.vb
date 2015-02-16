@@ -48,6 +48,8 @@ Public Class Form1
     Public Const CMD_SET_TARGET_CURRENT_STARTUP_DIRECTION As Byte = &H55
     Public Const CMD_SET_LOW_ENERGY_GANTRY_TARGET_CURRENT_SETPOINT As Byte = &H56
     Public Const CMD_SET_FILAMENT_OFFSET As Byte = &H57
+    Public Const CMD_SET_SCALE_INTERLEAVED As Byte = &H58
+    Public Const CMD_SET_SCALE_LOW_ENERGY As Byte = &H59
 
     Public Const CMD_FORCE_SOFTWARE_RESTART As Byte = &HA0
     Public Const CMD_SOFTWARE_SKIP_WARMUP As Byte = &HA1
@@ -140,6 +142,9 @@ Public Class Form1
     Public Const RAM_READ_HV_LAMBDA_VPEAK_ADC As Byte = &H63
     Public Const RAM_READ_HV_LAMBDA_VMON_ADC As Byte = &H64
     Public Const RAM_READ_FILAMENT_OFFSET As Byte = &H65
+    Public Const RAM_READ_OPERATION_MODE As Byte = &H66
+    Public Const RAM_READ_SCALE_INTERLEAVED As Byte = &H67
+    Public Const RAM_READ_SCALE_LOW_ENERGY As Byte = &H68
 
 
     Public Const RAM_READ_PULSE_MODE_A_FILTERED_CURRENT As Byte = &H70
@@ -960,11 +965,45 @@ Public Class Form1
             LabelTargetAdjustInitial.Text = "error"
         End If
 
-        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_FILAMENT_OFFSET, 0, 0) = True Then
-            LabelFilamentOffset.Text = ConvertToSignedInteger(ReturnData)
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_OPERATION_MODE, 0, 0) = True Then
+            If ReturnData = 20 Then
+                LabelMode.Text = "Mode Low Energy"
+            ElseIf ReturnData = 30 Then
+                LabelMode.Text = "Mode Interleaved"
+            ElseIf ReturnData = 40 Then
+                LabelMode.Text = "Mode High Energy"
+            Else
+                LabelMode.Text = "Mode Unknown"
+            End If
         Else
-            LabelFilamentOffset.Text = "error"
+            LabelMode.Text = "error"
         End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_SCALE_INTERLEAVED, 0, 0) = True Then
+            Dim display As Double
+            display = ReturnData
+            display = display / 2 ^ 15
+            LabelScaleInterleaved.Text = Math.Round(display, 3)
+        Else
+            LabelScaleInterleaved.Text = "error"
+        End If
+
+        If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_SCALE_LOW_ENERGY, 0, 0) = True Then
+            Dim display As Double
+            display = ReturnData
+            display = display / 2 ^ 15
+            LabelScaleLowEnergy.Text = Math.Round(display, 3)
+        Else
+            LabelScaleLowEnergy.Text = "error"
+        End If
+
+
+        'If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_FILAMENT_OFFSET, 0, 0) = True Then
+        'LabelMode.Text = ConvertToSignedInteger(ReturnData)
+        'Else
+        'LabelMode.Text = "error"
+        'End If
 
         LabelTime.Text = DateTime.Now
 
@@ -2223,20 +2262,45 @@ Public Class Form1
         End If
     End Sub
 
-    Private Sub ButtonFilamentOffset_Click(sender As System.Object, e As System.EventArgs) Handles ButtonFilamentOffset.Click
-        Dim Input As Int32
+
+    Private Sub ButtonInterleavedMult_Click(sender As System.Object, e As System.EventArgs) Handles ButtonInterleavedMult.Click
+        Dim Input As Double
         Dim ProgramWord As UInt16
         Dim ProgramHB As Byte
         Dim ProgramLB As Byte
-        Input = TextBoxFilamentOffset.Text
-        If Input < 0 Then
-            Input = Input + 2 ^ 16
+
+        Input = TextBoxInterleavedMult.Text
+        Input = Input * 2 ^ 15
+        If Input > 65000 Then
+            Input = 65000
         End If
         ProgramWord = Input
         ProgramHB = Int(ProgramWord / 256)
         ProgramLB = ProgramWord Mod 256
 
-        If SendAndValidateCommand(CMD_SET_FILAMENT_OFFSET, 0, ProgramHB, ProgramLB) = True Then
+        If SendAndValidateCommand(CMD_SET_SCALE_INTERLEAVED, 0, ProgramHB, ProgramLB) = True Then
+            ' the command Succeded
+        Else
+            MsgBox("Set Lambda Voltage Command Failed")
+        End If
+    End Sub
+
+    Private Sub ButtonLowEnergyMult_Click(sender As System.Object, e As System.EventArgs) Handles ButtonLowEnergyMult.Click
+        Dim Input As Double
+        Dim ProgramWord As UInt16
+        Dim ProgramHB As Byte
+        Dim ProgramLB As Byte
+
+        Input = TextBoxLowEnergyMult.Text
+        Input = Input * 2 ^ 15
+        If Input > 65000 Then
+            Input = 65000
+        End If
+        ProgramWord = Input
+        ProgramHB = Int(ProgramWord / 256)
+        ProgramLB = ProgramWord Mod 256
+
+        If SendAndValidateCommand(CMD_SET_SCALE_LOW_ENERGY, 0, ProgramHB, ProgramLB) = True Then
             ' the command Succeded
         Else
             MsgBox("Set Lambda Voltage Command Failed")

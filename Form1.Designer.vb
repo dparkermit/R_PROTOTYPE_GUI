@@ -475,10 +475,16 @@ Partial Class Form1
         Me.Label147 = New System.Windows.Forms.Label()
         Me.ButtonSetGantryTargetI = New System.Windows.Forms.Button()
         Me.TextBoxGantryTargetI = New System.Windows.Forms.TextBox()
-        Me.TextBoxFilamentOffset = New System.Windows.Forms.TextBox()
-        Me.ButtonFilamentOffset = New System.Windows.Forms.Button()
+        Me.TextBoxLowEnergyMult = New System.Windows.Forms.TextBox()
+        Me.ButtonLowEnergyMult = New System.Windows.Forms.Button()
         Me.Label100 = New System.Windows.Forms.Label()
-        Me.LabelFilamentOffset = New System.Windows.Forms.Label()
+        Me.LabelMode = New System.Windows.Forms.Label()
+        Me.LabelScaleInterleaved = New System.Windows.Forms.Label()
+        Me.Label140 = New System.Windows.Forms.Label()
+        Me.LabelScaleLowEnergy = New System.Windows.Forms.Label()
+        Me.Label144 = New System.Windows.Forms.Label()
+        Me.ButtonInterleavedMult = New System.Windows.Forms.Button()
+        Me.TextBoxInterleavedMult = New System.Windows.Forms.TextBox()
         Me.MenuStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -4257,7 +4263,7 @@ Partial Class Form1
         '
         Me.CheckBoxIOExpanderError.AutoCheck = False
         Me.CheckBoxIOExpanderError.AutoSize = True
-        Me.CheckBoxIOExpanderError.Location = New System.Drawing.Point(1124, 635)
+        Me.CheckBoxIOExpanderError.Location = New System.Drawing.Point(1127, 606)
         Me.CheckBoxIOExpanderError.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxIOExpanderError.Name = "CheckBoxIOExpanderError"
         Me.CheckBoxIOExpanderError.Size = New System.Drawing.Size(15, 14)
@@ -4267,7 +4273,7 @@ Partial Class Form1
         'Label129
         '
         Me.Label129.AutoSize = True
-        Me.Label129.Location = New System.Drawing.Point(903, 622)
+        Me.Label129.Location = New System.Drawing.Point(906, 593)
         Me.Label129.Name = "Label129"
         Me.Label129.Size = New System.Drawing.Size(93, 13)
         Me.Label129.TabIndex = 821
@@ -4276,7 +4282,7 @@ Partial Class Form1
         'Label130
         '
         Me.Label130.AutoSize = True
-        Me.Label130.Location = New System.Drawing.Point(903, 608)
+        Me.Label130.Location = New System.Drawing.Point(906, 579)
         Me.Label130.Name = "Label130"
         Me.Label130.Size = New System.Drawing.Size(75, 13)
         Me.Label130.TabIndex = 820
@@ -4285,7 +4291,7 @@ Partial Class Form1
         'Label131
         '
         Me.Label131.AutoSize = True
-        Me.Label131.Location = New System.Drawing.Point(1033, 635)
+        Me.Label131.Location = New System.Drawing.Point(1036, 606)
         Me.Label131.Name = "Label131"
         Me.Label131.Size = New System.Drawing.Size(91, 13)
         Me.Label131.TabIndex = 819
@@ -4295,7 +4301,7 @@ Partial Class Form1
         '
         Me.CheckBoxIOPUWR.AutoCheck = False
         Me.CheckBoxIOPUWR.AutoSize = True
-        Me.CheckBoxIOPUWR.Location = New System.Drawing.Point(1006, 635)
+        Me.CheckBoxIOPUWR.Location = New System.Drawing.Point(1009, 606)
         Me.CheckBoxIOPUWR.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxIOPUWR.Name = "CheckBoxIOPUWR"
         Me.CheckBoxIOPUWR.Size = New System.Drawing.Size(15, 14)
@@ -4306,7 +4312,7 @@ Partial Class Form1
         '
         Me.CheckBoxTRAPR.AutoCheck = False
         Me.CheckBoxTRAPR.AutoSize = True
-        Me.CheckBoxTRAPR.Location = New System.Drawing.Point(1006, 607)
+        Me.CheckBoxTRAPR.Location = New System.Drawing.Point(1009, 578)
         Me.CheckBoxTRAPR.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxTRAPR.Name = "CheckBoxTRAPR"
         Me.CheckBoxTRAPR.Size = New System.Drawing.Size(15, 14)
@@ -4317,7 +4323,7 @@ Partial Class Form1
         '
         Me.CheckBoxWDT.AutoCheck = False
         Me.CheckBoxWDT.AutoSize = True
-        Me.CheckBoxWDT.Location = New System.Drawing.Point(1006, 621)
+        Me.CheckBoxWDT.Location = New System.Drawing.Point(1009, 592)
         Me.CheckBoxWDT.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxWDT.Name = "CheckBoxWDT"
         Me.CheckBoxWDT.Size = New System.Drawing.Size(15, 14)
@@ -4328,7 +4334,7 @@ Partial Class Form1
         '
         Me.CheckBoxBOR.AutoCheck = False
         Me.CheckBoxBOR.AutoSize = True
-        Me.CheckBoxBOR.Location = New System.Drawing.Point(1006, 593)
+        Me.CheckBoxBOR.Location = New System.Drawing.Point(1009, 564)
         Me.CheckBoxBOR.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxBOR.Name = "CheckBoxBOR"
         Me.CheckBoxBOR.Size = New System.Drawing.Size(15, 14)
@@ -4338,7 +4344,7 @@ Partial Class Form1
         'Label132
         '
         Me.Label132.AutoSize = True
-        Me.Label132.Location = New System.Drawing.Point(903, 636)
+        Me.Label132.Location = New System.Drawing.Point(906, 607)
         Me.Label132.Name = "Label132"
         Me.Label132.Size = New System.Drawing.Size(83, 13)
         Me.Label132.TabIndex = 814
@@ -4347,7 +4353,7 @@ Partial Class Form1
         'Label133
         '
         Me.Label133.AutoSize = True
-        Me.Label133.Location = New System.Drawing.Point(903, 594)
+        Me.Label133.Location = New System.Drawing.Point(906, 565)
         Me.Label133.Name = "Label133"
         Me.Label133.Size = New System.Drawing.Size(88, 13)
         Me.Label133.TabIndex = 813
@@ -4355,7 +4361,7 @@ Partial Class Form1
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(1025, 558)
+        Me.Button1.Location = New System.Drawing.Point(1028, 529)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(114, 23)
         Me.Button1.TabIndex = 832
@@ -4365,7 +4371,7 @@ Partial Class Form1
         'Label85
         '
         Me.Label85.AutoSize = True
-        Me.Label85.Location = New System.Drawing.Point(1033, 607)
+        Me.Label85.Location = New System.Drawing.Point(1036, 578)
         Me.Label85.Name = "Label85"
         Me.Label85.Size = New System.Drawing.Size(76, 13)
         Me.Label85.TabIndex = 838
@@ -4374,7 +4380,7 @@ Partial Class Form1
         'Label88
         '
         Me.Label88.AutoSize = True
-        Me.Label88.Location = New System.Drawing.Point(1033, 593)
+        Me.Label88.Location = New System.Drawing.Point(1036, 564)
         Me.Label88.Name = "Label88"
         Me.Label88.Size = New System.Drawing.Size(85, 13)
         Me.Label88.TabIndex = 837
@@ -4384,7 +4390,7 @@ Partial Class Form1
         '
         Me.CheckBoxSWReset.AutoCheck = False
         Me.CheckBoxSWReset.AutoSize = True
-        Me.CheckBoxSWReset.Location = New System.Drawing.Point(1124, 621)
+        Me.CheckBoxSWReset.Location = New System.Drawing.Point(1127, 592)
         Me.CheckBoxSWReset.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxSWReset.Name = "CheckBoxSWReset"
         Me.CheckBoxSWReset.Size = New System.Drawing.Size(15, 14)
@@ -4395,7 +4401,7 @@ Partial Class Form1
         '
         Me.CheckBoxPOR.AutoCheck = False
         Me.CheckBoxPOR.AutoSize = True
-        Me.CheckBoxPOR.Location = New System.Drawing.Point(1124, 593)
+        Me.CheckBoxPOR.Location = New System.Drawing.Point(1127, 564)
         Me.CheckBoxPOR.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxPOR.Name = "CheckBoxPOR"
         Me.CheckBoxPOR.Size = New System.Drawing.Size(15, 14)
@@ -4406,7 +4412,7 @@ Partial Class Form1
         '
         Me.CheckBoxExtReset.AutoCheck = False
         Me.CheckBoxExtReset.AutoSize = True
-        Me.CheckBoxExtReset.Location = New System.Drawing.Point(1124, 607)
+        Me.CheckBoxExtReset.Location = New System.Drawing.Point(1127, 578)
         Me.CheckBoxExtReset.Margin = New System.Windows.Forms.Padding(0)
         Me.CheckBoxExtReset.Name = "CheckBoxExtReset"
         Me.CheckBoxExtReset.Size = New System.Drawing.Size(15, 14)
@@ -4416,7 +4422,7 @@ Partial Class Form1
         'Label90
         '
         Me.Label90.AutoSize = True
-        Me.Label90.Location = New System.Drawing.Point(1033, 621)
+        Me.Label90.Location = New System.Drawing.Point(1036, 592)
         Me.Label90.Name = "Label90"
         Me.Label90.Size = New System.Drawing.Size(80, 13)
         Me.Label90.TabIndex = 833
@@ -4568,7 +4574,7 @@ Partial Class Form1
         '
         Me.Label97.AutoSize = True
         Me.Label97.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label97.Location = New System.Drawing.Point(903, 563)
+        Me.Label97.Location = New System.Drawing.Point(906, 534)
         Me.Label97.Name = "Label97"
         Me.Label97.Size = New System.Drawing.Size(100, 13)
         Me.Label97.TabIndex = 856
@@ -4988,49 +4994,107 @@ Partial Class Form1
         Me.TextBoxGantryTargetI.Size = New System.Drawing.Size(71, 20)
         Me.TextBoxGantryTargetI.TabIndex = 902
         '
-        'TextBoxFilamentOffset
+        'TextBoxLowEnergyMult
         '
-        Me.TextBoxFilamentOffset.Location = New System.Drawing.Point(907, 691)
-        Me.TextBoxFilamentOffset.Name = "TextBoxFilamentOffset"
-        Me.TextBoxFilamentOffset.Size = New System.Drawing.Size(71, 20)
-        Me.TextBoxFilamentOffset.TabIndex = 904
+        Me.TextBoxLowEnergyMult.Location = New System.Drawing.Point(907, 691)
+        Me.TextBoxLowEnergyMult.Name = "TextBoxLowEnergyMult"
+        Me.TextBoxLowEnergyMult.Size = New System.Drawing.Size(71, 20)
+        Me.TextBoxLowEnergyMult.TabIndex = 904
         '
-        'ButtonFilamentOffset
+        'ButtonLowEnergyMult
         '
-        Me.ButtonFilamentOffset.Location = New System.Drawing.Point(984, 689)
-        Me.ButtonFilamentOffset.Name = "ButtonFilamentOffset"
-        Me.ButtonFilamentOffset.Size = New System.Drawing.Size(114, 23)
-        Me.ButtonFilamentOffset.TabIndex = 905
-        Me.ButtonFilamentOffset.Text = "Set Filament Offset"
-        Me.ButtonFilamentOffset.UseVisualStyleBackColor = True
+        Me.ButtonLowEnergyMult.Location = New System.Drawing.Point(984, 689)
+        Me.ButtonLowEnergyMult.Name = "ButtonLowEnergyMult"
+        Me.ButtonLowEnergyMult.Size = New System.Drawing.Size(114, 23)
+        Me.ButtonLowEnergyMult.TabIndex = 905
+        Me.ButtonLowEnergyMult.Text = "Low Energy Mult"
+        Me.ButtonLowEnergyMult.UseVisualStyleBackColor = True
         '
         'Label100
         '
         Me.Label100.AutoSize = True
-        Me.Label100.Location = New System.Drawing.Point(907, 673)
+        Me.Label100.Location = New System.Drawing.Point(906, 628)
         Me.Label100.Name = "Label100"
-        Me.Label100.Size = New System.Drawing.Size(77, 13)
+        Me.Label100.Size = New System.Drawing.Size(83, 13)
         Me.Label100.TabIndex = 906
-        Me.Label100.Text = "Filament Offset"
+        Me.Label100.Text = "Operation Mode"
         '
-        'LabelFilamentOffset
+        'LabelMode
         '
-        Me.LabelFilamentOffset.AutoSize = True
-        Me.LabelFilamentOffset.Location = New System.Drawing.Point(986, 673)
-        Me.LabelFilamentOffset.Name = "LabelFilamentOffset"
-        Me.LabelFilamentOffset.Size = New System.Drawing.Size(10, 13)
-        Me.LabelFilamentOffset.TabIndex = 907
-        Me.LabelFilamentOffset.Text = "-"
+        Me.LabelMode.AutoSize = True
+        Me.LabelMode.Location = New System.Drawing.Point(985, 628)
+        Me.LabelMode.Name = "LabelMode"
+        Me.LabelMode.Size = New System.Drawing.Size(10, 13)
+        Me.LabelMode.TabIndex = 907
+        Me.LabelMode.Text = "-"
+        '
+        'LabelScaleInterleaved
+        '
+        Me.LabelScaleInterleaved.AutoSize = True
+        Me.LabelScaleInterleaved.Location = New System.Drawing.Point(985, 641)
+        Me.LabelScaleInterleaved.Name = "LabelScaleInterleaved"
+        Me.LabelScaleInterleaved.Size = New System.Drawing.Size(10, 13)
+        Me.LabelScaleInterleaved.TabIndex = 909
+        Me.LabelScaleInterleaved.Text = "-"
+        '
+        'Label140
+        '
+        Me.Label140.AutoSize = True
+        Me.Label140.Location = New System.Drawing.Point(906, 641)
+        Me.Label140.Name = "Label140"
+        Me.Label140.Size = New System.Drawing.Size(83, 13)
+        Me.Label140.TabIndex = 908
+        Me.Label140.Text = "Interleaved Mult"
+        '
+        'LabelScaleLowEnergy
+        '
+        Me.LabelScaleLowEnergy.AutoSize = True
+        Me.LabelScaleLowEnergy.Location = New System.Drawing.Point(985, 654)
+        Me.LabelScaleLowEnergy.Name = "LabelScaleLowEnergy"
+        Me.LabelScaleLowEnergy.Size = New System.Drawing.Size(10, 13)
+        Me.LabelScaleLowEnergy.TabIndex = 911
+        Me.LabelScaleLowEnergy.Text = "-"
+        '
+        'Label144
+        '
+        Me.Label144.AutoSize = True
+        Me.Label144.Location = New System.Drawing.Point(906, 654)
+        Me.Label144.Name = "Label144"
+        Me.Label144.Size = New System.Drawing.Size(50, 13)
+        Me.Label144.TabIndex = 910
+        Me.Label144.Text = "Low Mult"
+        '
+        'ButtonInterleavedMult
+        '
+        Me.ButtonInterleavedMult.Location = New System.Drawing.Point(984, 667)
+        Me.ButtonInterleavedMult.Name = "ButtonInterleavedMult"
+        Me.ButtonInterleavedMult.Size = New System.Drawing.Size(114, 23)
+        Me.ButtonInterleavedMult.TabIndex = 913
+        Me.ButtonInterleavedMult.Text = "Interleaved Mult"
+        Me.ButtonInterleavedMult.UseVisualStyleBackColor = True
+        '
+        'TextBoxInterleavedMult
+        '
+        Me.TextBoxInterleavedMult.Location = New System.Drawing.Point(907, 669)
+        Me.TextBoxInterleavedMult.Name = "TextBoxInterleavedMult"
+        Me.TextBoxInterleavedMult.Size = New System.Drawing.Size(71, 20)
+        Me.TextBoxInterleavedMult.TabIndex = 912
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1154, 712)
-        Me.Controls.Add(Me.LabelFilamentOffset)
+        Me.Controls.Add(Me.ButtonInterleavedMult)
+        Me.Controls.Add(Me.TextBoxInterleavedMult)
+        Me.Controls.Add(Me.LabelScaleLowEnergy)
+        Me.Controls.Add(Me.Label144)
+        Me.Controls.Add(Me.LabelScaleInterleaved)
+        Me.Controls.Add(Me.Label140)
+        Me.Controls.Add(Me.LabelMode)
         Me.Controls.Add(Me.Label100)
-        Me.Controls.Add(Me.ButtonFilamentOffset)
-        Me.Controls.Add(Me.TextBoxFilamentOffset)
+        Me.Controls.Add(Me.ButtonLowEnergyMult)
+        Me.Controls.Add(Me.TextBoxLowEnergyMult)
         Me.Controls.Add(Me.ButtonSetGantryTargetI)
         Me.Controls.Add(Me.TextBoxGantryTargetI)
         Me.Controls.Add(Me.LabelTargetAdjustInitial)
@@ -5933,9 +5997,15 @@ Partial Class Form1
     Friend WithEvents Label147 As System.Windows.Forms.Label
     Friend WithEvents ButtonSetGantryTargetI As System.Windows.Forms.Button
     Friend WithEvents TextBoxGantryTargetI As System.Windows.Forms.TextBox
-    Friend WithEvents TextBoxFilamentOffset As System.Windows.Forms.TextBox
-    Friend WithEvents ButtonFilamentOffset As System.Windows.Forms.Button
+    Friend WithEvents TextBoxLowEnergyMult As System.Windows.Forms.TextBox
+    Friend WithEvents ButtonLowEnergyMult As System.Windows.Forms.Button
     Friend WithEvents Label100 As System.Windows.Forms.Label
-    Friend WithEvents LabelFilamentOffset As System.Windows.Forms.Label
+    Friend WithEvents LabelMode As System.Windows.Forms.Label
+    Friend WithEvents LabelScaleInterleaved As System.Windows.Forms.Label
+    Friend WithEvents Label140 As System.Windows.Forms.Label
+    Friend WithEvents LabelScaleLowEnergy As System.Windows.Forms.Label
+    Friend WithEvents Label144 As System.Windows.Forms.Label
+    Friend WithEvents ButtonInterleavedMult As System.Windows.Forms.Button
+    Friend WithEvents TextBoxInterleavedMult As System.Windows.Forms.TextBox
 
 End Class
