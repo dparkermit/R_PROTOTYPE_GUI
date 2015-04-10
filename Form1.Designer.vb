@@ -5007,7 +5007,7 @@ Partial Class Form1
         Me.ButtonLowEnergyMult.Name = "ButtonLowEnergyMult"
         Me.ButtonLowEnergyMult.Size = New System.Drawing.Size(114, 23)
         Me.ButtonLowEnergyMult.TabIndex = 905
-        Me.ButtonLowEnergyMult.Text = "Low Energy Mult"
+        Me.ButtonLowEnergyMult.Text = "Ultra Lose Dose Mult"
         Me.ButtonLowEnergyMult.UseVisualStyleBackColor = True
         '
         'Label100
@@ -5042,9 +5042,9 @@ Partial Class Form1
         Me.Label140.AutoSize = True
         Me.Label140.Location = New System.Drawing.Point(906, 641)
         Me.Label140.Name = "Label140"
-        Me.Label140.Size = New System.Drawing.Size(83, 13)
+        Me.Label140.Size = New System.Drawing.Size(77, 13)
         Me.Label140.TabIndex = 908
-        Me.Label140.Text = "Interleaved Mult"
+        Me.Label140.Text = "Port/Gant Mult"
         '
         'LabelScaleLowEnergy
         '
@@ -5060,9 +5060,9 @@ Partial Class Form1
         Me.Label144.AutoSize = True
         Me.Label144.Location = New System.Drawing.Point(906, 654)
         Me.Label144.Name = "Label144"
-        Me.Label144.Size = New System.Drawing.Size(50, 13)
+        Me.Label144.Size = New System.Drawing.Size(75, 13)
         Me.Label144.TabIndex = 910
-        Me.Label144.Text = "Low Mult"
+        Me.Label144.Text = "Ultra Low Mult"
         '
         'ButtonInterleavedMult
         '
@@ -5070,7 +5070,7 @@ Partial Class Form1
         Me.ButtonInterleavedMult.Name = "ButtonInterleavedMult"
         Me.ButtonInterleavedMult.Size = New System.Drawing.Size(114, 23)
         Me.ButtonInterleavedMult.TabIndex = 913
-        Me.ButtonInterleavedMult.Text = "Interleaved Mult"
+        Me.ButtonInterleavedMult.Text = "Portal Gantry Mult"
         Me.ButtonInterleavedMult.UseVisualStyleBackColor = True
         '
         'TextBoxInterleavedMult

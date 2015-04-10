@@ -967,12 +967,18 @@ Public Class Form1
 
 
         If SendAndValidateCommand(CMD_READ_RAM_VALUE, RAM_READ_OPERATION_MODE, 0, 0) = True Then
-            If ReturnData = 20 Then
-                LabelMode.Text = "Mode Low Energy"
-            ElseIf ReturnData = 30 Then
-                LabelMode.Text = "Mode Interleaved"
-            ElseIf ReturnData = 40 Then
-                LabelMode.Text = "Mode High Energy"
+            If ReturnData = &H40 Then
+                LabelMode.Text = "Portal Gantry High Energy"
+            ElseIf ReturnData = &H30 Then
+                LabelMode.Text = "Portal Gantry Interleaved"
+            ElseIf ReturnData = &H20 Then
+                LabelMode.Text = "Portal Gantry Low Energy"
+            ElseIf ReturnData = &H1040 Then
+                LabelMode.Text = "Ultra Low Dose High Energy"
+            ElseIf ReturnData = &H1030 Then
+                LabelMode.Text = "Ultra Low Dose Interleaved"
+            ElseIf ReturnData = &H1020 Then
+                LabelMode.Text = "Ultra Low Dose Low Energy"
             Else
                 LabelMode.Text = "Mode Unknown"
             End If
